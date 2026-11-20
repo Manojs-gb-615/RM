@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Node
+node_modules/
+dist/
+*.local
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Data & artifacts (large / not source)
+data/poses/
+data/manifests/
+models/*.pkl
+models/*.pt
+checkpoints/
+results/
+*.npy
+*.npz
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
