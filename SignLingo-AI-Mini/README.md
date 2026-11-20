@@ -17,7 +17,9 @@
 4. Animate the retrieved 2D skeleton (body, arms, hands, fingers) on a canvas.
 5. Play the video and animation side by side; compare **text-only** vs **context-aware** retrieval.
 
-Retrieval is a simple weighted cosine ranking, not a trained Transformer / VAE.
+Retrieval is a fixed weighted cosine ranking, not a trained Transformer / VAE. Here
+"training" means building the sentence-embedding index from real examples; no gradient
+training is performed. Section 3 of the brief explicitly permits a simple similarity ranker.
 
 ---
 
@@ -27,9 +29,10 @@ Retrieval is a simple weighted cosine ranking, not a trained Transformer / VAE.
 |---|---|
 | Python ML pipeline (synthetic end-to-end) | ✅ runs |
 | `ml/setup_data.py` (real + synthetic + template) | ✅ runs |
-| Backend full flow (parse → retrieve → 274-d pose) | ✅ tested with `TestClient` |
+| Backend full flow (parse → retrieve → 274-d pose) | ✅ `retrieve_all` + `compare` tested via `TestClient` |
 | Frontend build (`npm run build`) | ✅ 0 TypeScript errors |
-| Test suite (`python -m pytest tests`) | ✅ 15 passed |
+| Test suite (`python -m pytest tests`) | ✅ 19 passed |
+| Browser UI (visual video + skeleton playback) | ⚠️ build + API verified; not visually tested |
 | **Real How2Sign pose data** | ❌ not present on disk (blocker) |
 | Real trained index (`models/retrieval_index.pkl`) | ❌ not created (needs real poses) |
 | Human / ASL-signer evaluation | ❌ not conducted |

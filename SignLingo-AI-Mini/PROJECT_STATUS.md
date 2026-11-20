@@ -17,8 +17,10 @@ Updated: 2026-11-20
 | `frontend/` | ✅ DONE | React + Tailwind single page, canvas skeleton viewer |
 | Frontend build | ✅ PASSED | `npm run build` → 0 errors |
 | Colab notebook | ✅ DONE | Honest evaluation; `USE_SYNTHETIC` defaults to False |
-| Tests | ✅ PASSED | `python -m pytest tests -q` → 15 passed |
-| Backend end-to-end | ✅ VERIFIED | parse → retrieve → 274-d pose (synthetic data) |
+| Tests | ✅ PASSED | `python -m pytest tests -q` → 19 passed |
+| Backend end-to-end | ✅ VERIFIED | retrieve, retrieve_all, compare → 274-d pose (synthetic) |
+| UI layout | ✅ DONE | LEFT video / RIGHT skeleton / BOTTOM transcript + controls |
+| Video ↔ animation sync | ✅ DONE | video play/pause drives animation; segment click seeks video |
 
 ---
 
@@ -38,7 +40,7 @@ Updated: 2026-11-20
 
 ```bash
 # unit tests
-python -m pytest tests -q                      # 15 passed
+python -m pytest tests -q                      # 19 passed
 
 # synthetic pipeline (testing only)
 python ml/setup_data.py synthetic --output-dir data/synthetic --n 30
