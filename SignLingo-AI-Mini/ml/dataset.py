@@ -74,9 +74,11 @@ class SignLingoDataset:
         self.samples: List[PoseSample] = []
         self._index: Dict[str, PoseSample] = {}
         self._loaded = False
+        self.is_synthetic = False
 
     def load(self) -> "SignLingoDataset":
         """Load metadata CSV and attempt to load pose .npy files."""
+        self.is_synthetic = (self.data_dir / "SYNTHETIC_DATASET.txt").exists()
         if not self.metadata_csv.exists():
             print(f"[Dataset] metadata.csv not found at {self.metadata_csv}. Dataset empty.")
             return self

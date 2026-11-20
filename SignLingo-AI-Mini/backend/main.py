@@ -8,6 +8,7 @@ import sys
 import json
 import tempfile
 import traceback
+from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Optional, List
 
@@ -17,17 +18,31 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-from pydantic import BaseModel, validator
+from pydantic import BaseModel, field_validator
 
 from ml.inference import SignLingoInference
 from ml.retrieval import parse_srt, parse_vtt, TranscriptSegment
 
 # ── App setup ─────────────────────────────────────────────────────────────────
 
+# ── Global inference engine ────────────────────────────────────────────────────
+
+inference = SignLingoInference()
+
+
+@asynccontextmanager
+async def lifespan(_app: FastAPI):
+    data_dir = os.environ.get("DATA_DIR", "data")
+    pose_dir = os.environ.get("POSE_DIR", None)
+    inference.setup(data_dir=data_dir, pose_dir=pose_dir)
+    yield
+
+
 app = FastAPI(
     title="SignLingo AI Mini",
     description="Context-Aware ASL Pose Retrieval API",
     version="1.0.0",
+    lifespan=lifespan,
 )
 
 app.add_middleware(
@@ -38,17 +53,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ── Global inference engine ────────────────────────────────────────────────────
-
-inference = SignLingoInference()
-
-
-@app.on_event("startup")
-async def startup():
-    data_dir = os.environ.get("DATA_DIR", "data")
-    pose_dir = os.environ.get("POSE_DIR", None)
-    inference.setup(data_dir=data_dir, pose_dir=pose_dir)
-
 
 # ── Request / Response models ──────────────────────────────────────────────────
 
@@ -58,13 +62,15 @@ class RetrieveRequest(BaseModel):
     prev_sentence: Optional[str] = None
     prev_pose: Optional[List[List[float]]] = None   # [T, 274]
 
-    @validator("mode")
+    @field_validator("mode")
+    @classmethod
     def valid_mode(cls, v):
         if v not in ("text_only", "context_aware"):
             raise ValueError("mode must be 'text_only' or 'context_aware'")
         return v
 
-    @validator("current_sentence")
+    @field_validator("current_sentence")
+    @classmethod
     def not_empty(cls, v):
         if not v.strip():
             raise ValueError("current_sentence must not be empty")
@@ -184,7 +190,7 @@ async def parse_transcript(file: UploadFile = File(...)):
                 start_seconds=s.start_seconds,
                 end_seconds=s.end_seconds,
                 text=s.text,
-            ).dict()
+            ).model_dump()
             for s in segments
         ],
     }

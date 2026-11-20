@@ -5,6 +5,7 @@ export interface StatusResponse {
   num_indexed: number;
   dataset_samples: number;
   dataset_with_pose: number;
+  is_synthetic: boolean;
   message: string;
 }
 
@@ -16,6 +17,7 @@ export interface RetrievalResult {
   no_match_reason: string | null;
   mode: string;
   ready: boolean;
+  is_synthetic: boolean;
 }
 
 export interface CompareResult {

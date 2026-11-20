@@ -20,7 +20,8 @@ class SignLingoInference:
 
     INDEX_PATH = "models/retrieval_index.pkl"
 
-    def __init__(self):
+    def __init__(self, index_path: Optional[str] = None):
+        self.index_path = index_path or os.environ.get("INDEX_PATH", self.INDEX_PATH)
         self._engine: Optional[SignLingoRetrieval] = None
         self._dataset: Optional[SignLingoDataset] = None
         self._ready = False
@@ -33,23 +34,24 @@ class SignLingoInference:
         # Load dataset (for sample browsing)
         self._dataset = SignLingoDataset(data_dir=data_dir, pose_dir=pose_dir).load()
 
-        # Load retrieval index if it exists
-        if Path(self.INDEX_PATH).exists():
+        # Load retrieval index if it exists, otherwise build it from pose samples.
+        if Path(self.index_path).exists():
             try:
-                self._engine = SignLingoRetrieval.load(self.INDEX_PATH)
+                self._engine = SignLingoRetrieval.load(self.index_path)
+                self._engine.is_synthetic = self._engine.is_synthetic or self._dataset.is_synthetic
                 self._ready = True
                 print(f"[Inference] Retrieval engine ready. {self._engine.num_samples} samples indexed.")
             except Exception as e:
                 print(f"[Inference] Failed to load index: {e}")
                 self._ready = False
         else:
-            # Try to build index from dataset samples with poses
             samples_with_pose = self._dataset.samples_with_pose()
             if samples_with_pose:
                 print(f"[Inference] No saved index — building from {len(samples_with_pose)} pose samples.")
                 self._engine = SignLingoRetrieval()
+                self._engine.is_synthetic = self._dataset.is_synthetic
                 self._engine.build_index(samples_with_pose)
-                self._engine.save(self.INDEX_PATH)
+                self._engine.save(self.index_path)
                 self._ready = True
             else:
                 print("[Inference] No pose data found. Engine not ready. "
@@ -65,11 +67,12 @@ class SignLingoInference:
     def status(self) -> Dict[str, Any]:
         return {
             "ready": self._ready,
-            "index_path": self.INDEX_PATH,
-            "index_exists": Path(self.INDEX_PATH).exists(),
+            "index_path": self.index_path,
+            "index_exists": Path(self.index_path).exists(),
             "num_indexed": self._engine.num_samples if self._engine else 0,
             "dataset_samples": len(self._dataset.samples) if self._dataset else 0,
             "dataset_with_pose": len(self._dataset.samples_with_pose()) if self._dataset else 0,
+            "is_synthetic": bool(self._engine.is_synthetic) if self._engine else False,
             "message": (
                 "Retrieval engine ready." if self._ready
                 else "No pose data available. See README for setup instructions."
@@ -95,6 +98,7 @@ class SignLingoInference:
                 "no_match_reason": "Retrieval engine not ready. No pose data available.",
                 "mode": mode,
                 "ready": False,
+                "is_synthetic": False,
             }
 
         prev_pose = None
@@ -120,6 +124,7 @@ class SignLingoInference:
             "no_match_reason": result.no_match_reason,
             "mode": result.mode,
             "ready": True,
+            "is_synthetic": bool(self._engine.is_synthetic),
         }
 
     def get_dataset_samples(self) -> list:

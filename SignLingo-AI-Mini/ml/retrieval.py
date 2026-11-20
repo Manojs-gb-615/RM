@@ -23,6 +23,8 @@ except ImportError:
 
 from ml.dataset import PoseSample, POSE_DIM
 
+_MODEL_CACHE: Dict[str, "SentenceTransformer"] = {}
+
 
 # ── Retrieval result ───────────────────────────────────────────────────────────
 
@@ -78,6 +80,7 @@ class SignLingoRetrieval:
         self._sbert: Optional[SentenceTransformer] = None
         self._index: List[Dict] = []   # [{sample_id, sentence, text_emb, pose_feat}]
         self._built = False
+        self.is_synthetic = False
 
     # ── Lazy load sentence-transformer ────────────────────────────────────────
 
@@ -85,8 +88,10 @@ class SignLingoRetrieval:
         if self._sbert is None:
             if not HAS_SBERT:
                 raise RuntimeError("Install sentence-transformers: pip install sentence-transformers")
-            print(f"[Retrieval] Loading sentence-transformer: {self.model_name}")
-            self._sbert = SentenceTransformer(self.model_name)
+            if self.model_name not in _MODEL_CACHE:
+                print(f"[Retrieval] Loading sentence-transformer: {self.model_name}")
+                _MODEL_CACHE[self.model_name] = SentenceTransformer(self.model_name)
+            self._sbert = _MODEL_CACHE[self.model_name]
         return self._sbert
 
     # ── Build index ────────────────────────────────────────────────────────────
@@ -225,6 +230,7 @@ class SignLingoRetrieval:
         # Don't save the SBERT model itself, only the index
         data = {
             "model_name": self.model_name,
+            "is_synthetic": self.is_synthetic,
             "index": [
                 {k: v for k, v in e.items() if k != "pose"}  # save without full pose arrays
                 for e in self._index
@@ -241,6 +247,7 @@ class SignLingoRetrieval:
             data = pickle.load(f)
         engine = cls(model_name=data["model_name"])
         engine._index = data.get("index_with_pose", data.get("index", []))
+        engine.is_synthetic = bool(data.get("is_synthetic", False))
         engine._built = True
         print(f"[Retrieval] Index loaded from {path}: {len(engine._index)} entries.")
         return engine

@@ -17,7 +17,6 @@ dist/
 !.env.example
 
 # Data & artifacts (large / not source)
-data/poses/
 data/manifests/
 models/*.pkl
 models/*.pt
@@ -25,6 +24,9 @@ checkpoints/
 results/
 *.npy
 *.npz
+
+# Keep empty pose dirs in the repo
+!**/data/poses/.gitkeep
 
 # OS / editor
 .DS_Store

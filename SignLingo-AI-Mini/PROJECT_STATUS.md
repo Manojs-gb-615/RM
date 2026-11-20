@@ -1,87 +1,85 @@
 # PROJECT_STATUS.md — SignLingo AI Mini
 
-Generated: 2026-11-20
+Updated: 2026-11-20
 
 ---
 
-## Component Status
+## Component status
 
 | Component | Status | Notes |
 |---|---|---|
-| Project structure | ✅ DONE | All dirs created |
-| `ml/dataset.py` | ✅ DONE | Loader + synthetic data |
-| `ml/retrieval.py` | ✅ DONE | text_only + context_aware, .srt/.vtt parser |
-| `ml/inference.py` | ✅ DONE | FastAPI wrapper |
-| `ml/train.py` | ✅ DONE | Builds retrieval index |
-| `backend/main.py` | ✅ DONE | 8 API endpoints |
-| `frontend/` | ✅ DONE | React + Tailwind, TypeScript build passes |
-| Frontend build | ✅ DONE | `npm run build` → 0 errors |
-| Colab notebook | ✅ DONE | `notebooks/train_signlingo.ipynb` |
-| README.md | ✅ DONE | Full setup instructions |
+| `ml/dataset.py` | ✅ DONE | Loader + synthetic test data + synthetic marker detection |
+| `ml/retrieval.py` | ✅ DONE | text_only + context_aware, SRT/VTT parsing, model cache, save/load |
+| `ml/inference.py` | ✅ DONE | Backend wrapper, configurable index path, synthetic flag |
+| `ml/train.py` | ✅ DONE | Builds index, honest split evaluation |
+| `ml/setup_data.py` | ✅ DONE | `real` / `synthetic` / `template` modes |
+| `backend/main.py` | ✅ DONE | 8 endpoints, lifespan startup, pydantic v2 validators |
+| `frontend/` | ✅ DONE | React + Tailwind single page, canvas skeleton viewer |
+| Frontend build | ✅ PASSED | `npm run build` → 0 errors |
+| Colab notebook | ✅ DONE | Honest evaluation; `USE_SYNTHETIC` defaults to False |
+| Tests | ✅ PASSED | `python -m pytest tests -q` → 15 passed |
+| Backend end-to-end | ✅ VERIFIED | parse → retrieve → 274-d pose (synthetic data) |
 
 ---
 
-## Data Status
+## Data status
 
 | Item | Status |
 |---|---|
-| How2Sign CSVs | Available (Downloads folder) |
-| How2Sign pose .npy files | ❌ NOT AVAILABLE locally |
-| `data/metadata.csv` | ❌ NOT CREATED (requires pose files) |
-| Retrieval index (`models/retrieval_index.pkl`) | ❌ NOT TRAINED (no pose data) |
-| Synthetic index (for testing) | Can be generated via `python ml/train.py --synthetic` |
+| How2Sign CSVs | Available in `Downloads` (outside this repo) |
+| How2Sign pose `.npy` files | ❌ NOT AVAILABLE locally |
+| `data/metadata.csv` | ⚠️ header-only template committed |
+| Real retrieval index | ❌ NOT BUILT (no pose data) |
+| Synthetic test data | Generated on demand + clearly flagged |
 
 ---
 
-## Test Results
-
-### Python import test
-- Status: **PENDING** (requires numpy/sentence-transformers install)
-- Command: `python -c "from ml.dataset import make_synthetic_dataset; print('OK')"`
-
-### Frontend build
-- Status: ✅ **PASSED**
-- Command: `npm run build` (from `frontend/`)
-- Output: 0 TypeScript errors, bundle built successfully in 3.00s
-
-### Backend import test
-- Status: **PENDING** (requires fastapi/uvicorn install)
-
----
-
-## Startup Commands (once dependencies installed)
+## Verified commands
 
 ```bash
-# 1. Install Python deps
+# unit tests
+python -m pytest tests -q                      # 15 passed
+
+# synthetic pipeline (testing only)
+python ml/setup_data.py synthetic --output-dir data/synthetic --n 30
+python ml/train.py --data-dir data/synthetic --pose-dir data/synthetic/poses \
+    --output data/synthetic/retrieval_index.pkl --eval
+
+# frontend
+cd frontend && npm run build                    # passes
+```
+
+---
+
+## Startup commands
+
+```bash
+# 1. install
 pip install -r requirements.txt
+cd frontend && npm install && cd ..
 
-# 2. Build retrieval index (synthetic for testing, real data for production)
-python ml/train.py --synthetic --eval
+# 2. build index from real data (once poses exist)
+python ml/setup_data.py real --csv <how2sign.csv> --pose-dir data/poses --output data/metadata.csv
+python ml/train.py --data-dir data --pose-dir data/poses --eval
 
-# 3. Start backend (from project root)
+# 3. run (from SignLingo-AI-Mini/)
 uvicorn backend.main:app --reload --port 8000
-
-# 4. Start frontend (in another terminal)
 cd frontend && npm run dev
-
-# 5. Open browser
-# http://localhost:5173
+# open http://localhost:5173
 ```
 
 ---
 
 ## What is NOT done
 
-- Real How2Sign pose data download (requires registration at https://how2sign.github.io/)
-- Real model training (blocked by pose data)
-- Human evaluation by qualified ASL signers (NOT CONDUCTED, ethically mandatory before real use)
-- Backend API end-to-end smoke test (pending pip install)
+- Real How2Sign pose data download/extraction (blocker; requires registration).
+- Real index build (blocked by pose data).
+- Human evaluation by qualified ASL signers (not conducted; ethically required before real use).
 
----
+## Honest limitations
 
-## Honest Limitations
-
-- System performs pose **retrieval** only, not generation
-- Retrieval quality untested on real data
-- No certified ASL accuracy evaluation performed
-- Prototype only — not suitable for accessibility use without expert evaluation
+- Retrieval only, not generation.
+- Retrieval quality untested on real data.
+- No certified ASL accuracy evaluation.
+- Prototype only — not for accessibility use without expert evaluation.
+- Synthetic poses are random sinusoids and are flagged as such; never ASL.

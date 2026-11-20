@@ -168,6 +168,17 @@ export default function StudioPage() {
         </span>
       </div>
 
+      {/* Synthetic data warning */}
+      {status?.is_synthetic && (
+        <div className="bg-red-950 border-b border-red-700 px-6 py-2 flex items-center gap-2 text-red-300 text-xs">
+          <Info size={14} />
+          <span>
+            <strong>Synthetic test data loaded.</strong> The poses below are generated
+            sinusoids, not American Sign Language. Retrain on real How2Sign clips for real output.
+          </span>
+        </div>
+      )}
+
       {/* Main content */}
       <main className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-6 p-6 max-w-7xl mx-auto w-full">
 
