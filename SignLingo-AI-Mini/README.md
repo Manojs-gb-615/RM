@@ -192,8 +192,9 @@ npm run test:e2e                   # Playwright + installed Edge (channel: msedg
 Playwright asserts the LEFT/RIGHT/BOTTOM layout, uploads a real How2Sign clip +
 SRT, generates poses, checks that the skeleton frame equals
 `floor(((currentTime - start) / duration) * nFrames)` within ±1 during playback
-and after seeking, changes playback rate, clicks a transcript sentence (video
-seeks), and verifies the synthetic banner via a mocked status response.
+and after seeking, asserts pause freezes the frame, changes playback rate, checks
+that loop wraps to the start with a valid frame, clicks a transcript sentence
+(video seeks), and verifies the synthetic banner via a mocked status response.
 
 Screenshots (in `frontend/tests/e2e/screenshots/`):
 `01-initial.png`, `02-transcript-loaded.png`, `03-after-search.png`,

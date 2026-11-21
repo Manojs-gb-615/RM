@@ -179,9 +179,9 @@ baseline R@1 (0.044) but is worse at R@10/MRR. This is a negative result and is 
 - Two `webServer` entries: uvicorn (from project root) + Vite.
 - Fixtures: `sample.mp4` (real How2Sign clip, 902 KB) and `sample.srt` (3 real captions:
   0–2.5 s, 2.5–5 s, 5–8 s).
-- Test covers: layout boxes, upload, generate, playback frame sync ±1, seek ±1, rate change,
-  sentence-click seek, absence of synthetic banner, and a mocked-status test that asserts
-  the synthetic banner is visible.
+- Test covers: layout boxes, upload, generate, playback frame sync ±1, **pause freezes the
+  frame**, seek ±1, rate change, **loop wraps to t≈0 with a valid frame**, sentence-click seek,
+  absence of synthetic banner, and a mocked-status test that asserts the synthetic banner is visible.
 
 **Failures hit and fixed**
 
@@ -190,7 +190,7 @@ baseline R@1 (0.044) but is worse at R@10/MRR. This is a negative result and is 
 2. Frame mismatch (`frame=0`, expected `10`, total `32`) → the render effect reset to frame 0
    on every parent re-render; fixed with `renderRef` + stable `useCallback(handleFrameChange)`.
 
-**Final E2E:** `2 passed (21.2s)`. Screenshots:
+**Final E2E:** `2 passed` (latest run 1.1 min including server startup). Screenshots:
 `01-initial`, `02-transcript-loaded`, `03-after-search`, `04-during-playback`,
 `05-after-sentence-click`, `06-synthetic-banner`.
 
@@ -302,7 +302,7 @@ cd frontend && npm run build && npm run test:e2e
 | Recall@1/5/10, MRR, latency vs baseline | Yes | table above |
 | Real headless browser screenshots | Yes | 01–06 |
 | Skeleton frame tracks video ±1 frame | Yes | Playwright assertions |
-| Seek / pause / rate / loop handled | Yes | Playwright + code |
+| Seek / pause / rate / loop handled | Yes | Playwright: ±1 seek, pause-freeze, loop-wrap |
 | Human eval protocol + form + aggregator | Yes | eval/ + tests |
 | Human ratings collected | **No — PENDING** | explicit marker |
 | Synthetic data impossible to mistake | Yes | banner test + explicit flags |
