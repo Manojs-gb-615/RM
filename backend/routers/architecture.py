@@ -102,5 +102,5 @@ async def get_architecture() -> ArchitectureResponse:
     return ArchitectureResponse(
         components=ARCHITECTURE_COMPONENTS,
         data_flow=DATA_FLOW_STEPS,
-        model_config=MODEL_CONFIG,
+        model_configuration=MODEL_CONFIG,
     )

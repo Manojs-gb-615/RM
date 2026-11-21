@@ -1,0 +1,285 @@
+{
+  "name": "openpose137",
+  "version": 1,
+  "description": "Task canonical 137-point layout: BODY_25, 70 face (iBUG-68 + 2 pupils), left hand, right hand. Canonical space: origin neck, unit = median shoulder width, +x signer anatomical left, +y up, +z toward camera.",
+  "coordinateSpace": "neck-origin, shoulder-width units, +x signer-left, +y up, +z toward camera",
+  "totalPoints": 137,
+  "regions": {
+    "body": {
+      "start": 0,
+      "count": 25,
+      "names": [
+        "Nose",
+        "Neck",
+        "RShoulder",
+        "RElbow",
+        "RWrist",
+        "LShoulder",
+        "LElbow",
+        "LWrist",
+        "MidHip",
+        "RHip",
+        "RKnee",
+        "RAnkle",
+        "LHip",
+        "LKnee",
+        "LAnkle",
+        "REye",
+        "LEye",
+        "REar",
+        "LEar",
+        "LBigToe",
+        "LSmallToe",
+        "LHeel",
+        "RBigToe",
+        "RSmallToe",
+        "RHeel"
+      ]
+    },
+    "face": {
+      "start": 25,
+      "count": 70,
+      "names": [
+        "Jaw0",
+        "Jaw1",
+        "Jaw2",
+        "Jaw3",
+        "Jaw4",
+        "Jaw5",
+        "Jaw6",
+        "Jaw7",
+        "Jaw8",
+        "Jaw9",
+        "Jaw10",
+        "Jaw11",
+        "Jaw12",
+        "Jaw13",
+        "Jaw14",
+        "Jaw15",
+        "Jaw16",
+        "RBrow1",
+        "RBrow2",
+        "RBrow3",
+        "RBrow4",
+        "RBrow5",
+        "LBrow1",
+        "LBrow2",
+        "LBrow3",
+        "LBrow4",
+        "LBrow5",
+        "NoseBridge1",
+        "NoseBridge2",
+        "NoseBridge3",
+        "NoseBridge4",
+        "NoseBase1",
+        "NoseBase2",
+        "NoseBase3",
+        "NoseBase4",
+        "NoseBase5",
+        "REye1",
+        "REye2",
+        "REye3",
+        "REye4",
+        "REye5",
+        "REye6",
+        "LEye1",
+        "LEye2",
+        "LEye3",
+        "LEye4",
+        "LEye5",
+        "LEye6",
+        "OuterLip1",
+        "OuterLip2",
+        "OuterLip3",
+        "OuterLip4",
+        "OuterLip5",
+        "OuterLip6",
+        "OuterLip7",
+        "OuterLip8",
+        "OuterLip9",
+        "OuterLip10",
+        "OuterLip11",
+        "OuterLip12",
+        "InnerLip1",
+        "InnerLip2",
+        "InnerLip3",
+        "InnerLip4",
+        "InnerLip5",
+        "InnerLip6",
+        "InnerLip7",
+        "InnerLip8",
+        "RPupil",
+        "LPupil"
+      ]
+    },
+    "leftHand": {
+      "start": 95,
+      "count": 21,
+      "names": [
+        "HandRoot",
+        "Thumb1",
+        "Thumb2",
+        "Thumb3",
+        "Thumb4",
+        "Index1",
+        "Index2",
+        "Index3",
+        "Index4",
+        "Middle1",
+        "Middle2",
+        "Middle3",
+        "Middle4",
+        "Ring1",
+        "Ring2",
+        "Ring3",
+        "Ring4",
+        "Pinky1",
+        "Pinky2",
+        "Pinky3",
+        "Pinky4"
+      ]
+    },
+    "rightHand": {
+      "start": 116,
+      "count": 21,
+      "names": [
+        "HandRoot",
+        "Thumb1",
+        "Thumb2",
+        "Thumb3",
+        "Thumb4",
+        "Index1",
+        "Index2",
+        "Index3",
+        "Index4",
+        "Middle1",
+        "Middle2",
+        "Middle3",
+        "Middle4",
+        "Ring1",
+        "Ring2",
+        "Ring3",
+        "Ring4",
+        "Pinky1",
+        "Pinky2",
+        "Pinky3",
+        "Pinky4"
+      ]
+    }
+  },
+  "indices": {
+    "nose": 0,
+    "neck": 1,
+    "rightShoulder": 2,
+    "rightElbow": 3,
+    "rightWrist": 4,
+    "leftShoulder": 5,
+    "leftElbow": 6,
+    "leftWrist": 7,
+    "midHip": 8,
+    "rightHip": 9,
+    "leftHip": 12,
+    "rightEye": 15,
+    "leftEye": 16,
+    "rightEar": 17,
+    "leftEar": 18,
+    "faceStart": 25,
+    "jawStart": 25,
+    "rightBrowStart": 42,
+    "leftBrowStart": 47,
+    "noseTip": 55,
+    "mouthOuterStart": 73,
+    "mouthInnerStart": 85,
+    "rightPupil": 93,
+    "leftPupil": 94,
+    "leftHandStart": 95,
+    "rightHandStart": 116,
+    "leftHandRoot": 95,
+    "rightHandRoot": 116
+  },
+  "semantics": {
+    "faceLocal": {
+      "jaw": [
+        0,
+        16
+      ],
+      "rightBrow": [
+        17,
+        21
+      ],
+      "leftBrow": [
+        22,
+        26
+      ],
+      "noseBridge": [
+        27,
+        30
+      ],
+      "noseBase": [
+        31,
+        35
+      ],
+      "rightEye": [
+        36,
+        41
+      ],
+      "leftEye": [
+        42,
+        47
+      ],
+      "outerLips": [
+        48,
+        59
+      ],
+      "innerLips": [
+        60,
+        67
+      ],
+      "pupils": [
+        68,
+        69
+      ],
+      "noseTip": 30,
+      "chin": 8,
+      "rightEyeCenter": 39,
+      "leftEyeCenter": 42,
+      "rightMouthCorner": 48,
+      "leftMouthCorner": 54,
+      "mouthCenter": 62,
+      "mouthUpperInner": 62,
+      "mouthLowerInner": 66
+    },
+    "handLocal": {
+      "wrist": 0,
+      "thumb": [
+        1,
+        4
+      ],
+      "index": [
+        5,
+        8
+      ],
+      "middle": [
+        9,
+        12
+      ],
+      "ring": [
+        13,
+        16
+      ],
+      "pinky": [
+        17,
+        20
+      ],
+      "indexMcp": 5,
+      "middleMcp": 9,
+      "ringMcp": 13,
+      "pinkyMcp": 17,
+      "indexTip": 8,
+      "middleTip": 12,
+      "ringTip": 16,
+      "pinkyTip": 20,
+      "thumbTip": 4
+    }
+  }
+}

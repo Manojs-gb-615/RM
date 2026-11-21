@@ -20,6 +20,7 @@ from backend.routers import (
     generate,
     health,
     model,
+    poses,
 )
 from backend.schemas import ErrorResponse
 from backend.services.model_service import ModelNotReadyError, get_model_service
@@ -191,6 +192,7 @@ app.include_router(compare.router, prefix="/api")
 app.include_router(dataset.router, prefix="/api")
 app.include_router(experiments.router, prefix="/api")
 app.include_router(architecture.router, prefix="/api")
+app.include_router(poses.router, prefix="/api")
 
 
 if __name__ == "__main__":

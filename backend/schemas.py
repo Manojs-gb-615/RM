@@ -1,7 +1,7 @@
 """Pydantic request and response schemas for ContextSign AI API."""
 
 from typing import Any, Dict, List, Literal, Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class HealthResponse(BaseModel):
@@ -15,10 +15,17 @@ class HealthResponse(BaseModel):
 
 class ModelStatusResponse(BaseModel):
     """Detailed model status response."""
+
+    model_config = ConfigDict(populate_by_name=True)
+
     ready: bool = Field(..., description="True if a valid model checkpoint is loaded")
     checkpoint_path: Optional[str] = Field(default=None, description="Path to active checkpoint file")
     experiment_id: Optional[str] = Field(default=None, description="Current experiment identifier")
-    model_config: Optional[Dict[str, Any]] = Field(default=None, description="Model hyperparameter configuration")
+    model_configuration: Optional[Dict[str, Any]] = Field(
+        default=None,
+        alias="model_config",
+        description="Model hyperparameter configuration",
+    )
     cuda_available: bool = Field(default=False, description="Whether CUDA GPU is detected")
 
 
@@ -157,9 +164,14 @@ class MetricsResponse(BaseModel):
 
 class ArchitectureResponse(BaseModel):
     """Detailed architectural specifications of the ContextSign AI system."""
+
+    model_config = ConfigDict(populate_by_name=True)
+
     components: List[Dict[str, Any]] = Field(..., description="List of architectural components")
     data_flow: List[str] = Field(..., description="Ordered steps of tensor data flow")
-    model_config: Dict[str, Any] = Field(..., description="Model configuration parameters")
+    model_configuration: Dict[str, Any] = Field(
+        ..., alias="model_config", description="Model configuration parameters"
+    )
 
 
 class ErrorResponse(BaseModel):

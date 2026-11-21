@@ -46,7 +46,8 @@ try:
             return v
 
 except ImportError:
-    from pydantic import BaseSettings, validator  # type: ignore
+    # pydantic v2 ships the v1 API; use it when pydantic-settings is absent.
+    from pydantic.v1 import BaseSettings, validator  # type: ignore
 
     class Settings(BaseSettings):  # type: ignore
         class Config:

@@ -1,0 +1,174 @@
+{
+  "version": 1,
+  "generatedAt": "2026-11-21T07:06:22+00:00",
+  "fps": 24.0,
+  "layout": "openpose137",
+  "normalization": "neck_origin_shoulder_width",
+  "coordinateSpace": "origin=neck, unit=median shoulder width, +x signer-left, +y up, +z camera",
+  "sourceLayout": "openpose137",
+  "realDataAvailable": false,
+  "defaultSequenceId": "synthetic_arm_raise",
+  "sessionSequenceId": "synthetic_session",
+  "disclaimer": "Ground-truth or synthetic demo pose data. Synthetic sequences are NOT ASL. No model output and no claim of signing accuracy.",
+  "sequences": [
+    {
+      "id": "synthetic_arm_raise",
+      "title": "Synthetic \u2014 arm raise",
+      "file": "synthetic_arm_raise.npy",
+      "frames": 96,
+      "fps": 24.0,
+      "source": "synthetic",
+      "synthetic": true,
+      "layout": "openpose137",
+      "normalization": "neck_origin_shoulder_width",
+      "sentences": [
+        {
+          "index": 0,
+          "startFrame": 0,
+          "endFrame": 48,
+          "text": "Raise the left arm up"
+        },
+        {
+          "index": 1,
+          "startFrame": 48,
+          "endFrame": 96,
+          "text": "Lower the arm back down"
+        }
+      ],
+      "text": "Raise the left arm up / Lower the arm back down",
+      "warning": "Synthetic test motion \u2014 not American Sign Language."
+    },
+    {
+      "id": "synthetic_handshape_cycle",
+      "title": "Synthetic \u2014 handshape cycle",
+      "file": "synthetic_handshape_cycle.npy",
+      "frames": 96,
+      "fps": 24.0,
+      "source": "synthetic",
+      "synthetic": true,
+      "layout": "openpose137",
+      "normalization": "neck_origin_shoulder_width",
+      "sentences": [
+        {
+          "index": 0,
+          "startFrame": 0,
+          "endFrame": 24,
+          "text": "Open hand"
+        },
+        {
+          "index": 1,
+          "startFrame": 24,
+          "endFrame": 48,
+          "text": "Close the hand"
+        },
+        {
+          "index": 2,
+          "startFrame": 48,
+          "endFrame": 72,
+          "text": "Point the index finger"
+        },
+        {
+          "index": 3,
+          "startFrame": 72,
+          "endFrame": 96,
+          "text": "Open again"
+        }
+      ],
+      "text": "Open hand / Close the hand / Point the index finger / Open again",
+      "warning": "Synthetic test motion \u2014 not American Sign Language."
+    },
+    {
+      "id": "synthetic_head_nod",
+      "title": "Synthetic \u2014 head nod",
+      "file": "synthetic_head_nod.npy",
+      "frames": 72,
+      "fps": 24.0,
+      "source": "synthetic",
+      "synthetic": true,
+      "layout": "openpose137",
+      "normalization": "neck_origin_shoulder_width",
+      "sentences": [
+        {
+          "index": 0,
+          "startFrame": 0,
+          "endFrame": 36,
+          "text": "Nod the head yes"
+        },
+        {
+          "index": 1,
+          "startFrame": 36,
+          "endFrame": 72,
+          "text": "Return to neutral"
+        }
+      ],
+      "text": "Nod the head yes / Return to neutral",
+      "warning": "Synthetic test motion \u2014 not American Sign Language."
+    },
+    {
+      "id": "synthetic_brow_raise",
+      "title": "Synthetic \u2014 brow raise",
+      "file": "synthetic_brow_raise.npy",
+      "frames": 72,
+      "fps": 24.0,
+      "source": "synthetic",
+      "synthetic": true,
+      "layout": "openpose137",
+      "normalization": "neck_origin_shoulder_width",
+      "sentences": [
+        {
+          "index": 0,
+          "startFrame": 0,
+          "endFrame": 36,
+          "text": "Raise the eyebrows"
+        },
+        {
+          "index": 1,
+          "startFrame": 36,
+          "endFrame": 72,
+          "text": "Furrow the brows"
+        }
+      ],
+      "text": "Raise the eyebrows / Furrow the brows",
+      "warning": "Synthetic test motion \u2014 not American Sign Language."
+    },
+    {
+      "id": "synthetic_session",
+      "title": "Synthetic \u2014 combined session (4 sentences)",
+      "file": "synthetic_session.npy",
+      "frames": 192,
+      "fps": 24.0,
+      "source": "synthetic",
+      "synthetic": true,
+      "layout": "openpose137",
+      "normalization": "neck_origin_shoulder_width",
+      "sentences": [
+        {
+          "index": 0,
+          "startFrame": 0,
+          "endFrame": 48,
+          "text": "Raise the left arm up"
+        },
+        {
+          "index": 1,
+          "startFrame": 48,
+          "endFrame": 96,
+          "text": "Open and close the hand"
+        },
+        {
+          "index": 2,
+          "startFrame": 96,
+          "endFrame": 144,
+          "text": "Nod the head yes"
+        },
+        {
+          "index": 3,
+          "startFrame": 144,
+          "endFrame": 192,
+          "text": "Raise the eyebrows"
+        }
+      ],
+      "text": "Raise the left arm up / Open and close the hand / Nod the head yes / Raise the eyebrows",
+      "warning": "Synthetic test motion \u2014 not American Sign Language."
+    }
+  ]
+}
