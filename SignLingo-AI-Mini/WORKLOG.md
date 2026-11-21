@@ -15,12 +15,12 @@ metrics, and evidence. Anything not verified is marked PENDING/BLOCKED rather th
 |---|---|---|
 | 1. Real How2Sign data | **Done (subset)** — 450 val clips converted to `[T,274]`; index built | `data/real/metadata.csv`, `models/retrieval_index.pkl`, `tests/test_convert_openpose.py` |
 | 2. Gradient-trained ranker | **Done** — dual encoder trained with InfoNCE; integrated into retrieval | `ml/ranker.py`, `models/ranker.pt`, `models/ranker_train_log.csv`, `tests/test_ranker.py` |
-| 3. Browser-verified frame sync | **Done** — Playwright + Edge, skeleton tracks video ±1 frame | `frontend/tests/e2e/studio.spec.ts` (2 passed), screenshots 01–06 |
+| 3. Browser-verified frame sync | **Done** — Playwright + Edge, skeleton tracks video ±1 frame | `frontend/tests/e2e/studio.spec.ts` (3 passed), screenshots 01–07 |
 | 4a. Automated evaluation | **Done** — Recall@1/5/10, MRR, p50/p95 latency, baseline vs trained | `ml/evaluate.py`, `docs/eval_results.md`, `models/eval_results.json` |
 | 4b. Human signer evaluation | **PENDING** — protocol + form + aggregator ready; no signers available | `eval/PROTOCOL.md`, `eval/rating_form.csv`, `eval/aggregate_ratings.py` |
 
 **Final verification run:** `python -m pytest tests -q` → **31 passed**;
-`npm run build` → **0 errors**; `npx playwright test` → **2 passed**.
+`npm run build` → **0 errors**; `npx playwright test` → **3 passed**.
 
 **Honest headline:** the trained ranker does **not** beat the fixed baseline on the
 non-trivial context-only ablation. The full-protocol numbers (~1.0) are near-trivial
@@ -190,9 +190,24 @@ baseline R@1 (0.044) but is worse at R@10/MRR. This is a negative result and is 
 2. Frame mismatch (`frame=0`, expected `10`, total `32`) → the render effect reset to frame 0
    on every parent re-render; fixed with `renderRef` + stable `useCallback(handleFrameChange)`.
 
-**Final E2E:** `2 passed` (latest run 1.1 min including server startup). Screenshots:
+**Final E2E:** `3 passed`. Screenshots:
 `01-initial`, `02-transcript-loaded`, `03-after-search`, `04-during-playback`,
-`05-after-sentence-click`, `06-synthetic-banner`.
+`05-after-sentence-click`, `06-synthetic-banner`, `07-educational-video`.
+
+### Addendum — normal educational demo video (post-review)
+
+The earlier demo used a How2Sign ASL clip, which is not representative of the intended
+input. Replaced it with a normal instructional video that has spoken English captions:
+
+- Source: "How to tie a Cravat" (Coes Fashion, CC BY 3.0) via Wikimedia Commons.
+- File: 480p VP9/Opus WebM transcode, 1:18, 8.7 MB, plus the 22-cue English SRT.
+- Files: `demo/educational_cravat.webm`, `.srt`, `_SOURCE.txt`.
+- New Playwright test uploads both, generates poses for all 22 cues, asserts a valid
+  pose frame and no synthetic banner, and saves `07-educational-video.png`.
+- Example result: "Hello, my name is William Coe," retrieved the dataset clip
+  "Hi, my name is Dave Andrews." with score 0.90 — behaviour is retrieval, not generation.
+- Removed the old `demo/how2sign_15s.*` ASL clip to avoid confusing demo inputs.
+- Test run: `npx playwright test -g "normal educational"` → **1 passed (10.7 s)**.
 
 ### Gap 4b — Human evaluation kit (PENDING)
 
@@ -212,7 +227,7 @@ ethically required before claiming ASL correctness.
 ```text
 python -m pytest tests -q      → 31 passed in 11.36s
 npm run build                  → built in 1.19s, 0 TypeScript errors
-npx playwright test            → 2 passed (21.2s)
+npx playwright test            → 3 passed
 python eval/aggregate_ratings.py --input eval/rating_form.csv --output eval/summary.csv
                                → PENDING HUMAN EVALUATION
 ```
@@ -300,7 +315,7 @@ cd frontend && npm run build && npm run test:e2e
 | Trained by gradient descent (encoders/InfoNCE) | Yes | loss CSV 0.178; checkpoint |
 | Train/val split, fixed seed, logged curves | Yes | 80/20, seed 42, CSV |
 | Recall@1/5/10, MRR, latency vs baseline | Yes | table above |
-| Real headless browser screenshots | Yes | 01–06 |
+| Real headless browser screenshots | Yes | 01–07 (incl. normal educational video) |
 | Skeleton frame tracks video ±1 frame | Yes | Playwright assertions |
 | Seek / pause / rate / loop handled | Yes | Playwright: ±1 seek, pause-freeze, loop-wrap |
 | Human eval protocol + form + aggregator | Yes | eval/ + tests |

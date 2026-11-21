@@ -36,7 +36,7 @@ trained with InfoNCE on real sentence/clip pairs) or the fixed weighted cosine
 | Trained InfoNCE ranker | ✅ `models/ranker.pt` + loss log |
 | Backend full flow | ✅ retrieve / retrieve_all / compare via TestClient |
 | Frontend build | ✅ `npm run build`, 0 TypeScript errors |
-| Headless browser E2E | ✅ Playwright + Edge, 2 tests, 5 screenshots |
+| Headless browser E2E | ✅ Playwright + Edge, 3 tests, 7 screenshots |
 | Frame-level sync | ✅ frame tracks `video.currentTime` within ±1 frame |
 | pytest suite | ✅ 31 passed |
 | ASL-signer evaluation | ⏳ **PENDING** (kit ready in `eval/`) |
@@ -174,6 +174,11 @@ Open http://localhost:5173. The backend loads `models/retrieval_index.pkl`
 (real data) by default. Env overrides: `DATA_DIR`, `POSE_DIR`, `INDEX_PATH`,
 `RANKER_PATH`.
 
+An educational demo with spoken captions is included: upload
+`demo/educational_cravat.webm` and `demo/educational_cravat.srt` (1:18, 22 cues).
+The video is a normal instructional clip; the ASL poses are retrieved from the
+How2Sign index, not generated from the speaker.
+
 Synthetic demo (testing only, red banner):
 
 ```bash
@@ -198,10 +203,14 @@ SRT, generates poses, checks that the skeleton frame equals
 and after seeking, asserts pause freezes the frame, changes playback rate, checks
 that loop wraps to the start with a valid frame, clicks a transcript sentence
 (video seeks), and verifies the synthetic banner via a mocked status response.
+A third test uploads a **normal educational video with spoken captions**
+(`demo/educational_cravat.webm` + `.srt`, 22 cues) and confirms the app retrieves
+a dataset pose for every cue.
 
 Screenshots (in `frontend/tests/e2e/screenshots/`):
 `01-initial.png`, `02-transcript-loaded.png`, `03-after-search.png`,
-`04-during-playback.png`, `05-after-sentence-click.png`, `06-synthetic-banner.png`.
+`04-during-playback.png`, `05-after-sentence-click.png`, `06-synthetic-banner.png`,
+`07-educational-video.png`.
 
 ---
 

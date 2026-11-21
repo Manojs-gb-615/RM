@@ -23,7 +23,7 @@ Updated: 2026-11-21
 | Colab notebook | ✅ DONE | `USE_SYNTHETIC` defaults to False |
 | Tests | ✅ PASSED | `python -m pytest tests -q` → 31 passed |
 | Backend end-to-end | ✅ VERIFIED | retrieve, retrieve_all, compare (real index + synthetic tests) |
-| Playwright E2E | ✅ PASSED | 2 tests, screenshots 01–06 |
+| Playwright E2E | ✅ PASSED | 3 tests, screenshots 01–07 (incl. educational demo) |
 | ASL-signer evaluation | ⏳ PENDING | Kit in `eval/` |
 
 ---
@@ -55,7 +55,7 @@ python ml/evaluate.py --data-dir data/real \
 # tests
 python -m pytest tests -q                      # 31 passed
 cd frontend && npm run build                    # 0 errors
-npm run test:e2e                                # 2 passed
+npm run test:e2e                                # 3 passed
 
 # human ratings (pending)
 python eval/aggregate_ratings.py --input eval/rating_form.csv --output eval/summary.csv

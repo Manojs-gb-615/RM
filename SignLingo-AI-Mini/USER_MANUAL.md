@@ -31,7 +31,8 @@ The video file never leaves your browser. Only transcript text is sent to the ba
 ### End-user browser
 
 - Microsoft Edge or Google Chrome (recent version).
-- The video must be **H.264/AAC MP4**. Other codecs may play audio with a black frame.
+- **H.264/AAC MP4** is recommended. WebM (VP9/Opus) also plays in Edge/Chrome.
+  Other codecs may play audio with a black frame.
 
 ### Server / workstation
 
@@ -71,10 +72,15 @@ npm run dev
 Open <http://localhost:5173>. The header should show **Ready** and the number of indexed
 clips (for the included real index: **450 poses indexed**).
 
-A 15-second smoke-test clip and caption are included:
+A normal educational demo with spoken captions is included:
 
-- `demo/how2sign_15s.mp4`
-- `demo/how2sign_15s.srt`
+- `demo/educational_cravat.webm` — 1:18 instructional video ("How to tie a Cravat")
+- `demo/educational_cravat.srt` — 22 English cues, timing unchanged
+
+Upload both files to see captions from a regular teaching video mapped to ASL poses
+retrieved from the How2Sign subset. The app does not generate signs from the speaker;
+it retrieves the closest dataset pose for each caption. The clip is CC BY 3.0
+(Coes Fashion, via Wikimedia Commons); see `demo/educational_cravat_SOURCE.txt`.
 
 ---
 
@@ -187,7 +193,7 @@ shows a caption-only fallback instead of inventing ASL.
 |---|---|
 | Badge says “Index not ready” | No `models/retrieval_index.pkl`. Build it (Section 8) and restart the backend. |
 | Red **SYNTHETIC DATA** banner | Running on synthetic poses. Rebuild with real data and restart. |
-| Video is black but audio plays | Unsupported codec. Re-encode to H.264/AAC MP4. Use Edge/Chrome. |
+| Video is black but audio plays | Unsupported codec. Use H.264/AAC MP4 or WebM VP9; use Edge/Chrome. |
 | “Failed to parse transcript” | File is not `.srt`/`.vtt`, is malformed, or exceeds 500 KB. Validate timestamps. |
 | Fetch/network errors in the browser | Backend not running, wrong port, or production proxy missing `/api`. |
 | First page load is slow | The sentence-transformer model loads at backend startup (10–30 s). |
@@ -250,7 +256,7 @@ npm run build
 npm run test:e2e
 ```
 
-Expected: 31 pytest tests pass, the build has no TypeScript errors, and 2 Playwright tests
+Expected: 31 pytest tests pass, the build has no TypeScript errors, and 3 Playwright tests
 pass (they require Microsoft Edge).
 
 ---
@@ -337,7 +343,9 @@ Before exposing the service:
 - No evaluation by Deaf ASL signers has been completed. The kit is in `eval/` and marked
   **PENDING HUMAN EVALUATION**.
 - How2Sign data is **CC BY-NC 4.0**: research and non-commercial use only. Preserve
-  attribution (`data/real/DATASET_SOURCE.txt`, `demo/SOURCE.txt`).
+  attribution (`data/real/DATASET_SOURCE.txt`).
+- The educational demo clip is **CC BY 3.0** (Coes Fashion); preserve attribution in
+  `demo/educational_cravat_SOURCE.txt`.
 - Do not present output as an interpreter, translation, or accessibility compliance tool.
 
 ---
