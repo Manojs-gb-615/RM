@@ -1,0 +1,15 @@
+Educational demo video: "How to tie a Cravat" (78 seconds)
+
+Author: Coes Fashion
+Source: Wikimedia Commons — https://commons.wikimedia.org/wiki/File:How_to_tie_a_Cravat.ogv
+Original: https://www.youtube.com/watch?v=2QqxrbwOZt8
+License: Creative Commons Attribution 3.0 (CC BY 3.0)
+         https://creativecommons.org/licenses/by/3.0/
+
+Downloaded file: 480p VP9/Opus WebM transcode produced by Wikimedia Commons.
+Subtitles: Wikimedia Commons TimedText (TimedText:How to tie a Cravat.ogv.en.srt),
+           lightly reflowed into single-line cues; wording and timing unchanged.
+
+Purpose: a normal instructional video with spoken English captions used to test
+SignLingo's caption-to-ASL-pose retrieval. This is not an ASL video; poses shown by
+the app are retrieved from the How2Sign subset, not generated from the speaker.
