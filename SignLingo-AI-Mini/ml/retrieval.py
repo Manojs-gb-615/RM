@@ -75,12 +75,54 @@ class SignLingoRetrieval:
     POSE_WEIGHT = 0.25
     TEXT_WEIGHT = 0.75
 
-    def __init__(self, model_name: str = "all-MiniLM-L6-v2"):
+    def __init__(self, model_name: str = "all-MiniLM-L6-v2", trained=None):
         self.model_name = model_name
         self._sbert: Optional[SentenceTransformer] = None
         self._index: List[Dict] = []   # [{sample_id, sentence, text_emb, pose_feat}]
         self._built = False
         self.is_synthetic = False
+        self._trained = trained
+        self.trained_checkpoint: Optional[str] = None
+        self._text_mat: Optional[np.ndarray] = None
+        self._pose_feat_mat: Optional[np.ndarray] = None
+        self._trained_text_mat: Optional[np.ndarray] = None
+        self._trained_pose_mat: Optional[np.ndarray] = None
+        self._has_pose: Optional[np.ndarray] = None
+
+    @property
+    def has_trained(self) -> bool:
+        return self._trained is not None
+
+    def _rebuild_matrices(self) -> None:
+        n = len(self._index)
+        if n == 0:
+            self._text_mat = None
+            self._pose_feat_mat = None
+            self._trained_text_mat = None
+            self._trained_pose_mat = None
+            self._has_pose = None
+            return
+        self._text_mat = np.stack([e["text_emb"] for e in self._index]).astype(np.float32)
+        pose_feats = []
+        for e in self._index:
+            pf = e.get("pose_feat")
+            if pf is None:
+                pose_feats.append(np.zeros(64, dtype=np.float32))
+            else:
+                norm = np.linalg.norm(pf) + 1e-9
+                pose_feats.append((pf / norm).astype(np.float32))
+        self._pose_feat_mat = np.stack(pose_feats)
+        self._has_pose = np.array([bool(e.get("has_pose")) for e in self._index], dtype=bool)
+        if self.has_trained and "trained_text_emb" in self._index[0]:
+            self._trained_text_mat = np.stack(
+                [e["trained_text_emb"] for e in self._index]
+            ).astype(np.float32)
+            self._trained_pose_mat = np.stack(
+                [e["trained_pose_emb"] for e in self._index]
+            ).astype(np.float32)
+        else:
+            self._trained_text_mat = None
+            self._trained_pose_mat = None
 
     # ── Lazy load sentence-transformer ────────────────────────────────────────
 
@@ -96,8 +138,14 @@ class SignLingoRetrieval:
 
     # ── Build index ────────────────────────────────────────────────────────────
 
-    def build_index(self, samples: List[PoseSample]) -> "SignLingoRetrieval":
-        """Encode all sample sentences and cache pose features."""
+    def build_index(self, samples: List[PoseSample], trained=None) -> "SignLingoRetrieval":
+        """Encode all sample sentences and cache pose features.
+
+        If a trained dual encoder is supplied, also cache its projected
+        text/pose embeddings so retrieval uses the trained ranker.
+        """
+        if trained is not None:
+            self._trained = trained
         if not samples:
             print("[Retrieval] No samples to index.")
             self._built = True
@@ -110,22 +158,148 @@ class SignLingoRetrieval:
         norms = np.linalg.norm(embeddings, axis=1, keepdims=True) + 1e-9
         embeddings = embeddings / norms
 
+        from ml.ranker import pose_features
+
+        trained_text = None
+        trained_pose = None
+        if self._trained is not None:
+            print("[Retrieval] Encoding clips with trained dual encoder…")
+            trained_text = self._trained.encode_text(embeddings)
+            pose_matrix = np.stack([
+                pose_features(s.pose) if s.pose is not None else np.zeros(548, dtype=np.float32)
+                for s in samples
+            ]).astype(np.float32)
+            trained_pose = self._trained.encode_pose(pose_matrix)
+
         self._index = []
-        for s, emb in zip(samples, embeddings):
-            self._index.append({
+        for i, (s, emb) in enumerate(zip(samples, embeddings)):
+            entry = {
                 "sample_id": s.sample_id,
                 "sentence": s.sentence,
                 "text_emb": emb,
                 "pose_feat": summarize_pose(s.pose) if s.pose is not None else None,
                 "pose": s.pose,
                 "has_pose": s.pose is not None,
-            })
+            }
+            if trained_text is not None and trained_pose is not None:
+                entry["trained_text_emb"] = trained_text[i]
+                entry["trained_pose_emb"] = trained_pose[i]
+            self._index.append(entry)
+        self._rebuild_matrices()
         self._built = True
         print(f"[Retrieval] Index built: {len(self._index)} entries, "
-              f"{sum(1 for e in self._index if e['has_pose'])} with pose.")
+              f"{sum(1 for e in self._index if e['has_pose'])} with pose, "
+              f"trained={'yes' if self.has_trained else 'no'}.")
         return self
 
     # ── Retrieve ───────────────────────────────────────────────────────────────
+
+    def _encode(self, text: str) -> np.ndarray:
+        model = self._get_model()
+        emb = model.encode([text], convert_to_numpy=True)[0]
+        return emb / (np.linalg.norm(emb) + 1e-9)
+
+    def score_all(
+        self,
+        current_sentence: str,
+        mode: str = "text_only",
+        prev_sentence: Optional[str] = None,
+        prev_pose: Optional[np.ndarray] = None,
+        require_pose: bool = True,
+        include_current: bool = True,
+    ) -> List[Tuple[float, Dict]]:
+        """Score every indexed clip and return [(score, entry)] descending.
+
+        include_current=False is used only by the context-only ablation in
+        ml/evaluate.py: it hides the current sentence so retrieval must rely on
+        context + previous pose.
+        """
+        if not self._built:
+            raise RuntimeError("Call build_index() first.")
+        if not self._index:
+            return []
+        if self._text_mat is None:
+            self._rebuild_matrices()
+
+        n = len(self._index)
+        mask = self._has_pose.copy() if require_pose else np.ones(n, dtype=bool)
+        if not mask.any():
+            return []
+
+        cur_emb = self._encode(current_sentence) if include_current else None
+        ctx_emb = None
+        if mode == "context_aware" and prev_sentence:
+            combined = f"{prev_sentence} [SEP] {current_sentence}" if include_current else prev_sentence
+            ctx_emb = self._encode(combined)
+        prev_pose_feat = None
+        if mode == "context_aware" and prev_pose is not None:
+            pf = summarize_pose(prev_pose)
+            prev_pose_feat = pf / (np.linalg.norm(pf) + 1e-9)
+
+        if self.has_trained and self._trained_text_mat is not None:
+            scores = self._score_trained(cur_emb, ctx_emb, prev_pose, mode, include_current)
+        else:
+            scores = self._score_baseline(cur_emb, ctx_emb, prev_pose_feat, mode, include_current)
+
+        scores = np.where(mask, scores, -np.inf)
+        order = np.argsort(-scores)
+        return [(float(scores[i]), self._index[i]) for i in order if np.isfinite(scores[i])]
+
+    def _score_baseline(self, cur_emb, ctx_emb, prev_pose_feat, mode, include_current) -> np.ndarray:
+        cur_scores = self._text_mat @ cur_emb if cur_emb is not None else np.zeros(len(self._index))
+        if mode != "context_aware" or ctx_emb is None:
+            return cur_scores.astype(np.float64)
+        ctx_scores = self._text_mat @ ctx_emb
+        if include_current:
+            txt = self.TEXT_WEIGHT * cur_scores + (1 - self.TEXT_WEIGHT) * ctx_scores
+        else:
+            txt = ctx_scores
+        scores = txt.astype(np.float64)
+        if prev_pose_feat is not None:
+            pose_scores = self._pose_feat_mat @ prev_pose_feat
+            scores = (1 - self.POSE_WEIGHT) * scores + self.POSE_WEIGHT * pose_scores
+        return scores
+
+    def _score_trained(self, cur_emb, ctx_emb, prev_pose, mode, include_current) -> np.ndarray:
+        from ml.ranker import pose_features
+
+        text_mat = self._trained_text_mat
+        cur_scores = np.zeros(len(self._index), dtype=np.float64)
+        ctx_scores = np.zeros(len(self._index), dtype=np.float64)
+        pose_scores = np.zeros(len(self._index), dtype=np.float64)
+        have_cur = cur_emb is not None
+        have_ctx = ctx_emb is not None
+        have_pose = prev_pose is not None
+
+        if have_cur:
+            q = self._trained.encode_text(cur_emb[None])[0]
+            cur_scores = text_mat @ q
+        if have_ctx:
+            q = self._trained.encode_text(ctx_emb[None])[0]
+            ctx_scores = text_mat @ q
+        if have_pose:
+            q = self._trained.encode_pose(pose_features(prev_pose)[None])[0]
+            pose_scores = self._trained_pose_mat @ q
+
+        weights = {"text": 0.0, "ctx": 0.0, "pose": 0.0}
+        if mode == "context_aware" and have_cur:
+            weights["text"] = 0.6
+        elif have_cur:
+            weights["text"] = 1.0
+        if mode == "context_aware" and have_ctx:
+            weights["ctx"] = 0.2
+        if mode == "context_aware" and have_pose:
+            weights["pose"] = 0.2
+        total = sum(weights.values())
+        if total <= 0:
+            weights["text"] = 1.0
+            total = 1.0
+        scores = (
+            weights["text"] * cur_scores
+            + weights["ctx"] * ctx_scores
+            + weights["pose"] * pose_scores
+        ) / total
+        return scores.astype(np.float64)
 
     def retrieve(
         self,
@@ -137,11 +311,8 @@ class SignLingoRetrieval:
     ) -> RetrievalResult:
         """
         Find the best matching sample for current_sentence.
-        mode='text_only':      cosine similarity on current sentence embedding only.
-        mode='context_aware':  weighted combination of:
-            - current sentence similarity
-            - concatenated (current + prev sentence) similarity
-            - pose feature similarity to prev_pose
+        mode='text_only':      sentence similarity only.
+        mode='context_aware':  current + previous sentence + previous pose.
         """
         if not self._built:
             raise RuntimeError("Call build_index() first.")
@@ -149,57 +320,21 @@ class SignLingoRetrieval:
             return RetrievalResult(None, None, 0.0, None,
                                    "Dataset is empty — no samples indexed.", mode)
 
-        candidates = self._index if not require_pose else [e for e in self._index if e["has_pose"]]
+        candidates = [e for e in self._index if e["has_pose"]] if require_pose else self._index
         if not candidates:
             return RetrievalResult(None, None, 0.0, None,
                                    "No pose files available. See DATASET_SETUP in README.", mode)
 
-        model = self._get_model()
+        ranked = self.score_all(
+            current_sentence=current_sentence, mode=mode,
+            prev_sentence=prev_sentence, prev_pose=prev_pose,
+            require_pose=require_pose,
+        )
+        if not ranked:
+            return RetrievalResult(None, None, 0.0, None,
+                                   "No pose files available. See DATASET_SETUP in README.", mode)
 
-        # ── Text embedding for current sentence ────────────────────────────────
-        cur_emb = model.encode([current_sentence], convert_to_numpy=True)[0]
-        cur_emb = cur_emb / (np.linalg.norm(cur_emb) + 1e-9)
-
-        # ── Context embedding ──────────────────────────────────────────────────
-        ctx_emb = None
-        if mode == "context_aware" and prev_sentence:
-            combined = f"{prev_sentence} [SEP] {current_sentence}"
-            ctx_emb = model.encode([combined], convert_to_numpy=True)[0]
-            ctx_emb = ctx_emb / (np.linalg.norm(ctx_emb) + 1e-9)
-
-        # ── Previous pose features ─────────────────────────────────────────────
-        prev_pose_feat = None
-        if mode == "context_aware" and prev_pose is not None:
-            prev_pose_feat = summarize_pose(prev_pose)
-            prev_pose_feat = prev_pose_feat / (np.linalg.norm(prev_pose_feat) + 1e-9)
-
-        # ── Score each candidate ───────────────────────────────────────────────
-        best_score = -np.inf
-        best_entry = None
-
-        for entry in candidates:
-            idx_emb = entry["text_emb"]   # already normalised
-
-            if mode == "text_only" or ctx_emb is None:
-                score = float(np.dot(cur_emb, idx_emb))
-            else:
-                # Combined text score
-                txt_score = (
-                    self.TEXT_WEIGHT * float(np.dot(cur_emb, idx_emb)) +
-                    (1 - self.TEXT_WEIGHT) * float(np.dot(ctx_emb, idx_emb))
-                )
-                # Pose similarity
-                if prev_pose_feat is not None and entry["pose_feat"] is not None:
-                    pf = entry["pose_feat"]
-                    pf = pf / (np.linalg.norm(pf) + 1e-9)
-                    pose_score = float(np.dot(prev_pose_feat, pf))
-                    score = (1 - self.POSE_WEIGHT) * txt_score + self.POSE_WEIGHT * pose_score
-                else:
-                    score = txt_score
-
-            if score > best_score:
-                best_score = score
-                best_entry = entry
+        best_score, best_entry = ranked[0]
 
         if best_entry is None or best_score < self.MATCH_THRESHOLD:
             return RetrievalResult(
@@ -227,19 +362,18 @@ class SignLingoRetrieval:
 
     def save(self, path: str = "models/retrieval_index.pkl"):
         Path(path).parent.mkdir(parents=True, exist_ok=True)
-        # Don't save the SBERT model itself, only the index
+        # Don't save the SBERT model itself, only the index entries.
         data = {
             "model_name": self.model_name,
             "is_synthetic": self.is_synthetic,
-            "index": [
-                {k: v for k, v in e.items() if k != "pose"}  # save without full pose arrays
-                for e in self._index
-            ],
-            "index_with_pose": self._index,  # keep poses in index for inference
+            "use_trained": self.has_trained,
+            "trained_checkpoint": self.trained_checkpoint,
+            "index_with_pose": self._index,
         }
         with open(path, "wb") as f:
             pickle.dump(data, f)
-        print(f"[Retrieval] Index saved to {path}")
+        print(f"[Retrieval] Index saved to {path} "
+              f"({'trained' if self.has_trained else 'baseline'} ranker)")
 
     @classmethod
     def load(cls, path: str = "models/retrieval_index.pkl") -> "SignLingoRetrieval":
@@ -248,6 +382,18 @@ class SignLingoRetrieval:
         engine = cls(model_name=data["model_name"])
         engine._index = data.get("index_with_pose", data.get("index", []))
         engine.is_synthetic = bool(data.get("is_synthetic", False))
+        engine.trained_checkpoint = data.get("trained_checkpoint")
+        if data.get("use_trained"):
+            checkpoint = engine.trained_checkpoint or "models/ranker.pt"
+            try:
+                from ml.ranker import TrainedRetriever
+                engine._trained = TrainedRetriever.load(checkpoint)
+                print(f"[Retrieval] Loaded trained ranker: {checkpoint}")
+            except Exception as exc:
+                print(f"[Retrieval] WARNING: trained ranker unavailable ({exc}); "
+                      "falling back to baseline cosine.")
+                engine._trained = None
+        engine._rebuild_matrices()
         engine._built = True
         print(f"[Retrieval] Index loaded from {path}: {len(engine._index)} entries.")
         return engine

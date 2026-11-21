@@ -20,8 +20,9 @@ class SignLingoInference:
 
     INDEX_PATH = "models/retrieval_index.pkl"
 
-    def __init__(self, index_path: Optional[str] = None):
+    def __init__(self, index_path: Optional[str] = None, ranker_path: Optional[str] = None):
         self.index_path = index_path or os.environ.get("INDEX_PATH", self.INDEX_PATH)
+        self.ranker_path = ranker_path or os.environ.get("RANKER_PATH", "models/ranker.pt")
         self._engine: Optional[SignLingoRetrieval] = None
         self._dataset: Optional[SignLingoDataset] = None
         self._ready = False
@@ -48,9 +49,18 @@ class SignLingoInference:
             samples_with_pose = self._dataset.samples_with_pose()
             if samples_with_pose:
                 print(f"[Inference] No saved index — building from {len(samples_with_pose)} pose samples.")
-                self._engine = SignLingoRetrieval()
+                trained = None
+                if Path(self.ranker_path).exists():
+                    try:
+                        from ml.ranker import TrainedRetriever
+                        trained = TrainedRetriever.load(self.ranker_path)
+                        print(f"[Inference] Using trained ranker: {self.ranker_path}")
+                    except Exception as exc:
+                        print(f"[Inference] Trained ranker unavailable ({exc}); baseline.")
+                self._engine = SignLingoRetrieval(trained=trained)
                 self._engine.is_synthetic = self._dataset.is_synthetic
-                self._engine.build_index(samples_with_pose)
+                self._engine.trained_checkpoint = self.ranker_path if trained else None
+                self._engine.build_index(samples_with_pose, trained=trained)
                 self._engine.save(self.index_path)
                 self._ready = True
             else:
@@ -73,6 +83,8 @@ class SignLingoInference:
             "dataset_samples": len(self._dataset.samples) if self._dataset else 0,
             "dataset_with_pose": len(self._dataset.samples_with_pose()) if self._dataset else 0,
             "is_synthetic": bool(self._engine.is_synthetic) if self._engine else False,
+            "is_trained": bool(self._engine.has_trained) if self._engine else False,
+            "ranker_path": self.ranker_path,
             "message": (
                 "Retrieval engine ready." if self._ready
                 else "No pose data available. See README for setup instructions."

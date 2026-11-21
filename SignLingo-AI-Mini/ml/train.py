@@ -16,6 +16,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from ml.dataset import SignLingoDataset, make_synthetic_dataset
 from ml.retrieval import SignLingoRetrieval
+from ml.ranker import train_ranker, TrainedRetriever
 
 
 def _score_sample(engine: SignLingoRetrieval, sample, index_map, mode: str) -> float:
@@ -100,6 +101,14 @@ def main():
     parser.add_argument("--eval", action="store_true", help="Run train/holdout split evaluation")
     parser.add_argument("--synthetic", action="store_true",
                         help="Use synthetic data for testing (INTERNAL ONLY, not real ASL)")
+    parser.add_argument("--ranker", default="models/ranker.pt",
+                        help="Trained dual-encoder checkpoint")
+    parser.add_argument("--train-ranker", action="store_true",
+                        help="Train the dual encoder on this dataset before building the index")
+    parser.add_argument("--epochs", type=int, default=40, help="Ranker training epochs")
+    parser.add_argument("--seed", type=int, default=42, help="Random seed")
+    parser.add_argument("--no-trained", action="store_true",
+                        help="Build a baseline-only index even if a checkpoint exists")
     args = parser.parse_args()
 
     if args.synthetic:
@@ -108,23 +117,36 @@ def main():
         print("Synthetic poses are random numbers, NOT real ASL movements.")
         print("=" * 60)
         samples = make_synthetic_dataset(20)
+        if args.output == "models/retrieval_index.pkl":
+            args.output = "models/synthetic_index.pkl"
     else:
         ds = SignLingoDataset(data_dir=args.data_dir, pose_dir=args.pose_dir).load()
         samples = ds.samples_with_pose()
         if not samples:
             print("[Train] No pose files found.")
-            print("  To get pose data:")
-            print("  1. Register at https://how2sign.github.io/")
-            print("  2. Download the How2Sign pose files")
-            print("  3. Place .npy files in data/poses/ named by sentence_id")
-            print("  4. Update data/metadata.csv accordingly")
-            print("  OR: Run the Colab notebook (notebooks/train_signlingo.ipynb)")
+            print("  Build the real dataset from official How2Sign OpenPose JSON:")
+            print("    python ml/convert_openpose.py \\")
+            print("        --json-dir <how2sign>/openpose_output/json \\")
+            print("        --csv <how2sign>/how2sign_realigned_val.csv \\")
+            print("        --out-dir data --limit 600")
+            print("  Then: python ml/build_real_index.py --data-dir data")
             sys.exit(1)
+
+    trained = None
+    if args.train_ranker:
+        print(f"[Train] Training dual encoder on {len(samples)} samples…")
+        train_ranker(samples, out_path=args.ranker, epochs=args.epochs, seed=args.seed)
+    if not args.no_trained and Path(args.ranker).exists():
+        trained = TrainedRetriever.load(args.ranker)
+        print(f"[Train] Using trained ranker: {args.ranker}")
+    else:
+        print("[Train] Using baseline fixed weighted cosine ranker.")
 
     print(f"[Train] Building retrieval index from {len(samples)} samples.")
     engine = SignLingoRetrieval()
     engine.is_synthetic = bool(args.synthetic)
-    engine.build_index(samples)
+    engine.trained_checkpoint = args.ranker if trained is not None else None
+    engine.build_index(samples, trained=trained)
     engine.save(args.output)
     print(f"[Train] Index saved to: {args.output}")
 
