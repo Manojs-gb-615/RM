@@ -1,0 +1,9 @@
+15-second test clip: How2Sign validation sentence
+2ri5HYm48MA_8-2-rgb_front (0:52.8–1:07.8).
+
+Source: How2Sign (Duarte et al., CVPR 2021), https://how2sign.github.io/
+License: CC BY-NC 4.0 — research/non-commercial use only.
+
+Files:
+  how2sign_15s.mp4  (15.0 s, frontal RGB clip)
+  how2sign_15s.srt  (matching English caption, 0–15 s)
