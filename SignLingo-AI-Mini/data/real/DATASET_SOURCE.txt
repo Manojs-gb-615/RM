@@ -1,0 +1,4 @@
+Real How2Sign 2D keypoints (B-F-H / OpenPose).
+Source: https://how2sign.github.io/ (Duarte et al., CVPR 2021).
+License: CC BY-NC 4.0 — research use only, non-commercial.
+Converted by ml/convert_openpose.py.

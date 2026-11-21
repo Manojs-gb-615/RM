@@ -1,0 +1,451 @@
+sample_id,sentence,video_id,narrative_id,start_time,end_time,prev_sample_id,frames
+-d5dN54tH2E_0-1-rgb_front,We're going to work on a arm drill that will help you have graceful hand movements in front of you.,-d5dN54tH2E,-d5dN54tH2E,12.97,19.52,,189
+-d5dN54tH2E_1-1-rgb_front,I call it painting the wall.,-d5dN54tH2E,-d5dN54tH2E,20.65,24.28,-d5dN54tH2E_0-1-rgb_front,32
+-d5dN54tH2E_10-1-rgb_front,"So we're going to go up and down; let's switch hands, down and up; down and up.",-d5dN54tH2E,-d5dN54tH2E,85.5,87.83,-d5dN54tH2E_9-1-rgb_front,172
+-d5dN54tH2E_11-1-rgb_front,And just let those fingers relax.,-d5dN54tH2E,-d5dN54tH2E,87.84,93.62,-d5dN54tH2E_10-1-rgb_front,42
+-d5dN54tH2E_12-1-rgb_front,Now together you're going to go opposite.,-d5dN54tH2E,-d5dN54tH2E,94.26,101.39,-d5dN54tH2E_11-1-rgb_front,82
+-d5dN54tH2E_13-1-rgb_front,Do it very mechanically at first and then slowly soften it out as you feel comfortable.,-d5dN54tH2E,-d5dN54tH2E,102.15,110.04,-d5dN54tH2E_12-1-rgb_front,140
+-d5dN54tH2E_14-1-rgb_front,"It's real easy to actually get your fingers to lead, so try not to let them do that.",-d5dN54tH2E,-d5dN54tH2E,111.88,116.02,-d5dN54tH2E_13-1-rgb_front,111
+-d5dN54tH2E_15-1-rgb_front,Let the wrist do all the leading.,-d5dN54tH2E,-d5dN54tH2E,116.02,120.82,-d5dN54tH2E_14-1-rgb_front,43
+-d5dN54tH2E_2-1-rgb_front,"So this one what you're going to start with, let's take one hand first; it's going to, the wrist is going to come down and the wrist is going to come up.",-d5dN54tH2E,-d5dN54tH2E,26.03,36.99,-d5dN54tH2E_1-1-rgb_front,199
+-d5dN54tH2E_3-1-rgb_front,"So basically your wrist is going to be leading the movement, and let the fingers follow nice and relaxed where the wrist is going.",-d5dN54tH2E,-d5dN54tH2E,37.0,45.84,-d5dN54tH2E_5-1-rgb_front,174
+-d5dN54tH2E_4-1-rgb_front,"Don't let the fingers take over, let the wrist do all the guiding.",-d5dN54tH2E,-d5dN54tH2E,45.84,53.8,-d5dN54tH2E_3-1-rgb_front,89
+-d5dN54tH2E_5-1-rgb_front,Let's make sure that are feet are parallel and are knees are soft.,-d5dN54tH2E,-d5dN54tH2E,30.45,33.26,-d5dN54tH2E_2-1-rgb_front,68
+-d5dN54tH2E_6-1-rgb_front,"Our belly buttons pulled in pressing in towards our spine and our chest is lifted, and our arms are relaxed; are shoulders are nice and relaxed.",-d5dN54tH2E,-d5dN54tH2E,54.0,64.33,-d5dN54tH2E_4-1-rgb_front,165
+-d5dN54tH2E_7-1-rgb_front,So let's start with the one hand going up and down.,-d5dN54tH2E,-d5dN54tH2E,64.81,68.31,-d5dN54tH2E_6-1-rgb_front,63
+-d5dN54tH2E_8-1-rgb_front,We're going to keep this right in front of us; you don't want to have it in front of your face so you block yourself.,-d5dN54tH2E,-d5dN54tH2E,68.32,71.3,-d5dN54tH2E_7-1-rgb_front,100
+-d5dN54tH2E_9-1-rgb_front,You want it right in front of your solar plexus.,-d5dN54tH2E,-d5dN54tH2E,77.05,84.4,-d5dN54tH2E_8-1-rgb_front,90
+-f1_kdl050s_0-1-rgb_front,In this clip we are going to talk about dangers for these birds in the household and otherwise.,-f1_kdl050s,-f1_kdl050s,1.96,7.58,,120
+-f1_kdl050s_1-1-rgb_front,"The number one loss for these birds, is flight.",-f1_kdl050s,-f1_kdl050s,8.09,11.55,-f1_kdl050s_0-1-rgb_front,74
+-f1_kdl050s_10-1-rgb_front,You need to be very careful when cleaning their cages if these birds are flighted.,-f1_kdl050s,-f1_kdl050s,56.94,60.48,-f1_kdl050s_9-1-rgb_front,104
+-f1_kdl050s_11-1-rgb_front,It seems to be the number one way to loose them.,-f1_kdl050s,-f1_kdl050s,60.49,64.73,-f1_kdl050s_10-1-rgb_front,66
+-f1_kdl050s_12-1-rgb_front,"Once they get loose outside, predators will get to them very quickly.",-f1_kdl050s,-f1_kdl050s,64.76,66.71,-f1_kdl050s_11-1-rgb_front,78
+-f1_kdl050s_13-1-rgb_front,"These guys are not suited to live in the United States, they are not native here and they don't survive.",-f1_kdl050s,-f1_kdl050s,66.71,75.82,-f1_kdl050s_12-1-rgb_front,138
+-f1_kdl050s_14-1-rgb_front,"The other dangers you need to worry about, is Teflon pans.",-f1_kdl050s,-f1_kdl050s,76.2,81.22,-f1_kdl050s_13-1-rgb_front,82
+-f1_kdl050s_15-1-rgb_front,"If they are heated to a high temperature, they give off some fumes that the birds inhale which causes them basically to fell off their perch dead.",-f1_kdl050s,-f1_kdl050s,81.22,90.39,-f1_kdl050s_14-1-rgb_front,228
+-f1_kdl050s_16-1-rgb_front,There is nothing that you can do about it and it is very quickly.,-f1_kdl050s,-f1_kdl050s,90.74,93.72,-f1_kdl050s_15-1-rgb_front,58
+-f1_kdl050s_17-1-rgb_front,It is kind of a silent killer.,-f1_kdl050s,-f1_kdl050s,93.9,100.54,-f1_kdl050s_16-1-rgb_front,36
+-f1_kdl050s_18-1-rgb_front,"So, if you have them in the kitchen and if you are going to cook with Teflon, move them to another room in the house, so that you can protect them.",-f1_kdl050s,-f1_kdl050s,101.65,106.86,-f1_kdl050s_17-1-rgb_front,164
+-f1_kdl050s_19-1-rgb_front,"Aerosols, spraying for bugs, spraying perfumes around the house, all those sort of things, these birds have very very sensitive upper repository tracts and so if you have any sort of aerosol it can irritate their lungs.",-f1_kdl050s,-f1_kdl050s,106.88,124.34,-f1_kdl050s_18-1-rgb_front,319
+-f1_kdl050s_2-1-rgb_front,"If these guys are flighted, you need to be really careful if you have them loose in your household.",-f1_kdl050s,-f1_kdl050s,11.55,18.81,-f1_kdl050s_1-1-rgb_front,88
+-f1_kdl050s_20-1-rgb_front,"And, these guys only have a few breaths before they'll die.",-f1_kdl050s,-f1_kdl050s,125.37,130.88,-f1_kdl050s_19-1-rgb_front,85
+-f1_kdl050s_21-1-rgb_front,So you need to be very careful with aerosols around the house.,-f1_kdl050s,-f1_kdl050s,131.27,132.41,-f1_kdl050s_26-1-rgb_front,89
+-f1_kdl050s_22-1-rgb_front,"And lastly, they are so so tiny, basically anything in your house, a dog, a cat, anything, they can get squished in a door, if they get mouthed, even a little tiny bit by your dog or cat, or by your kid, they will just squished.",-f1_kdl050s,-f1_kdl050s,134.64,154.09,-f1_kdl050s_21-1-rgb_front,353
+-f1_kdl050s_23-1-rgb_front,"There is not a whole lot to them, they are not that robust, they are mostly feathers.",-f1_kdl050s,-f1_kdl050s,155.27,165.75,-f1_kdl050s_22-1-rgb_front,91
+-f1_kdl050s_24-1-rgb_front,You have to be fairly careful with these birds.,-f1_kdl050s,-f1_kdl050s,166.28,168.03,-f1_kdl050s_23-1-rgb_front,79
+-f1_kdl050s_25-1-rgb_front,At least in a physical way.,-f1_kdl050s,-f1_kdl050s,168.03,171.85,-f1_kdl050s_24-1-rgb_front,65
+-f1_kdl050s_26-1-rgb_front,Those are most of your household dangers.,-f1_kdl050s,-f1_kdl050s,125.9,129.17,-f1_kdl050s_20-1-rgb_front,79
+-f1_kdl050s_27-1-rgb_front,"And again, if you are cooking and the birds are loose, be careful with them landing on a hot pan.",-f1_kdl050s,-f1_kdl050s,173.54,179.62,-f1_kdl050s_25-1-rgb_front,116
+-f1_kdl050s_28-1-rgb_front,You don't want toilet seats open if they are flying around your house because they can fly in it and drowned.,-f1_kdl050s,-f1_kdl050s,179.62,184.53,-f1_kdl050s_27-1-rgb_front,89
+-f1_kdl050s_29-1-rgb_front,"Just be careful, you want to make sure that if you ever let these guys loose out of their cage, you basically bombproof your house.",-f1_kdl050s,-f1_kdl050s,184.53,193.65,-f1_kdl050s_28-1-rgb_front,153
+-f1_kdl050s_3-1-rgb_front,A lot of these birds aren't tame.,-f1_kdl050s,-f1_kdl050s,19.41,25.22,-f1_kdl050s_4-1-rgb_front,49
+-f1_kdl050s_30-1-rgb_front,You make sure that every little nook and cranny has been looked at for.,-f1_kdl050s,-f1_kdl050s,193.65,199.42,-f1_kdl050s_29-1-rgb_front,63
+-f1_kdl050s_31-1-rgb_front,"And, if they are alone in their cages and if you have smaller pets and it is a smaller cage, they cannot knock their cage over and let either the bird to fly out or they can't reach through the bars.",-f1_kdl050s,-f1_kdl050s,200.13,213.7,-f1_kdl050s_30-1-rgb_front,256
+-f1_kdl050s_32-1-rgb_front,Like a cat might dig through the bars if they are small enough and be able to grab hold of the bird.,-f1_kdl050s,-f1_kdl050s,213.7,218.55,-f1_kdl050s_31-1-rgb_front,122
+-f1_kdl050s_33-1-rgb_front,"And, if the bird is outside if you let these guys outside to get some fresh sunshine, raccoons have been known to break into their cages and tear through the bars and ripped into these guys.",-f1_kdl050s,-f1_kdl050s,219.42,233.54,-f1_kdl050s_32-1-rgb_front,230
+-f1_kdl050s_34-1-rgb_front,So you have to be very careful if you leave them outside for any period of time.,-f1_kdl050s,-f1_kdl050s,234.27,239.64,-f1_kdl050s_33-1-rgb_front,106
+-f1_kdl050s_35-1-rgb_front,"That more or less covers it, just be careful because your birds are very small and much more sensitive to chemicals then many other pets are.",-f1_kdl050s,-f1_kdl050s,241.11,247.5,-f1_kdl050s_34-1-rgb_front,187
+-f1_kdl050s_4-1-rgb_front,People get them and they only have two or three of them.,-f1_kdl050s,-f1_kdl050s,15.8,17.69,-f1_kdl050s_2-1-rgb_front,45
+-f1_kdl050s_5-1-rgb_front,As you are opening the cage doors to clean their cages these guys will get startled and fly away.,-f1_kdl050s,-f1_kdl050s,26.52,32.3,-f1_kdl050s_3-1-rgb_front,124
+-f1_kdl050s_6-1-rgb_front,"And when they panic, they fly and they don't come back.",-f1_kdl050s,-f1_kdl050s,32.3,35.98,-f1_kdl050s_5-1-rgb_front,59
+-f1_kdl050s_7-1-rgb_front,They fly out your windows.,-f1_kdl050s,-f1_kdl050s,36.03,37.79,-f1_kdl050s_6-1-rgb_front,28
+-f1_kdl050s_8-1-rgb_front,They fly out your front door.,-f1_kdl050s,-f1_kdl050s,36.03,37.79,-f1_kdl050s_7-1-rgb_front,38
+-f1_kdl050s_9-1-rgb_front,"You will be thinking that every thing is sealed and you go clean the papers and your daughter, son, husband walks in through the front door and that bird just flies right out.",-f1_kdl050s,-f1_kdl050s,41.18,53.61,-f1_kdl050s_8-1-rgb_front,227
+00dWJ4YRRSI_0_1-1-rgb_front,"I hope this becomes very popular, here of late, is the circle hooks. Now, circle hooks has been used by Japanese fishermen and longliners for years and years, but in recent years, they've developed lighter, smaller, in shore type hooks, which are very well suited, particularly to folks that are in to the hook and release type fishing.",00dWJ4YRRSI,00dWJ4YRRSI,0.6,36.6,,638
+00dWJ4YRRSI_2-1-rgb_front,"This hook, basically is designed, to catch the fish in the corner of the mouth.",00dWJ4YRRSI,00dWJ4YRRSI,37.05,44.77,00dWJ4YRRSI_0_1-1-rgb_front,125
+00dWJ4YRRSI_3-1-rgb_front,"Now this type of hook, when you get a bite, you can't jerk the rod to set the hook.",00dWJ4YRRSI,00dWJ4YRRSI,45.53,53.1,00dWJ4YRRSI_2-1-rgb_front,162
+00dWJ4YRRSI_4-1-rgb_front,"You basically just reel down, and get the line tight, and the fish will take off, and when he does, he usually turns, and this hook comes right in the corner of his mouth, and it sort of acts, really like a, kind of like a bottle opener.",00dWJ4YRRSI,00dWJ4YRRSI,53.44,74.85,00dWJ4YRRSI_3-1-rgb_front,411
+00dWJ4YRRSI_5-1-rgb_front,"Once you get it in there, it is very difficult to remove this hook, so if you catch a lot of fish, when you hook up the fish, you rarely ever lose them because of that particular mechanism.",00dWJ4YRRSI,00dWJ4YRRSI,75.66,94.26,00dWJ4YRRSI_7-1-rgb_front,291
+00dWJ4YRRSI_6-1-rgb_front,"The nice thing about the circle hook is, you don't gut hook a lot of fish.",00dWJ4YRRSI,00dWJ4YRRSI,95.45,101.39,00dWJ4YRRSI_5-1-rgb_front,101
+00dWJ4YRRSI_7-1-rgb_front,You don't damage a lot of fish.,00dWJ4YRRSI,00dWJ4YRRSI,74.78,76.23,00dWJ4YRRSI_4-1-rgb_front,35
+00dWJ4YRRSI_8-1-rgb_front,You simply get him up to the boat.,00dWJ4YRRSI,00dWJ4YRRSI,102.53,106.73,00dWJ4YRRSI_6-1-rgb_front,32
+00dWJ4YRRSI_9-1-rgb_front,"If you want to release him, you can release him, or cut the hook out, and it's a pretty, it's a pretty friendly hook, for fishing.",00dWJ4YRRSI,00dWJ4YRRSI,107.17,114.43,00dWJ4YRRSI_8-1-rgb_front,195
+0oGfy530AuI_0-1-rgb_front,MICHAEL ROSENGART: Thrusters.,0oGfy530AuI,0oGfy530AuI,0.92,2.86,,31
+0oGfy530AuI_1-1-rgb_front,"Right now, we're going to get into a more complicated exercise.",0oGfy530AuI,0oGfy530AuI,3.15,7.54,0oGfy530AuI_0-1-rgb_front,85
+0oGfy530AuI_10-1-rgb_front,Jonesy is going to sit back.,0oGfy530AuI,0oGfy530AuI,42.29,44.75,0oGfy530AuI_8-1-rgb_front,26
+0oGfy530AuI_11-1-rgb_front,"And as he drives up, again, driving on his heel, driving his hips forward is the work from his hips that will then force the arms up.",0oGfy530AuI,0oGfy530AuI,44.75,53.44,0oGfy530AuI_10-1-rgb_front,208
+0oGfy530AuI_12-1-rgb_front,Good.,0oGfy530AuI,0oGfy530AuI,54.62,55.41,0oGfy530AuI_11-1-rgb_front,8
+0oGfy530AuI_13-1-rgb_front,And then there's a lot of arm strength involved to stabilize the dumbbell right above his shoulders.,0oGfy530AuI,0oGfy530AuI,56.53,61.21,0oGfy530AuI_12-1-rgb_front,117
+0oGfy530AuI_14-1-rgb_front,"Not out to the side, not back, but right above.",0oGfy530AuI,0oGfy530AuI,61.21,67.11,0oGfy530AuI_13-1-rgb_front,62
+0oGfy530AuI_15-1-rgb_front,That's good.,0oGfy530AuI,0oGfy530AuI,67.44,68.26,0oGfy530AuI_14-1-rgb_front,16
+0oGfy530AuI_16-1-rgb_front,"Good work, Jonesy.",0oGfy530AuI,0oGfy530AuI,68.26,70.54,0oGfy530AuI_15-1-rgb_front,21
+0oGfy530AuI_17-1-rgb_front,"Again working from the heels up, work with your breath; feel that you're driving your hips forward and up each time, good work.",0oGfy530AuI,0oGfy530AuI,70.77,83.04,0oGfy530AuI_16-1-rgb_front,203
+0oGfy530AuI_18-1-rgb_front,"Do ten of those and we're going to take a three to five minute break, and then come back to it.",0oGfy530AuI,0oGfy530AuI,83.04,92.44,0oGfy530AuI_17-1-rgb_front,151
+0oGfy530AuI_19-1-rgb_front,"Again, I want to make sure that you understand that when you're doing the thruster that it's working from the ground up, and it is one smooth movement.",0oGfy530AuI,0oGfy530AuI,92.45,104.73,0oGfy530AuI_18-1-rgb_front,179
+0oGfy530AuI_2-1-rgb_front,We're integrating more of the body.,0oGfy530AuI,0oGfy530AuI,8.14,11.88,0oGfy530AuI_1-1-rgb_front,45
+0oGfy530AuI_20-1-rgb_front,It's not segmented.,0oGfy530AuI,0oGfy530AuI,104.73,105.66,0oGfy530AuI_19-1-rgb_front,26
+0oGfy530AuI_21-1-rgb_front,"It's not the squat and a shoulder press, okay?",0oGfy530AuI,0oGfy530AuI,105.66,106.79,0oGfy530AuI_20-1-rgb_front,70
+0oGfy530AuI_22-1-rgb_front,It's one smooth movement.,0oGfy530AuI,0oGfy530AuI,106.79,111.52,0oGfy530AuI_21-1-rgb_front,34
+0oGfy530AuI_23-1-rgb_front,Try it.,0oGfy530AuI,0oGfy530AuI,111.53,112.31,0oGfy530AuI_22-1-rgb_front,8
+0oGfy530AuI_3-1-rgb_front,And we're going to develop more strength because we're getting more of the body parts working together at the same time in cohesion.,0oGfy530AuI,0oGfy530AuI,12.5,21.83,0oGfy530AuI_2-1-rgb_front,170
+0oGfy530AuI_4-1-rgb_front,Okay.,0oGfy530AuI,0oGfy530AuI,15.72,15.99,0oGfy530AuI_3-1-rgb_front,6
+0oGfy530AuI_5-1-rgb_front,"So, Jonesy, you want to go ahead and show what a thruster is?",0oGfy530AuI,0oGfy530AuI,23.03,26.64,0oGfy530AuI_4-1-rgb_front,60
+0oGfy530AuI_6-1-rgb_front,"Jonesy going to take a couple of dumbbells, bring it up to his shoulders.",0oGfy530AuI,0oGfy530AuI,26.64,31.89,0oGfy530AuI_5-1-rgb_front,79
+0oGfy530AuI_7-1-rgb_front,"And we're, basically, he's going to sit back into a squat.",0oGfy530AuI,0oGfy530AuI,31.89,36.92,0oGfy530AuI_9-1-rgb_front,73
+0oGfy530AuI_8-1-rgb_front,"And we're basically combining a squat and a shoulder press, but it's not that simple.",0oGfy530AuI,0oGfy530AuI,36.92,41.38,0oGfy530AuI_7-1-rgb_front,93
+0oGfy530AuI_9-1-rgb_front,It's not segmented like that.,0oGfy530AuI,0oGfy530AuI,29.52,31.21,0oGfy530AuI_6-1-rgb_front,40
+0pKzG0RRUz4_0-1-rgb_front,Another technique is you can braid the hair on first and then start wrapping cause some people have really short hair and we can create the look with adding the hair end.,0pKzG0RRUz4,0pKzG0RRUz4,0.22,14.79,0pKzG0RRUz4_0-2-rgb_front,314
+0pKzG0RRUz4_0-2-rgb_front,Another technique is you can braid the hair on first and then start wrapping cause some people have really short hair and we can create the look with adding the hair end.,0pKzG0RRUz4,0pKzG0RRUz4,0.06,11.22,,314
+0pKzG0RRUz4_1-1-rgb_front,"So no matter what the length of your hair, long as it's long enough to add a, at the hair on, we can start by braiding it on, then braid, then wrap and you can make this as thick as you like, whatever size you like, whatever color you like.",0pKzG0RRUz4,0pKzG0RRUz4,18.12,44.86,0pKzG0RRUz4_1-2-rgb_front,505
+0pKzG0RRUz4_1-2-rgb_front,"So no matter what the length of your hair, long as it's long enough to add a, at the hair on, we can start by braiding it on, then braid, then wrap and you can make this as thick as you like, whatever size you like, whatever color you like.",0pKzG0RRUz4,0pKzG0RRUz4,11.24,45.36,0pKzG0RRUz4_0-1-rgb_front,505
+0pKzG0RRUz4_2-1-rgb_front,"I like the lock extensions because it's not damaging to your hair at all, because you can add color without actually coloring your hair, you just wrap on a different color.",0pKzG0RRUz4,0pKzG0RRUz4,45.18,65.78,0pKzG0RRUz4_1-1-rgb_front,296
+0pKzG0RRUz4_2-2-rgb_front,"I like the lock extensions because it's not damaging to your hair at all, because you can add color without actually coloring your hair, you just wrap on a different color.",0pKzG0RRUz4,0pKzG0RRUz4,45.87,62.29,0pKzG0RRUz4_2-1-rgb_front,296
+0pKzG0RRUz4_3-1-rgb_front,I really like that.,0pKzG0RRUz4,0pKzG0RRUz4,66.15,67.91,0pKzG0RRUz4_4-2-rgb_front,20
+0pKzG0RRUz4_3-2-rgb_front,I really like that.,0pKzG0RRUz4,0pKzG0RRUz4,62.3,64.84,0pKzG0RRUz4_2-2-rgb_front,20
+0pKzG0RRUz4_4-1-rgb_front,"You can get instant length, which I love.",0pKzG0RRUz4,0pKzG0RRUz4,68.91,72.43,0pKzG0RRUz4_3-1-rgb_front,114
+0pKzG0RRUz4_4-2-rgb_front,"You can get instant length, which I love.",0pKzG0RRUz4,0pKzG0RRUz4,65.18,71.07,0pKzG0RRUz4_3-2-rgb_front,114
+0pKzG0RRUz4_5-1-rgb_front,"And, we have a skinny one and we have a little fatter one.",0pKzG0RRUz4,0pKzG0RRUz4,73.43,84.33,0pKzG0RRUz4_5-2-rgb_front,148
+0pKzG0RRUz4_5-2-rgb_front,"And, we have a skinny one and we have a little fatter one.",0pKzG0RRUz4,0pKzG0RRUz4,71.37,81.91,0pKzG0RRUz4_4-1-rgb_front,148
+0pKzG0RRUz4_6-1-rgb_front,And we can them even fatter.,0pKzG0RRUz4,0pKzG0RRUz4,85.31,87.53,0pKzG0RRUz4_6-2-rgb_front,34
+0pKzG0RRUz4_6-2-rgb_front,And we can them even fatter.,0pKzG0RRUz4,0pKzG0RRUz4,82.02,85.87,0pKzG0RRUz4_5-1-rgb_front,34
+0pKzG0RRUz4_7-1-rgb_front,"Whatever length, we can just keep on adding hair forever and ever and it will just go on and on.",0pKzG0RRUz4,0pKzG0RRUz4,87.53,91.3,0pKzG0RRUz4_7-2-rgb_front,133
+0pKzG0RRUz4_7-2-rgb_front,"Whatever length, we can just keep on adding hair forever and ever and it will just go on and on.",0pKzG0RRUz4,0pKzG0RRUz4,86.44,93.66,0pKzG0RRUz4_6-1-rgb_front,133
+0pKzG0RRUz4_8-1-rgb_front,We can make them as long as we want.,0pKzG0RRUz4,0pKzG0RRUz4,91.3,94.42,0pKzG0RRUz4_7-1-rgb_front,38
+0pKzG0RRUz4_8-2-rgb_front,We can make them as long as we want.,0pKzG0RRUz4,0pKzG0RRUz4,93.66,98.02,0pKzG0RRUz4_8-1-rgb_front,38
+0zvsqf23tmw_1-1-rgb_front,"And in this segment, I'm going to just start paint in the background color.",0zvsqf23tmw,0zvsqf23tmw,2.22,10.21,,110
+0zvsqf23tmw_1-2-rgb_front,"And in this segment, I'm going to just start paint in the background color.",0zvsqf23tmw,0zvsqf23tmw,3.73,9.77,0zvsqf23tmw_1-1-rgb_front,110
+0zvsqf23tmw_10-1-rgb_front,I'm going to start on the edge so I can get the edge painted in against the skyline.,0zvsqf23tmw,0zvsqf23tmw,64.11,72.53,0zvsqf23tmw_10-2-rgb_front,167
+0zvsqf23tmw_10-2-rgb_front,I'm going to start on the edge so I can get the edge painted in against the skyline.,0zvsqf23tmw,0zvsqf23tmw,62.42,73.53,0zvsqf23tmw_9-1-rgb_front,167
+0zvsqf23tmw_11-1-rgb_front,I'm just doing a dark hill here.,0zvsqf23tmw,0zvsqf23tmw,72.53,75.22,0zvsqf23tmw_15-1-rgb_front,188
+0zvsqf23tmw_11-2-rgb_front,I'm just doing a dark hill here.,0zvsqf23tmw,0zvsqf23tmw,73.58,75.78,0zvsqf23tmw_11-1-rgb_front,188
+0zvsqf23tmw_12-1-rgb_front,I'm trying to define the edges and then kinda just dry-brush it to fill it in a little bit.,0zvsqf23tmw,0zvsqf23tmw,76.88,87.19,0zvsqf23tmw_12-2-rgb_front,115
+0zvsqf23tmw_12-2-rgb_front,I'm trying to define the edges and then kinda just dry-brush it to fill it in a little bit.,0zvsqf23tmw,0zvsqf23tmw,75.78,87.87,0zvsqf23tmw_11-2-rgb_front,115
+0zvsqf23tmw_13-1-rgb_front,I don't want too much paint on the wall.,0zvsqf23tmw,0zvsqf23tmw,91.36,94.33,0zvsqf23tmw_14-2-rgb_front,52
+0zvsqf23tmw_13-2-rgb_front,I don't want too much paint on the wall.,0zvsqf23tmw,0zvsqf23tmw,88.91,90.52,0zvsqf23tmw_17-1-rgb_front,52
+0zvsqf23tmw_14-1-rgb_front,And you really don't need to use a lot of paint.,0zvsqf23tmw,0zvsqf23tmw,94.34,96.21,0zvsqf23tmw_13-1-rgb_front,37
+0zvsqf23tmw_14-2-rgb_front,And you really don't need to use a lot of paint.,0zvsqf23tmw,0zvsqf23tmw,91.18,96.51,0zvsqf23tmw_13-2-rgb_front,37
+0zvsqf23tmw_15-1-rgb_front,You don't need a lot of paint on your brush.,0zvsqf23tmw,0zvsqf23tmw,72.46,73.8,0zvsqf23tmw_10-1-rgb_front,32
+0zvsqf23tmw_15-2-rgb_front,You don't need a lot of paint on your brush.,0zvsqf23tmw,0zvsqf23tmw,97.01,99.94,0zvsqf23tmw_14-1-rgb_front,32
+0zvsqf23tmw_16-1-rgb_front,You want to just kinda take it easy and then use more paint as you start filling in your details.,0zvsqf23tmw,0zvsqf23tmw,98.43,108.39,0zvsqf23tmw_15-2-rgb_front,140
+0zvsqf23tmw_16-2-rgb_front,You want to just kinda take it easy and then use more paint as you start filling in your details.,0zvsqf23tmw,0zvsqf23tmw,99.94,104.33,0zvsqf23tmw_16-1-rgb_front,140
+0zvsqf23tmw_17-1-rgb_front,"So right now, we're just kinda put a tiny bit of paint on there.",0zvsqf23tmw,0zvsqf23tmw,79.67,85.58,0zvsqf23tmw_12-1-rgb_front,141
+0zvsqf23tmw_17-2-rgb_front,"So right now, we're just kinda put a tiny bit of paint on there.",0zvsqf23tmw,0zvsqf23tmw,104.36,110.71,0zvsqf23tmw_16-2-rgb_front,141
+0zvsqf23tmw_18-1-rgb_front,And this entire mural is going to kinda fade in to the wall.,0zvsqf23tmw,0zvsqf23tmw,109.53,115.94,0zvsqf23tmw_17-2-rgb_front,72
+0zvsqf23tmw_18-2-rgb_front,And this entire mural is going to kinda fade in to the wall.,0zvsqf23tmw,0zvsqf23tmw,110.76,116.45,0zvsqf23tmw_18-1-rgb_front,72
+0zvsqf23tmw_19-1-rgb_front,It's not going to be a wall-to-wall mural so I just want to make sure that I use less paint the farther out that I go.,0zvsqf23tmw,0zvsqf23tmw,116.91,126.82,0zvsqf23tmw_18-2-rgb_front,151
+0zvsqf23tmw_19-2-rgb_front,It's not going to be a wall-to-wall mural so I just want to make sure that I use less paint the farther out that I go.,0zvsqf23tmw,0zvsqf23tmw,117.21,127.98,0zvsqf23tmw_19-1-rgb_front,151
+0zvsqf23tmw_2-1-rgb_front,"And when you do a children's wall mural, you probably most likely want to always start with, like, your sky first.",0zvsqf23tmw,0zvsqf23tmw,11.82,18.87,0zvsqf23tmw_2-2-rgb_front,141
+0zvsqf23tmw_2-2-rgb_front,"And when you do a children's wall mural, you probably most likely want to always start with, like, your sky first.",0zvsqf23tmw,0zvsqf23tmw,9.79,20.38,0zvsqf23tmw_1-2-rgb_front,141
+0zvsqf23tmw_3-1-rgb_front,You want to do your background before you get all your objects and those are--it should always be last.,0zvsqf23tmw,0zvsqf23tmw,18.87,24.36,0zvsqf23tmw_2-1-rgb_front,111
+0zvsqf23tmw_3-2-rgb_front,You want to do your background before you get all your objects and those are--it should always be last.,0zvsqf23tmw,0zvsqf23tmw,20.38,24.91,0zvsqf23tmw_3-1-rgb_front,111
+0zvsqf23tmw_4-1-rgb_front,So what I've got here is I've got a little bit of Benjamin Moore acrylic paint and I've got it in a--it's a flat paint.,0zvsqf23tmw,0zvsqf23tmw,24.56,33.22,0zvsqf23tmw_3-2-rgb_front,177
+0zvsqf23tmw_4-2-rgb_front,So what I've got here is I've got a little bit of Benjamin Moore acrylic paint and I've got it in a--it's a flat paint.,0zvsqf23tmw,0zvsqf23tmw,24.97,34.58,0zvsqf23tmw_4-1-rgb_front,177
+0zvsqf23tmw_5-1-rgb_front,And I've also got a cheap brush and I'm just going to kinda dry-brush it a little bit onto the wall.,0zvsqf23tmw,0zvsqf23tmw,33.22,40.05,0zvsqf23tmw_4-2-rgb_front,113
+0zvsqf23tmw_5-2-rgb_front,And I've also got a cheap brush and I'm just going to kinda dry-brush it a little bit onto the wall.,0zvsqf23tmw,0zvsqf23tmw,34.65,42.12,0zvsqf23tmw_5-1-rgb_front,113
+0zvsqf23tmw_6-1-rgb_front,And I'm not going to do way solid onto the wall.,0zvsqf23tmw,0zvsqf23tmw,42.06,44.64,0zvsqf23tmw_5-2-rgb_front,60
+0zvsqf23tmw_6-2-rgb_front,And I'm not going to do way solid onto the wall.,0zvsqf23tmw,0zvsqf23tmw,42.12,44.68,0zvsqf23tmw_6-1-rgb_front,60
+0zvsqf23tmw_7-1-rgb_front,I'm just going to start kinda tapping it on and getting the wall color on there.,0zvsqf23tmw,0zvsqf23tmw,44.64,47.53,0zvsqf23tmw_6-2-rgb_front,144
+0zvsqf23tmw_7-2-rgb_front,I'm just going to start kinda tapping it on and getting the wall color on there.,0zvsqf23tmw,0zvsqf23tmw,44.68,51.47,0zvsqf23tmw_7-1-rgb_front,144
+0zvsqf23tmw_8-1-rgb_front,And if I need to mix it down a little bit then I can always use a little bit of medium or a little bit of water to dilute it.,0zvsqf23tmw,0zvsqf23tmw,48.39,60.75,0zvsqf23tmw_7-2-rgb_front,173
+0zvsqf23tmw_8-2-rgb_front,And if I need to mix it down a little bit then I can always use a little bit of medium or a little bit of water to dilute it.,0zvsqf23tmw,0zvsqf23tmw,51.47,60.14,0zvsqf23tmw_8-1-rgb_front,173
+0zvsqf23tmw_9-1-rgb_front,And I'll just keep painting on here.,0zvsqf23tmw,0zvsqf23tmw,61.69,63.63,0zvsqf23tmw_9-2-rgb_front,74
+0zvsqf23tmw_9-2-rgb_front,And I'll just keep painting on here.,0zvsqf23tmw,0zvsqf23tmw,60.29,62.37,0zvsqf23tmw_8-2-rgb_front,74
+1-xK5UtDSmE_0-2-rgb_front,"We're going to look at it from several aspects and the first thing that I would want to speak to would be the owner of the business, the CEO and in my profession, and I work for a company that provides wellness programs.",1-xK5UtDSmE,1-xK5UtDSmE,0.56,24.86,,423
+1-xK5UtDSmE_1-2-rgb_front,We've been doing this for a number of years and have been quite successful at producing results.,1-xK5UtDSmE,1-xK5UtDSmE,24.9,33.06,1-xK5UtDSmE_0-2-rgb_front,149
+1-xK5UtDSmE_10-2-rgb_front,Another one would be eating a proper diet.,1-xK5UtDSmE,1-xK5UtDSmE,111.73,115.63,1-xK5UtDSmE_9-2-rgb_front,87
+1-xK5UtDSmE_11-2-rgb_front,"And you know when we got to that, I said, you know it's not just eating the right foods but it's also eliminating some of the bad foods.",1-xK5UtDSmE,1-xK5UtDSmE,118.23,129.41,1-xK5UtDSmE_10-2-rgb_front,273
+1-xK5UtDSmE_12-2-rgb_front,"And I said, you know like ice cream, ice cream is great but if you eat ice cream all the time, it's got so much sugar in it it's really going have an effect, and the president said whoa, you can't go there, that's my favorite food.",1-xK5UtDSmE,1-xK5UtDSmE,129.41,149.47,1-xK5UtDSmE_11-2-rgb_front,282
+1-xK5UtDSmE_13-2-rgb_front,"And so then I said well, maybe soda would be something that you would start with as.",1-xK5UtDSmE,1-xK5UtDSmE,149.5,159.31,1-xK5UtDSmE_12-2-rgb_front,165
+1-xK5UtDSmE_14-2-rgb_front,"And he said whoa wait, the vice president said we can't go there because you know because he's addicted to soda.",1-xK5UtDSmE,1-xK5UtDSmE,159.32,167.41,1-xK5UtDSmE_13-2-rgb_front,137
+1-xK5UtDSmE_15-2-rgb_front,And so the net after our presentation I called back and I wasn't getting any callbacks.,1-xK5UtDSmE,1-xK5UtDSmE,168.02,180.93,1-xK5UtDSmE_14-2-rgb_front,190
+1-xK5UtDSmE_16-2-rgb_front,We want a wellness program but we really don't want to lead.,1-xK5UtDSmE,1-xK5UtDSmE,180.93,186.8,1-xK5UtDSmE_15-2-rgb_front,88
+1-xK5UtDSmE_17-2-rgb_front,"But when you think about that, is that going to get the job done for you.",1-xK5UtDSmE,1-xK5UtDSmE,186.8,193.29,1-xK5UtDSmE_16-2-rgb_front,110
+1-xK5UtDSmE_18-2-rgb_front,"So I speak to you Mr. CEO, Mr. corporate owner, Mr. corporate president, you that are trying to produce something positive in your company, you need to pay attention to your own health.",1-xK5UtDSmE,1-xK5UtDSmE,194.51,208.48,1-xK5UtDSmE_17-2-rgb_front,289
+1-xK5UtDSmE_19-2-rgb_front,"Think about it, if you have a heart attack, if you are hit with cancer, what is that going to do to your organization?",1-xK5UtDSmE,1-xK5UtDSmE,211.25,222.93,1-xK5UtDSmE_18-2-rgb_front,187
+1-xK5UtDSmE_2-2-rgb_front,"And so the real key to it is you Mr. CEO, you Mr. owner of the business and why would that be.",1-xK5UtDSmE,1-xK5UtDSmE,33.07,46.5,1-xK5UtDSmE_1-2-rgb_front,206
+1-xK5UtDSmE_3-2-rgb_front,"Well if you are not healthy, can you have a healthy organization?",1-xK5UtDSmE,1-xK5UtDSmE,46.76,53.69,1-xK5UtDSmE_2-2-rgb_front,93
+1-xK5UtDSmE_4-2-rgb_front,"If you are not setting the example, if you are not being the leader then who's going to lead.",1-xK5UtDSmE,1-xK5UtDSmE,53.69,59.29,1-xK5UtDSmE_3-2-rgb_front,129
+1-xK5UtDSmE_5-2-rgb_front,"I've spoken with several different companies and I can remember one particular bank president in his senior vice president, we sat down together and we started to talk about the subject of, because he wanted a wellness program, that's why I was there.",1-xK5UtDSmE,1-xK5UtDSmE,59.29,79.27,1-xK5UtDSmE_4-2-rgb_front,346
+1-xK5UtDSmE_6-2-rgb_front,"And so we started talking about it and I said to him, well you know there are certain things that are required to have a really a healthy group of employees.",1-xK5UtDSmE,1-xK5UtDSmE,79.28,90.01,1-xK5UtDSmE_5-2-rgb_front,256
+1-xK5UtDSmE_7-2-rgb_front,And I said well one of them would be exercise.,1-xK5UtDSmE,1-xK5UtDSmE,94.88,99.3,1-xK5UtDSmE_6-2-rgb_front,68
+1-xK5UtDSmE_8-2-rgb_front,You are going to have to have someway of getting your employees involved with regular exercise.,1-xK5UtDSmE,1-xK5UtDSmE,99.3,105.8,1-xK5UtDSmE_7-2-rgb_front,113
+1-xK5UtDSmE_9-2-rgb_front,"Another one is drinking water, we're going to get into these in a little more detail.",1-xK5UtDSmE,1-xK5UtDSmE,105.8,111.73,1-xK5UtDSmE_8-2-rgb_front,104
+11JT4jRNI-o_0-2-rgb_front,Let's go to the squat position now and add the tubing into that.,11JT4jRNI-o,11JT4jRNI-o,0.85,6.99,,95
+11JT4jRNI-o_1-2-rgb_front,"Again, so many variations.",11JT4jRNI-o,11JT4jRNI-o,7.75,9.43,11JT4jRNI-o_2-2-rgb_front,51
+11JT4jRNI-o_10-2-rgb_front,"The key on this one, and something to keep in mind on this position, is this.",11JT4jRNI-o,11JT4jRNI-o,48.99,55.67,11JT4jRNI-o_9-2-rgb_front,205
+11JT4jRNI-o_11-2-rgb_front,"If you're tubing is really tight, you might not be able to get up unless your legs are close together.",11JT4jRNI-o,11JT4jRNI-o,55.78,69.66,11JT4jRNI-o_10-2-rgb_front,217
+11JT4jRNI-o_12-2-rgb_front,"A squat position, close together, doesn't work very well.",11JT4jRNI-o,11JT4jRNI-o,69.72,73.13,11JT4jRNI-o_11-2-rgb_front,109
+11JT4jRNI-o_13-2-rgb_front,"So the key on something like this, is that your tubing, what you've purchased, or what you have, has enough flexibility, that when you stand on it, you can really stand wide.",11JT4jRNI-o,11JT4jRNI-o,73.25,87.85,11JT4jRNI-o_12-2-rgb_front,283
+11JT4jRNI-o_14-2-rgb_front,"But it's definitely a great exercise, and I highly recommend it.",11JT4jRNI-o,11JT4jRNI-o,88.1,91.46,11JT4jRNI-o_13-2-rgb_front,101
+11JT4jRNI-o_2-2-rgb_front,I'm going to show you something simple and basic.,11JT4jRNI-o,11JT4jRNI-o,7.27,9.65,11JT4jRNI-o_0-2-rgb_front,62
+11JT4jRNI-o_3-2-rgb_front,"I've got my feet about shoulder width apart, pretty much have to, to do a descent squat.",11JT4jRNI-o,11JT4jRNI-o,10.37,16.11,11JT4jRNI-o_1-2-rgb_front,150
+11JT4jRNI-o_4-2-rgb_front,"I'm going to take my tubing up, and I'm going to open up my palms so they're facing forward.",11JT4jRNI-o,11JT4jRNI-o,16.57,23.54,11JT4jRNI-o_3-2-rgb_front,125
+11JT4jRNI-o_5-2-rgb_front,What am I doing with this?,11JT4jRNI-o,11JT4jRNI-o,23.68,25.18,11JT4jRNI-o_4-2-rgb_front,35
+11JT4jRNI-o_6-2-rgb_front,"As I go down and up in a squat position, I have to resist the tubing, right?",11JT4jRNI-o,11JT4jRNI-o,25.37,32.38,11JT4jRNI-o_5-2-rgb_front,153
+11JT4jRNI-o_7-2-rgb_front,It's trying to keep me from coming up.,11JT4jRNI-o,11JT4jRNI-o,32.53,36.82,11JT4jRNI-o_6-2-rgb_front,88
+11JT4jRNI-o_8-2-rgb_front,"As I stretch the tubing straight up and down, it makes the squat harder.",11JT4jRNI-o,11JT4jRNI-o,36.94,43.36,11JT4jRNI-o_7-2-rgb_front,143
+11JT4jRNI-o_9-2-rgb_front,"Once again, you don't want to bend forward too much on this.",11JT4jRNI-o,11JT4jRNI-o,43.94,48.89,11JT4jRNI-o_8-2-rgb_front,82
+1G8LIWgKLME_0-2-rgb_front,To begin your dotted nail art you're going to need to use a stylus also known as a dotter.,1G8LIWgKLME,1G8LIWgKLME,0.35,9.2,,341
+1G8LIWgKLME_1-2-rgb_front,A stylus comes with different size rounded ends on it anywhere ranging from very small to very large.,1G8LIWgKLME,1G8LIWgKLME,9.29,18.01,1G8LIWgKLME_0-2-rgb_front,409
+1G8LIWgKLME_2-2-rgb_front,There's also sizes in between depending on the design you're wanting to do.,1G8LIWgKLME,1G8LIWgKLME,18.14,23.45,1G8LIWgKLME_1-2-rgb_front,260
+1G8LIWgKLME_3-2-rgb_front,"For a very small intricate design like an ""i"" you're going to want to use the smallest size that you have where as if you're wanting to do something large such as the sun you're going to want to use the largest end that you have.",1G8LIWgKLME,1G8LIWgKLME,24.58,42.41,1G8LIWgKLME_2-2-rgb_front,847
+1G8LIWgKLME_4-2-rgb_front,There's also sizes if you wanted to do things like buttons or just small designs like that.,1G8LIWgKLME,1G8LIWgKLME,42.55,52.7,1G8LIWgKLME_3-2-rgb_front,370
+1G8LIWgKLME_5-2-rgb_front,For your polish color you're going to want to use a polish that is either complimentary or contrasting.,1G8LIWgKLME,1G8LIWgKLME,52.79,59.81,1G8LIWgKLME_4-2-rgb_front,378
+1G8LIWgKLME_6-2-rgb_front,I prefer contrasting just so that the design actually sticks out and stands better and so that it is more easily available to be seen.,1G8LIWgKLME,1G8LIWgKLME,59.93,75.3,1G8LIWgKLME_5-2-rgb_front,618
+1QmgK8f5JnY_0-1-rgb_front,"Hello, my names Rebecca Herrick, I'm a licensed massage therapist in Wilmington, North Carolina and I'm here to give my review on Massage Parlors.",1QmgK8f5JnY,1QmgK8f5JnY,0.31,11.72,,194
+1QmgK8f5JnY_1-1-rgb_front,"First of all Massage Parlor is a very dated term and often has some negative connotations that are associated with it and as a massage therapist we worked hard to kind of steer away from that and, you know, work, hard to get the respect that the therapeutic aspect of massage therapy deserves.",1QmgK8f5JnY,1QmgK8f5JnY,11.75,37.03,1QmgK8f5JnY_0-1-rgb_front,440
+1QmgK8f5JnY_2-1-rgb_front,"So, having said that, when you're looking for a place to have a massage you can call it a massage therapy center, or a wellness center, something of that nature, and when you're doing so you want to always make sure that you check the background of the location and also of the therapist practicing there.",1QmgK8f5JnY,1QmgK8f5JnY,38.77,65.16,1QmgK8f5JnY_1-1-rgb_front,465
+1QmgK8f5JnY_3-1-rgb_front,You always want to make sure that you get the highest quality care by receiving massage from the most educated and absolutely licensed therapist.,1QmgK8f5JnY,1QmgK8f5JnY,65.17,71.9,1QmgK8f5JnY_2-1-rgb_front,257
+1QmgK8f5JnY_4-1-rgb_front,"You can check with local networks, newspapers, other massage therapists in the area, for reviews on massage therapy centers in your area and that would be my take on massage parlor reviews.",1QmgK8f5JnY,1QmgK8f5JnY,78.13,104.62,1QmgK8f5JnY_3-1-rgb_front,389
+1V-aOg8wCT4_10-1-rgb_front,"Now, lets not forget your charity or event website.",1V-aOg8wCT4,1V-aOg8wCT4,58.55,62.96,1V-aOg8wCT4_9-1-rgb_front,75
+1V-aOg8wCT4_11-1-rgb_front,This is a great place to promote your sponsors as well.,1V-aOg8wCT4,1V-aOg8wCT4,63.39,68.18,1V-aOg8wCT4_10-1-rgb_front,62
+1V-aOg8wCT4_12-1-rgb_front,"You can do this through banners, links to their website, or actual ads on your site promoting the sponsor.",1V-aOg8wCT4,1V-aOg8wCT4,68.34,79.36,1V-aOg8wCT4_11-1-rgb_front,189
+1V-aOg8wCT4_13-1-rgb_front,"Finally, I hope you're going to hand out lots and lots of flyers.",1V-aOg8wCT4,1V-aOg8wCT4,79.72,84.27,1V-aOg8wCT4_12-1-rgb_front,97
+1V-aOg8wCT4_14-1-rgb_front,A flyer is a great way to promote the sponsor.,1V-aOg8wCT4,1V-aOg8wCT4,84.29,88.02,1V-aOg8wCT4_13-1-rgb_front,71
+1V-aOg8wCT4_15-1-rgb_front,"Again, depending on the level, they might just get their website listed.",1V-aOg8wCT4,1V-aOg8wCT4,88.52,91.32,1V-aOg8wCT4_14-1-rgb_front,80
+1V-aOg8wCT4_16-1-rgb_front,"If it's a large sponsor, they can have their logo or their full ad.",1V-aOg8wCT4,1V-aOg8wCT4,91.84,98.89,1V-aOg8wCT4_15-1-rgb_front,92
+1V-aOg8wCT4_17-1-rgb_front,The more colorful and bright the flyer the better.,1V-aOg8wCT4,1V-aOg8wCT4,99.47,103.34,1V-aOg8wCT4_16-1-rgb_front,64
+1V-aOg8wCT4_18-1-rgb_front,"Remember sponsors are looking for potential customers, promotion, and publicity.",1V-aOg8wCT4,1V-aOg8wCT4,103.68,110.98,1V-aOg8wCT4_17-1-rgb_front,114
+1V-aOg8wCT4_19-1-rgb_front,Also remember a happy sponsor is sure to come back year after year after year.,1V-aOg8wCT4,1V-aOg8wCT4,112.24,116.5,1V-aOg8wCT4_18-1-rgb_front,128
+1V-aOg8wCT4_2-1-rgb_front,How can I create great sponsorships for my golf tournament you cry?,1V-aOg8wCT4,1V-aOg8wCT4,3.65,11.79,,97
+1V-aOg8wCT4_3-1-rgb_front,"Well, no worries because that's exactly what this segment is about.",1V-aOg8wCT4,1V-aOg8wCT4,11.84,16.96,1V-aOg8wCT4_2-1-rgb_front,76
+1V-aOg8wCT4_4-1-rgb_front,Let's take a look at some of the perks you can offer potential sponsors.,1V-aOg8wCT4,1V-aOg8wCT4,17.19,23.33,1V-aOg8wCT4_3-1-rgb_front,78
+1V-aOg8wCT4_5-1-rgb_front,"To begin with, you can utilize your very own golf program that you're going to be printing.",1V-aOg8wCT4,1V-aOg8wCT4,23.36,29.13,1V-aOg8wCT4_4-1-rgb_front,101
+1V-aOg8wCT4_6-1-rgb_front,"Now, depending on the size of the sponsorship, you can offer quarter page, half page, or full-page ads.",1V-aOg8wCT4,1V-aOg8wCT4,29.63,36.85,1V-aOg8wCT4_5-1-rgb_front,165
+1V-aOg8wCT4_7-1-rgb_front,Title sponsors might get advertisement on the front the back cover of the actual program.,1V-aOg8wCT4,1V-aOg8wCT4,37.3,43.78,1V-aOg8wCT4_6-1-rgb_front,119
+1V-aOg8wCT4_8-1-rgb_front,Another great perk; offer a vendor table at the event.,1V-aOg8wCT4,1V-aOg8wCT4,44.16,50.8,1V-aOg8wCT4_7-1-rgb_front,88
+1V-aOg8wCT4_9-1-rgb_front,Companies will love the idea that they get to interact with the actual golfers at the event.,1V-aOg8wCT4,1V-aOg8wCT4,50.8,57.99,1V-aOg8wCT4_8-1-rgb_front,127
+1aJwX9nRlmk_0-2-rgb_front,"ELIZABETH ROSE: The next thing we're going to do is bring some movement into this area with all the tension, where your headache is happening.",1aJwX9nRlmk,1aJwX9nRlmk,0.0,9.42,,376
+1aJwX9nRlmk_1-2-rgb_front,"So, I'm going to put my hair back, so that you guys can see it, it's a little bit easier.",1aJwX9nRlmk,1aJwX9nRlmk,9.42,15.46,1aJwX9nRlmk_0-2-rgb_front,396
+1aJwX9nRlmk_10-2-rgb_front,"Again, when you're here, the shoulders aren't creeping up.",1aJwX9nRlmk,1aJwX9nRlmk,100.63,104.6,1aJwX9nRlmk_9-2-rgb_front,194
+1aJwX9nRlmk_11-2-rgb_front,They're still melting down on either side of the spine.,1aJwX9nRlmk,1aJwX9nRlmk,104.6,109.69,1aJwX9nRlmk_10-2-rgb_front,138
+1aJwX9nRlmk_12-2-rgb_front,"You're going to inhale, think of breathing into the back of the neck and between the shoulder blades, and exhale.",1aJwX9nRlmk,1aJwX9nRlmk,109.69,118.86,1aJwX9nRlmk_11-2-rgb_front,481
+1aJwX9nRlmk_13-2-rgb_front,"Stick with your 3-part breath into the belly, into the ribcage, and then into the heart.",1aJwX9nRlmk,1aJwX9nRlmk,118.98,127.14,1aJwX9nRlmk_12-2-rgb_front,382
+1aJwX9nRlmk_14-2-rgb_front,"Then as you inhale, you're going to let the left ear come over toward the left shoulder.",1aJwX9nRlmk,1aJwX9nRlmk,127.21,135.47,1aJwX9nRlmk_13-2-rgb_front,341
+1aJwX9nRlmk_15-2-rgb_front,"Notice again, the right shoulder isn't going to pop up and the left shoulder isn't going to come up to support the ear in your chest.",1aJwX9nRlmk,1aJwX9nRlmk,135.47,143.1,1aJwX9nRlmk_14-2-rgb_front,328
+1aJwX9nRlmk_16-2-rgb_front,Just keep then gently falling down.,1aJwX9nRlmk,1aJwX9nRlmk,143.15,146.32,1aJwX9nRlmk_15-2-rgb_front,177
+1aJwX9nRlmk_17-2-rgb_front,"So inhale and lift your ear up, and you're going to breathe here.",1aJwX9nRlmk,1aJwX9nRlmk,146.32,153.43,1aJwX9nRlmk_16-2-rgb_front,245
+1aJwX9nRlmk_18-2-rgb_front,"Now, slowly begin to connect these movements, exhaling as you drop the chin toward the chest and inhaling as the ear rolls up towards the shoulder blades, and do this as long as you're comfortable.",1aJwX9nRlmk,1aJwX9nRlmk,153.43,173.91,1aJwX9nRlmk_17-2-rgb_front,876
+1aJwX9nRlmk_19-2-rgb_front,I'd say at least 20 repetitions.,1aJwX9nRlmk,1aJwX9nRlmk,173.91,177.12,1aJwX9nRlmk_18-2-rgb_front,94
+1aJwX9nRlmk_2-2-rgb_front,"All that's going to happen is you're going to be seated in your easy seated pose, again, with your sits bone on the floor or on a block.",1aJwX9nRlmk,1aJwX9nRlmk,15.61,27.47,1aJwX9nRlmk_1-2-rgb_front,396
+1aJwX9nRlmk_20-2-rgb_front,"If you can keep it going for a minute, that's great, but stick with the breath.",1aJwX9nRlmk,1aJwX9nRlmk,177.15,182.3,1aJwX9nRlmk_19-2-rgb_front,215
+1aJwX9nRlmk_21-2-rgb_front,Let the breath be the emphasis for every movement and don't ever let yourself give the breath away.,1aJwX9nRlmk,1aJwX9nRlmk,182.6,187.86,1aJwX9nRlmk_20-2-rgb_front,272
+1aJwX9nRlmk_3-2-rgb_front,"You're going to inhale and the crown of the head reaches up so that you're sitting tall, but you're not going to be propped this way.",1aJwX9nRlmk,1aJwX9nRlmk,27.47,39.95,1aJwX9nRlmk_2-2-rgb_front,432
+1aJwX9nRlmk_4-2-rgb_front,"If you're sitting this way, then just relax so that your shoulder blades fall down on either side of the spine, but the crown of your head is still reaching up.",1aJwX9nRlmk,1aJwX9nRlmk,39.96,53.04,1aJwX9nRlmk_3-2-rgb_front,596
+1aJwX9nRlmk_5-2-rgb_front,"You're going to inhale, and then as you exhale, just gently drop the right ear toward the right shoulder.",1aJwX9nRlmk,1aJwX9nRlmk,53.12,60.77,1aJwX9nRlmk_4-2-rgb_front,352
+1aJwX9nRlmk_6-2-rgb_front,"Notice how my shoulders don't creep up--[SOUNDS LIKE] errk--as I drop the ear down, right?",1aJwX9nRlmk,1aJwX9nRlmk,60.77,68.71,1aJwX9nRlmk_5-2-rgb_front,445
+1aJwX9nRlmk_7-2-rgb_front,"They're going to stay exactly where they are and feeling my shoulder blades melting down on either side of the spine, and I'm exhaling to just drop my right ear toward the right shoulder.",1aJwX9nRlmk,1aJwX9nRlmk,69.03,81.99,1aJwX9nRlmk_6-2-rgb_front,573
+1aJwX9nRlmk_8-2-rgb_front,"Take a couple breaths here, inhaling and exhaling, and then, in and out through the nose, remember.",1aJwX9nRlmk,1aJwX9nRlmk,82.01,91.73,1aJwX9nRlmk_7-2-rgb_front,428
+1aJwX9nRlmk_9-2-rgb_front,"And then on an exhale, you're going to go ahead and let the chin fall toward the chest.",1aJwX9nRlmk,1aJwX9nRlmk,91.73,100.63,1aJwX9nRlmk_8-2-rgb_front,414
+204P_kHHWks_0-2-rgb_front,Now I've been applying product to both eyes and I'm finishing out the top of the left side of her eye.,204P_kHHWks,204P_kHHWks,0.02,7.73,,167
+204P_kHHWks_11-2-rgb_front,"Open, relax and open those eyes.",204P_kHHWks,204P_kHHWks,85.26,87.84,204P_kHHWks_0-2-rgb_front,49
+204P_kHHWks_12-2-rgb_front,"Then I look for even and these are beautifully, evenly done.",204P_kHHWks,204P_kHHWks,89.9,94.72,204P_kHHWks_11-2-rgb_front,91
+204P_kHHWks_13-2-rgb_front,"Then what I would do is get ice packs out and, before I even start the bottoms, just to relieve any kind of swelling and for comfort, I would ice pack her eyes and let her relax and take five minutes while I set up for the step two to the bottom eyes.",204P_kHHWks,204P_kHHWks,94.8,117.6,204P_kHHWks_12-2-rgb_front,380
+279MO2nwC_E_1-2-rgb_front,In this section we are going to talk about full body movement.,279MO2nwC_E,279MO2nwC_E,8.15,13.28,,161
+279MO2nwC_E_10-2-rgb_front,So you really want to make sure that you do that full body movement throughout your whole entire body especially as a cross country runner.,279MO2nwC_E,279MO2nwC_E,101.75,108.52,279MO2nwC_E_9-2-rgb_front,333
+279MO2nwC_E_2-2-rgb_front,So what I mean by full body movement is from your upper body down to your lower body.,279MO2nwC_E,279MO2nwC_E,13.91,21.14,279MO2nwC_E_1-2-rgb_front,196
+279MO2nwC_E_3-2-rgb_front,"Your upper body you do not want to be timid or shy, I know it is going to feel a little silly if you do not really move your arms, but you should really be moving your arms.",279MO2nwC_E,279MO2nwC_E,21.37,31.48,279MO2nwC_E_2-2-rgb_front,405
+279MO2nwC_E_4-2-rgb_front,"And the reason you will see is that arm movement a lot, especially when the intensity increases, and let's say you come to that hill, you really want to make sure you move your arms because you are now circulating a lot of blood flow evenly throughout your body, and you are getting more oxygen into your lungs, and you are breathing in that fresh air, and blowing it back out with full body movement.",279MO2nwC_E,279MO2nwC_E,31.66,56.78,279MO2nwC_E_3-2-rgb_front,951
+279MO2nwC_E_5-2-rgb_front,"Now as far as your lower body, your legs, you want to make sure that you put most of the weight down your calves.",279MO2nwC_E,279MO2nwC_E,56.88,67.11,279MO2nwC_E_4-2-rgb_front,263
+279MO2nwC_E_6-2-rgb_front,"So you see if I was running, as I am running I am putting most of the weight on my calves and I am moving my body and I am moving my arms and my shoulders.",279MO2nwC_E,279MO2nwC_E,67.16,76.77,279MO2nwC_E_5-2-rgb_front,447
+279MO2nwC_E_7-2-rgb_front,And breathing in through the nose and breathing out through the mouth.,279MO2nwC_E,279MO2nwC_E,76.84,83.04,279MO2nwC_E_6-2-rgb_front,116
+279MO2nwC_E_8-2-rgb_front,"And will you notice the difference the next time you run, just remember in your mind what I said.",279MO2nwC_E,279MO2nwC_E,83.13,88.6,279MO2nwC_E_7-2-rgb_front,201
+279MO2nwC_E_9-2-rgb_front,"The more that you move your arms, you are going to see yourself increasing in speed and you are going to see the increase in oxygen level compared to just standing there which does very little movement.",279MO2nwC_E,279MO2nwC_E,88.79,101.59,279MO2nwC_E_8-2-rgb_front,448
+2SnVWW3MOB4_1-2-rgb_front,We are talking about what hairstyles suit a diamond shape face.,2SnVWW3MOB4,2SnVWW3MOB4,5.18,11.49,,120
+2SnVWW3MOB4_2-2-rgb_front,You want to reduce the width at the sides so you want to go with a bob something short.,2SnVWW3MOB4,2SnVWW3MOB4,11.5,22.56,2SnVWW3MOB4_1-2-rgb_front,211
+2SnVWW3MOB4_3-2-rgb_front,Probably a little bit shorter then this but something like this would be good.,2SnVWW3MOB4,2SnVWW3MOB4,22.64,28.5,2SnVWW3MOB4_2-2-rgb_front,98
+2SnVWW3MOB4_4-2-rgb_front,Diamond shape faces need a narrow side and at the chin so if it came down to the chin that would be really good it would complete your look.,2SnVWW3MOB4,2SnVWW3MOB4,28.51,46.77,2SnVWW3MOB4_3-2-rgb_front,323
+2SnVWW3MOB4_5-2-rgb_front,Avoid wearing height on top or volume on the sides.,2SnVWW3MOB4,2SnVWW3MOB4,46.87,55.03,2SnVWW3MOB4_4-2-rgb_front,118
+2SnVWW3MOB4_6-2-rgb_front,You can use a bang to cover a narrow forehead or something like this would be really great right about here like this really helps change the shape of the face and give you a better look throughout.,2SnVWW3MOB4,2SnVWW3MOB4,55.31,79.62,2SnVWW3MOB4_5-2-rgb_front,441
+2ri5HYm48MA_0-2-rgb_front,REBECCA SATO: Hi.,2ri5HYm48MA,2ri5HYm48MA,0.65,1.33,,17
+2ri5HYm48MA_10-2-rgb_front,"So what they do is they pick someone for each character that they think kind of embodies that character, someone who realizes that they know but that they don't know too well.",2ri5HYm48MA,2ri5HYm48MA,72.07,82.33,2ri5HYm48MA_9-2-rgb_front,247
+2ri5HYm48MA_11-2-rgb_front,"And what they do is every time they're writing from that character's perspective or about that character, they will think what would that person that I know do, how would they react, how would they sound, how would they look and kind of look at that from that perspective.",2ri5HYm48MA,2ri5HYm48MA,82.33,96.67,2ri5HYm48MA_10-2-rgb_front,345
+2ri5HYm48MA_12-2-rgb_front,"And what's nice is that it's not someone that you know super well and so there's still a lot of room for imagination and creative interpretation which, I think, is very important and we should let it do that.",2ri5HYm48MA,2ri5HYm48MA,96.67,105.74,2ri5HYm48MA_11-2-rgb_front,217
+2ri5HYm48MA_13-2-rgb_front,"So basically, you have this really great base where you know the person enough that you have something to start with but you don't know him so well that it takes away their wonder.",2ri5HYm48MA,2ri5HYm48MA,105.74,116.69,2ri5HYm48MA_12-2-rgb_front,263
+2ri5HYm48MA_14-2-rgb_front,"So try that with your characters and that should really give you something to start with, a really great framework.",2ri5HYm48MA,2ri5HYm48MA,116.69,121.64,2ri5HYm48MA_13-2-rgb_front,119
+2ri5HYm48MA_2-2-rgb_front,And we're going to talk about character development and how to create really great characters that people are passionate about.,2ri5HYm48MA,2ri5HYm48MA,3.48,9.17,2ri5HYm48MA_0-2-rgb_front,137
+2ri5HYm48MA_3-2-rgb_front,"And it doesn't matter if they love them or they hate them or they love to hate them, preferably a little of everything.",2ri5HYm48MA,2ri5HYm48MA,9.47,16.25,2ri5HYm48MA_2-2-rgb_front,162
+2ri5HYm48MA_4-2-rgb_front,"Not necessarily with the same character, that will be a little conflicted, but with a range of characters that people are having this emotional experience and are able to identify with these people as they read.",2ri5HYm48MA,2ri5HYm48MA,16.35,26.85,2ri5HYm48MA_3-2-rgb_front,251
+2ri5HYm48MA_5-2-rgb_front,"And right now, I'm talking primarily about stories whether it's short stories or novels, but this actually also applies to all kinds of writing even copywriting and advertising and if you're writing a storyboard for a commercial.",2ri5HYm48MA,2ri5HYm48MA,26.98,43.74,2ri5HYm48MA_4-2-rgb_front,403
+2ri5HYm48MA_6-2-rgb_front,"I mean, you still want to know how to develop good characters.",2ri5HYm48MA,2ri5HYm48MA,43.8,46.22,2ri5HYm48MA_5-2-rgb_front,58
+2ri5HYm48MA_7-2-rgb_front,"But primarily, I'll be talking about it from the standpoint of traditional story.",2ri5HYm48MA,2ri5HYm48MA,46.71,52.29,2ri5HYm48MA_6-2-rgb_front,133
+2ri5HYm48MA_8-2-rgb_front,So one thing that I find to be very helpful and that a lot of really great writers have mentioned--and these are writers who are rich and famous so it's obviously worked for them--is to develop a really great character.,2ri5HYm48MA,2ri5HYm48MA,52.8,67.8,2ri5HYm48MA_7-2-rgb_front,359
+2ri5HYm48MA_9-2-rgb_front,It helps to have a little bit of information but not too much information.,2ri5HYm48MA,2ri5HYm48MA,67.8,72.04,2ri5HYm48MA_8-2-rgb_front,101
+2yudAtTnZrg_1-1-rgb_front,Now you put the eggs in before you put your flour mixture in.,2yudAtTnZrg,2yudAtTnZrg,9.18,14.17,,133
+2yudAtTnZrg_10-1-rgb_front,"Now this is, you just don't put the whole thing in there you have to gradually put your flour in there.",2yudAtTnZrg,2yudAtTnZrg,70.45,80.65,2yudAtTnZrg_9-1-rgb_front,188
+2yudAtTnZrg_11-1-rgb_front,Let me repeat you do not want to just throw it in your flour all at once.,2yudAtTnZrg,2yudAtTnZrg,80.8,86.18,2yudAtTnZrg_10-1-rgb_front,122
+2yudAtTnZrg_12-1-rgb_front,Just gradually do it.,2yudAtTnZrg,2yudAtTnZrg,86.95,91.05,2yudAtTnZrg_11-1-rgb_front,43
+2yudAtTnZrg_13-1-rgb_front,Maybe a couple of cups at a time.,2yudAtTnZrg,2yudAtTnZrg,92.38,97.61,2yudAtTnZrg_12-1-rgb_front,102
+2yudAtTnZrg_2-1-rgb_front,"Like I said, if you still have a little Crisco and it is floating around it is okay.",2yudAtTnZrg,2yudAtTnZrg,15.17,24.92,2yudAtTnZrg_1-1-rgb_front,182
+2yudAtTnZrg_3-1-rgb_front,At this time I'm going to add my flour and it takes 6 cups so you need to get.,2yudAtTnZrg,2yudAtTnZrg,25.54,41.05,2yudAtTnZrg_2-1-rgb_front,204
+2yudAtTnZrg_4-1-rgb_front,It is great if you have one of these really big measuring cups.,2yudAtTnZrg,2yudAtTnZrg,43.09,46.47,2yudAtTnZrg_3-1-rgb_front,137
+2yudAtTnZrg_5-1-rgb_front,Let me see.,2yudAtTnZrg,2yudAtTnZrg,46.66,47.18,2yudAtTnZrg_4-1-rgb_front,14
+2yudAtTnZrg_6-1-rgb_front,Let's get the glasses.,2yudAtTnZrg,2yudAtTnZrg,47.3,50.36,2yudAtTnZrg_5-1-rgb_front,72
+2yudAtTnZrg_7-1-rgb_front,"Let me see if I have, I only have 4 in there.",2yudAtTnZrg,2yudAtTnZrg,51.23,55.79,2yudAtTnZrg_6-1-rgb_front,93
+2yudAtTnZrg_8-1-rgb_front,Let me add some more.,2yudAtTnZrg,2yudAtTnZrg,56.08,58.79,2yudAtTnZrg_7-1-rgb_front,18
+2yudAtTnZrg_9-1-rgb_front,Okay I have my 6 cups.,2yudAtTnZrg,2yudAtTnZrg,59.1,61.11,2yudAtTnZrg_8-1-rgb_front,211
+33YRZ5UZTA4_0-2-rgb_front,"JASON PAINTER: Hi, I'm Jason.",33YRZ5UZTA4,33YRZ5UZTA4,0.39,1.51,,24
+33YRZ5UZTA4_1-2-rgb_front,"Today, we're painting on glass.",33YRZ5UZTA4,33YRZ5UZTA4,1.66,5.06,33YRZ5UZTA4_0-2-rgb_front,34
+33YRZ5UZTA4_10-2-rgb_front,"Fill that in, just like that.",33YRZ5UZTA4,33YRZ5UZTA4,79.51,81.27,33YRZ5UZTA4_9-2-rgb_front,32
+33YRZ5UZTA4_11-2-rgb_front,We don't have to do anything anymore.,33YRZ5UZTA4,33YRZ5UZTA4,81.36,85.22,33YRZ5UZTA4_10-2-rgb_front,43
+33YRZ5UZTA4_12-2-rgb_front,We'll be defeating the purpose.,33YRZ5UZTA4,33YRZ5UZTA4,85.47,87.52,33YRZ5UZTA4_11-2-rgb_front,27
+33YRZ5UZTA4_13-2-rgb_front,"We'll just spread that paint out thinner and thinner, and just be frustrated in the end.",33YRZ5UZTA4,33YRZ5UZTA4,87.64,91.9,33YRZ5UZTA4_12-2-rgb_front,132
+33YRZ5UZTA4_14-2-rgb_front,"So, this line here is not touching.",33YRZ5UZTA4,33YRZ5UZTA4,92.04,94.68,33YRZ5UZTA4_13-2-rgb_front,35
+33YRZ5UZTA4_15-2-rgb_front,"We can just put a little dab of black there, same as up here.",33YRZ5UZTA4,33YRZ5UZTA4,94.88,100.59,33YRZ5UZTA4_14-2-rgb_front,173
+33YRZ5UZTA4_16-2-rgb_front,"Just, basically, just want everything to touch and that's going to make a big difference when we fill in with the white.",33YRZ5UZTA4,33YRZ5UZTA4,100.83,118.27,33YRZ5UZTA4_15-2-rgb_front,270
+33YRZ5UZTA4_17-2-rgb_front,"So, go ahead and fill in everywhere that you gotta fill in, and look at it, and we'll wait for that to dry.",33YRZ5UZTA4,33YRZ5UZTA4,118.35,128.74,33YRZ5UZTA4_16-2-rgb_front,123
+33YRZ5UZTA4_18-2-rgb_front,And touch up the white.,33YRZ5UZTA4,33YRZ5UZTA4,128.89,130.94,33YRZ5UZTA4_17-2-rgb_front,15
+33YRZ5UZTA4_2-2-rgb_front,"We have put the first coat, the liner, and the fill in on all three of the steps.",33YRZ5UZTA4,33YRZ5UZTA4,5.11,11.51,33YRZ5UZTA4_1-2-rgb_front,179
+33YRZ5UZTA4_3-2-rgb_front,It's looking like it's ready now to be--we can really start touching up the liner.,33YRZ5UZTA4,33YRZ5UZTA4,11.95,20.46,33YRZ5UZTA4_2-2-rgb_front,133
+33YRZ5UZTA4_4-2-rgb_front,We can really start touching up the black.,33YRZ5UZTA4,33YRZ5UZTA4,20.62,23.05,33YRZ5UZTA4_3-2-rgb_front,48
+33YRZ5UZTA4_5-2-rgb_front,"If we look at it, we can see spots that-that filled in and spots that didn't, and we don't have to worry about how these thick line--it really looks bad right now, but we're just in the beginning stages.",33YRZ5UZTA4,33YRZ5UZTA4,23.33,39.61,33YRZ5UZTA4_4-2-rgb_front,316
+33YRZ5UZTA4_6-2-rgb_front,"So, really, those we want to do is make sure that all of the black lines connect, everywhere that we know they're going to need to, and all of the lines are filled in that we know we're going to need to.",33YRZ5UZTA4,33YRZ5UZTA4,39.59,49.64,33YRZ5UZTA4_5-2-rgb_front,208
+33YRZ5UZTA4_7-2-rgb_front,"So, we just take the angle brush back again, get black back out, and really, the less paint you have on here, the better, just a very little on the tip of your brush.",33YRZ5UZTA4,33YRZ5UZTA4,50.2,70.0,33YRZ5UZTA4_6-2-rgb_front,373
+33YRZ5UZTA4_8-2-rgb_front,"This line right here needs to be filled in, and we're not actually going to make any brush strokes.",33YRZ5UZTA4,33YRZ5UZTA4,70.08,77.64,33YRZ5UZTA4_7-2-rgb_front,72
+33YRZ5UZTA4_9-2-rgb_front,We're just going to set the paint right on it.,33YRZ5UZTA4,33YRZ5UZTA4,77.71,79.39,33YRZ5UZTA4_8-2-rgb_front,78
+33jxeIIbBnM_0-1-rgb_front,"Hi, my name is Dave Andrews.",33jxeIIbBnM,33jxeIIbBnM,1.48,4.28,,120
+33jxeIIbBnM_1-1-rgb_front,"Today, I'm going to show you how to run a macro in Excel from Access.",33jxeIIbBnM,33jxeIIbBnM,4.5,11.18,33jxeIIbBnM_0-1-rgb_front,75
+33jxeIIbBnM_10-1-rgb_front,Click on your office button.,33jxeIIbBnM,33jxeIIbBnM,69.96,72.45,33jxeIIbBnM_9-1-rgb_front,29
+33jxeIIbBnM_11-1-rgb_front,Go to save as.,33jxeIIbBnM,33jxeIIbBnM,72.55,74.4,33jxeIIbBnM_10-1-rgb_front,25
+33jxeIIbBnM_12-1-rgb_front,We're going to save macro enable workbook.,33jxeIIbBnM,33jxeIIbBnM,74.5,77.38,33jxeIIbBnM_11-1-rgb_front,55
+33jxeIIbBnM_13-1-rgb_front,Let's name it book one and just say save.,33jxeIIbBnM,33jxeIIbBnM,77.71,80.22,33jxeIIbBnM_12-1-rgb_front,64
+33jxeIIbBnM_14-1-rgb_front,"Now, we need to go into Access by clicking the start button, all programs, Microsoft Office.",33jxeIIbBnM,33jxeIIbBnM,80.99,98.79,33jxeIIbBnM_13-1-rgb_front,229
+33jxeIIbBnM_15-1-rgb_front,Let's open Access.,33jxeIIbBnM,33jxeIIbBnM,99.68,100.57,33jxeIIbBnM_14-1-rgb_front,21
+33jxeIIbBnM_16-1-rgb_front,We need to create a new database by clicking on the office button and saying new.,33jxeIIbBnM,33jxeIIbBnM,100.79,115.38,33jxeIIbBnM_15-1-rgb_front,87
+33jxeIIbBnM_17-1-rgb_front,Let's leave the name as database one and say create.,33jxeIIbBnM,33jxeIIbBnM,116.11,120.75,33jxeIIbBnM_16-1-rgb_front,74
+33jxeIIbBnM_18-1-rgb_front,Here's our new database.,33jxeIIbBnM,33jxeIIbBnM,120.81,122.81,33jxeIIbBnM_17-1-rgb_front,27
+33jxeIIbBnM_19-1-rgb_front,"To run that macro from Excel macro from Access, hold down the ALT key on the keyboard.",33jxeIIbBnM,33jxeIIbBnM,123.13,134.18,33jxeIIbBnM_18-1-rgb_front,138
+33jxeIIbBnM_2-1-rgb_front,Let's begin by opening up Excel.,33jxeIIbBnM,33jxeIIbBnM,11.25,13.25,33jxeIIbBnM_1-1-rgb_front,35
+33jxeIIbBnM_20-1-rgb_front,Press F11.,33jxeIIbBnM,33jxeIIbBnM,134.25,135.78,33jxeIIbBnM_19-1-rgb_front,17
+33jxeIIbBnM_21-1-rgb_front,This brings up the visual basic code editor.,33jxeIIbBnM,33jxeIIbBnM,136.11,142.58,33jxeIIbBnM_20-1-rgb_front,49
+33jxeIIbBnM_22-1-rgb_front,Go to the top.,33jxeIIbBnM,33jxeIIbBnM,143.1,144.44,33jxeIIbBnM_21-1-rgb_front,17
+33jxeIIbBnM_23-1-rgb_front,Say insert.,33jxeIIbBnM,33jxeIIbBnM,144.64,147.47,33jxeIIbBnM_22-1-rgb_front,20
+33jxeIIbBnM_24-1-rgb_front,We're going to say module.,33jxeIIbBnM,33jxeIIbBnM,147.92,150.7,33jxeIIbBnM_23-1-rgb_front,26
+33jxeIIbBnM_25-1-rgb_front,"In our code editor, we're going to begin typing in some code.",33jxeIIbBnM,33jxeIIbBnM,151.82,154.57,33jxeIIbBnM_24-1-rgb_front,62
+33jxeIIbBnM_26-1-rgb_front,"Now that we have our function created in Access, I'm going to go over it with you real quick.",33jxeIIbBnM,33jxeIIbBnM,155.46,162.68,33jxeIIbBnM_25-1-rgb_front,93
+33jxeIIbBnM_27-1-rgb_front,First thing it does is it creates a variable called Excel and the sign says Excel value.,33jxeIIbBnM,33jxeIIbBnM,163.23,174.9,33jxeIIbBnM_26-1-rgb_front,182
+33jxeIIbBnM_28-1-rgb_front,"To the create object function, it launches a new Excel dot application scheme.",33jxeIIbBnM,33jxeIIbBnM,175.24,182.57,33jxeIIbBnM_27-1-rgb_front,135
+33jxeIIbBnM_29-1-rgb_front,It then opens up a Excel database that we give to it which is the path right here that I typed in and then it simply says Excel dot run and then the name of the macro we created which was macro one.,33jxeIIbBnM,33jxeIIbBnM,182.69,202.48,33jxeIIbBnM_28-1-rgb_front,349
+33jxeIIbBnM_3-1-rgb_front,Let's first create our macro by clicking the view tab.,33jxeIIbBnM,33jxeIIbBnM,13.43,19.97,33jxeIIbBnM_2-1-rgb_front,87
+33jxeIIbBnM_30-1-rgb_front,You then could link to this function Excel test within an object in your database.,33jxeIIbBnM,33jxeIIbBnM,203.4,210.84,33jxeIIbBnM_29-1-rgb_front,113
+33jxeIIbBnM_31-1-rgb_front,My name is Dave Andrews and I just showed you how to run an Excel macro from Access.,33jxeIIbBnM,33jxeIIbBnM,211.12,223.86,33jxeIIbBnM_30-1-rgb_front,106
+33jxeIIbBnM_4-1-rgb_front,Go into macros and saying record macro.,33jxeIIbBnM,33jxeIIbBnM,21.08,25.64,33jxeIIbBnM_3-1-rgb_front,82
+33jxeIIbBnM_5-1-rgb_front,We're going to name this macro one just say okay.,33jxeIIbBnM,33jxeIIbBnM,26.08,33.75,33jxeIIbBnM_4-1-rgb_front,73
+33jxeIIbBnM_6-1-rgb_front,"All this macro is going to do is type the number one, two, three, four across the top row.",33jxeIIbBnM,33jxeIIbBnM,34.27,42.41,33jxeIIbBnM_5-1-rgb_front,161
+33jxeIIbBnM_7-1-rgb_front,"So, let's stop record by clicking this little drop down arrow and saying stop record.",33jxeIIbBnM,33jxeIIbBnM,43.3,56.16,33jxeIIbBnM_6-1-rgb_front,215
+33jxeIIbBnM_8-1-rgb_front,"Now, we have our macro created.",33jxeIIbBnM,33jxeIIbBnM,56.47,59.39,33jxeIIbBnM_7-1-rgb_front,29
+33jxeIIbBnM_9-1-rgb_front,"So, let's save this as a macro enable workbook.",33jxeIIbBnM,33jxeIIbBnM,59.82,66.49,33jxeIIbBnM_8-1-rgb_front,62
+39FN42e41r0_0-1-rgb_front,"MICHAEL ROSENGART: Right now, I'm here with two personal trainers, Ryan Regensburg and Jonesy and we're doing some renegade rows.",39FN42e41r0,39FN42e41r0,0.11,9.94,,163
+39FN42e41r0_1-1-rgb_front,"So, what I want you to do is go ahead and get into a push up position with two dumbbells in your hands, whereas Ryan's going to show us later on a little variation for it.",39FN42e41r0,39FN42e41r0,10.22,19.65,39FN42e41r0_0-1-rgb_front,184
+39FN42e41r0_10-1-rgb_front,"So, basically, he's just going to work one side at a time.",39FN42e41r0,39FN42e41r0,61.13,64.56,39FN42e41r0_9-1-rgb_front,60
+39FN42e41r0_11-1-rgb_front,The hand on the ground will give him a little more support and will make it a little easier.,39FN42e41r0,39FN42e41r0,65.11,69.84,39FN42e41r0_10-1-rgb_front,99
+39FN42e41r0_12-1-rgb_front,"And then once he does five, he's just going to switch over to the other side.",39FN42e41r0,39FN42e41r0,70.55,72.93,39FN42e41r0_11-1-rgb_front,80
+39FN42e41r0_13-1-rgb_front,"Again, for this workout, we're working for fifteen to twenty reps and another variation that I want you to work on or consider if you can do it, is a push up renegade row like Jonesy's doing here.",39FN42e41r0,39FN42e41r0,73.09,85.26,39FN42e41r0_12-1-rgb_front,252
+39FN42e41r0_14-1-rgb_front,"Each time you're going down, you're going to do a push up and then come back up.",39FN42e41r0,39FN42e41r0,86.08,95.34,39FN42e41r0_13-1-rgb_front,76
+39FN42e41r0_15-1-rgb_front,"It helps for a couple of different reasons, it helps again, to condition the chest but it also helps to stretch up--stretch out the anterior side of your shoulders which then allows you to get a deeper row.",39FN42e41r0,39FN42e41r0,95.98,108.89,39FN42e41r0_14-1-rgb_front,310
+39FN42e41r0_16-1-rgb_front,Alright.,39FN42e41r0,39FN42e41r0,109.24,109.81,39FN42e41r0_15-1-rgb_front,9
+39FN42e41r0_17-1-rgb_front,Good.,39FN42e41r0,39FN42e41r0,109.89,110.58,39FN42e41r0_16-1-rgb_front,3
+39FN42e41r0_18-1-rgb_front,"And then once you've done with fifteen or twenty reps, grab some water, meet us on the next exercise in the next clip.",39FN42e41r0,39FN42e41r0,111.37,120.64,39FN42e41r0_17-1-rgb_front,148
+39FN42e41r0_2-1-rgb_front,Jonesy's here in a push up position.,39FN42e41r0,39FN42e41r0,19.91,22.82,39FN42e41r0_1-1-rgb_front,42
+39FN42e41r0_3-1-rgb_front,"And what you're going to do is you're going to pull one of the dumbbells up into your rib cage, shifting your weight back and forth.",39FN42e41r0,39FN42e41r0,23.66,30.28,39FN42e41r0_2-1-rgb_front,132
+39FN42e41r0_4-1-rgb_front,"Now, if you're just starting on this, you may want to work with really wide feet.",39FN42e41r0,39FN42e41r0,30.6,34.77,39FN42e41r0_3-1-rgb_front,79
+39FN42e41r0_5-1-rgb_front,"That will give you more balance and support as you perform, alright?",39FN42e41r0,39FN42e41r0,34.86,39.61,39FN42e41r0_4-1-rgb_front,91
+39FN42e41r0_6-1-rgb_front,"At the same time, if you want a little bit more of a challenge, bring your feet closer together as you work.",39FN42e41r0,39FN42e41r0,39.93,44.56,39FN42e41r0_5-1-rgb_front,102
+39FN42e41r0_7-1-rgb_front,Exhale as you pull up and you're going to feel that you really get to use your abdominals and your obliques as you go back and forth.,39FN42e41r0,39FN42e41r0,45.47,52.88,39FN42e41r0_6-1-rgb_front,124
+39FN42e41r0_8-1-rgb_front,"Ryan, go ahead and get down.",39FN42e41r0,39FN42e41r0,53.14,55.12,39FN42e41r0_7-1-rgb_front,30
+39FN42e41r0_9-1-rgb_front,And Ryan's going to do a one-handed renegade row.,39FN42e41r0,39FN42e41r0,56.02,60.15,39FN42e41r0_8-1-rgb_front,65
+3EjKvwck6ss_0-1-rgb_front,"Now that we've blow dried and separated all the sub-sections, what we're going to do is go ahead and start with our finishing products.",3EjKvwck6ss,3EjKvwck6ss,1.06,9.67,,147
+3EjKvwck6ss_1-1-rgb_front,"What I like to do first is I like to heat the hair up just a little bit, especially just on the ends.",3EjKvwck6ss,3EjKvwck6ss,10.57,19.36,3EjKvwck6ss_0-1-rgb_front,124
+3EjKvwck6ss_10-1-rgb_front,Does it make the shine stay more?,3EjKvwck6ss,3EjKvwck6ss,56.87,58.73,3EjKvwck6ss_15-1-rgb_front,50
+3EjKvwck6ss_11-1-rgb_front,It does.,3EjKvwck6ss,3EjKvwck6ss,58.83,59.97,3EjKvwck6ss_10-1-rgb_front,12
+3EjKvwck6ss_12-1-rgb_front,"Basically what I do by heating up the hair, and you'll notice when you put it in, it kind of melts in your hair.",3EjKvwck6ss,3EjKvwck6ss,60.63,70.1,3EjKvwck6ss_11-1-rgb_front,176
+3EjKvwck6ss_13-1-rgb_front,It's like putting butter.,3EjKvwck6ss,3EjKvwck6ss,70.12,71.24,3EjKvwck6ss_12-1-rgb_front,20
+3EjKvwck6ss_14-1-rgb_front,"When you heat up butter, butter is going to spread better, so basically that's what this is.",3EjKvwck6ss,3EjKvwck6ss,72.53,77.1,3EjKvwck6ss_13-1-rgb_front,95
+3EjKvwck6ss_15-1-rgb_front,It's like spreading butter.,3EjKvwck6ss,3EjKvwck6ss,56.09,57.16,3EjKvwck6ss_9-1-rgb_front,25
+3EjKvwck6ss_16-1-rgb_front,Does it help with the dryness?,3EjKvwck6ss,3EjKvwck6ss,77.89,80.44,3EjKvwck6ss_14-1-rgb_front,30
+3EjKvwck6ss_17-1-rgb_front,It's not going to help with the dryness.,3EjKvwck6ss,3EjKvwck6ss,80.73,83.35,3EjKvwck6ss_16-1-rgb_front,62
+3EjKvwck6ss_18-1-rgb_front,The moisturizing conditioner is what's going to help with the dryness of your hair.,3EjKvwck6ss,3EjKvwck6ss,83.7,90.56,3EjKvwck6ss_17-1-rgb_front,100
+3EjKvwck6ss_19-1-rgb_front,"What this is going to do is just help to keep its shape, what we're going for.",3EjKvwck6ss,3EjKvwck6ss,91.27,97.79,3EjKvwck6ss_18-1-rgb_front,116
+3EjKvwck6ss_2-1-rgb_front,We're just going to heat up the hair.,3EjKvwck6ss,3EjKvwck6ss,12.34,14.92,3EjKvwck6ss_1-1-rgb_front,61
+3EjKvwck6ss_20-1-rgb_front,"It's pliable and it's fibrous, and it gives you some of that separation you want on your ends.",3EjKvwck6ss,3EjKvwck6ss,98.7,109.13,3EjKvwck6ss_19-1-rgb_front,148
+3EjKvwck6ss_21-1-rgb_front,Heat it up in your palms and just pull it through.,3EjKvwck6ss,3EjKvwck6ss,110.02,114.26,3EjKvwck6ss_20-1-rgb_front,59
+3EjKvwck6ss_22-1-rgb_front,There we go.,3EjKvwck6ss,3EjKvwck6ss,114.29,114.74,3EjKvwck6ss_21-1-rgb_front,14
+3EjKvwck6ss_23-1-rgb_front,Let's go ahead and go on to our next section.,3EjKvwck6ss,3EjKvwck6ss,116.64,118.47,3EjKvwck6ss_22-1-rgb_front,34
+3EjKvwck6ss_3-1-rgb_front,Then what I like to do is go on with my fiber pliable paste.,3EjKvwck6ss,3EjKvwck6ss,20.18,25.24,3EjKvwck6ss_2-1-rgb_front,90
+3EjKvwck6ss_4-1-rgb_front,A lot of people ask me why do you use that product before you go ahead and finalize and finish it.,3EjKvwck6ss,3EjKvwck6ss,25.58,32.79,3EjKvwck6ss_3-1-rgb_front,137
+3EjKvwck6ss_5-1-rgb_front,I like to think about it as getting your car painted.,3EjKvwck6ss,3EjKvwck6ss,34.99,39.56,3EjKvwck6ss_4-1-rgb_front,79
+3EjKvwck6ss_6-1-rgb_front,Do you know what they do before they paint your car?,3EjKvwck6ss,3EjKvwck6ss,39.82,42.03,3EjKvwck6ss_5-1-rgb_front,53
+3EjKvwck6ss_7-1-rgb_front,They prime it.,3EjKvwck6ss,3EjKvwck6ss,42.38,43.64,3EjKvwck6ss_6-1-rgb_front,14
+3EjKvwck6ss_8-1-rgb_front,Basically what this is doing for me is priming your hair and getting it ready for that last shot of color.,3EjKvwck6ss,3EjKvwck6ss,44.82,51.99,3EjKvwck6ss_7-1-rgb_front,139
+3EjKvwck6ss_9-1-rgb_front,"In this case, hairspray.",3EjKvwck6ss,3EjKvwck6ss,52.62,53.67,3EjKvwck6ss_8-1-rgb_front,26
+3HCjTYIijec_0-2-rgb_front,Urban legends are often the unwritten beliefs that people have and announce to others.,3HCjTYIijec,3HCjTYIijec,0.46,5.37,,202
+3HCjTYIijec_1-2-rgb_front,"Well, what are the unwritten rules for women about dating.",3HCjTYIijec,3HCjTYIijec,5.6,18.56,3HCjTYIijec_0-2-rgb_front,119
+3HCjTYIijec_10_11-2-rgb_front,They're no more successful than you are. The probability is you're more successful They may have their own agenda as well.,3HCjTYIijec,3HCjTYIijec,107.89,119.22,3HCjTYIijec_9-2-rgb_front,195
+3HCjTYIijec_12-2-rgb_front,"So, I would say the first unwritten rule is do not depend on your girl friends to give you valid input for your choices.",3HCjTYIijec,3HCjTYIijec,119.98,131.93,3HCjTYIijec_10_11-2-rgb_front,207
+3HCjTYIijec_13-2-rgb_front,That's what it's all about.,3HCjTYIijec,3HCjTYIijec,132.02,133.65,3HCjTYIijec_12-2-rgb_front,28
+3HCjTYIijec_14-2-rgb_front,This is Dr. Paul.,3HCjTYIijec,3HCjTYIijec,133.77,135.18,3HCjTYIijec_13-2-rgb_front,23
+3HCjTYIijec_15-2-rgb_front,May your fantasies of today be your realities of tomorrow.,3HCjTYIijec,3HCjTYIijec,135.59,140.9,3HCjTYIijec_14-2-rgb_front,76
+3HCjTYIijec_2-2-rgb_front,"This is Dr. Paul, author of Boomer Girls, a boomer woman's guide to men and dating and host of Ask Dr. Paul.",3HCjTYIijec,3HCjTYIijec,18.65,31.15,3HCjTYIijec_1-2-rgb_front,173
+3HCjTYIijec_3-2-rgb_front,"If they're unwritten, then how do we know them?",3HCjTYIijec,3HCjTYIijec,31.3,36.83,3HCjTYIijec_2-2-rgb_front,44
+3HCjTYIijec_4-2-rgb_front,"Well, they're passed on, and the best thing I can say about unwritten rules is do not depend on another woman, as a woman, to give you valid information.",3HCjTYIijec,3HCjTYIijec,37.56,45.66,3HCjTYIijec_3-2-rgb_front,344
+3HCjTYIijec_5-2-rgb_front,"Guess what, ladies, they're as equally involved with finding the answers as you are, and they're not going to find them from asking you because you're also asking them.",3HCjTYIijec,3HCjTYIijec,52.76,72.15,3HCjTYIijec_4-2-rgb_front,327
+3HCjTYIijec_6-2-rgb_front,It's a vicious cycle.,3HCjTYIijec,3HCjTYIijec,72.29,75.02,3HCjTYIijec_5-2-rgb_front,37
+3HCjTYIijec_7-2-rgb_front,"If you have questions, as I often say, if you want to find out about a man, why ask a woman, ask a man, ask Dr. Paul.",3HCjTYIijec,3HCjTYIijec,75.64,85.9,3HCjTYIijec_6-2-rgb_front,180
+3HCjTYIijec_8-2-rgb_front,"If you're at the point, where you're asking your girlfriends for their opinions and their input, then you're doing the wrong thing.",3HCjTYIijec,3HCjTYIijec,85.93,96.38,3HCjTYIijec_7-2-rgb_front,176
+3HCjTYIijec_9-2-rgb_front,"So, the unwritten beliefs that you're going to get, that data that you need, from your girl friends, is totally, absolutely, unequivocally wrong.",3HCjTYIijec,3HCjTYIijec,96.44,107.71,3HCjTYIijec_8-2-rgb_front,213
+3TrMyzNWGpY_0-2-rgb_front,Hi everybody I'm John Graden from the Martial Arts Teacher's Association and johngraden.com.,3TrMyzNWGpY,3TrMyzNWGpY,0.83,8.45,,118
+3TrMyzNWGpY_1-2-rgb_front,How do you practice your kickboxing moves?,3TrMyzNWGpY,3TrMyzNWGpY,8.57,12.35,3TrMyzNWGpY_0-2-rgb_front,53
+3TrMyzNWGpY_10-2-rgb_front,"Every time you throw your reverse move you always close the gap on your opponent, come in, engage, and then clear step out, re-open the gap with a clearing technique, I like to clear with a jab or I'll clear with the front leg round kick.",3TrMyzNWGpY,3TrMyzNWGpY,99.87,118.84,3TrMyzNWGpY_9-2-rgb_front,362
+3TrMyzNWGpY_11-2-rgb_front,"So I engage, step in, fire, fire, fire, clear and then here is the biggy, change my alignment on the bag or the target and then repeat the process.",3TrMyzNWGpY,3TrMyzNWGpY,119.01,134.92,3TrMyzNWGpY_10-2-rgb_front,252
+3TrMyzNWGpY_12-2-rgb_front,"So we are mixing our snapping techniques not just doing power all the time, two, every attack penetrating footwork, engage, clearing footwork, change your alignment that's always the pattern.",3TrMyzNWGpY,3TrMyzNWGpY,135.33,159.42,3TrMyzNWGpY_17-2-rgb_front,409
+3TrMyzNWGpY_13-2-rgb_front,"Penetrate, engage, clear, change your alignment, penetrate, engage, clear, change your alignment.",3TrMyzNWGpY,3TrMyzNWGpY,159.69,166.24,3TrMyzNWGpY_12-2-rgb_front,171
+3TrMyzNWGpY_14-2-rgb_front,Make sure that that is the pattern you are developing in the gym so that when you are in the ring that is how your fight comes out.,3TrMyzNWGpY,3TrMyzNWGpY,166.32,177.83,3TrMyzNWGpY_13-2-rgb_front,150
+3TrMyzNWGpY_15-2-rgb_front,I'm John Graden.,3TrMyzNWGpY,3TrMyzNWGpY,178.08,179.74,3TrMyzNWGpY_14-2-rgb_front,13
+3TrMyzNWGpY_16-2-rgb_front,I hope that helps.,3TrMyzNWGpY,3TrMyzNWGpY,179.87,181.55,3TrMyzNWGpY_15-2-rgb_front,15
+3TrMyzNWGpY_17-2-rgb_front,Thanks very much.,3TrMyzNWGpY,3TrMyzNWGpY,133.89,134.53,3TrMyzNWGpY_11-2-rgb_front,15
+3TrMyzNWGpY_2-2-rgb_front,That's a great question.,3TrMyzNWGpY,3TrMyzNWGpY,12.63,13.98,3TrMyzNWGpY_3-2-rgb_front,26
+3TrMyzNWGpY_3-2-rgb_front,As a kickboxer this is one I'm particularly fond of.,3TrMyzNWGpY,3TrMyzNWGpY,9.11,11.11,3TrMyzNWGpY_1-2-rgb_front,48
+3TrMyzNWGpY_4-2-rgb_front,Here is a common mistake that people make when they are dong their kickboxing moves.,3TrMyzNWGpY,3TrMyzNWGpY,16.08,23.74,3TrMyzNWGpY_2-2-rgb_front,112
+3TrMyzNWGpY_5-2-rgb_front,If I am hitting the bag or I'm doing the targets most beginners will try and power every single move.,3TrMyzNWGpY,3TrMyzNWGpY,24.6,33.3,3TrMyzNWGpY_4-2-rgb_front,198
+3TrMyzNWGpY_6-2-rgb_front,"They'll try and slam the bag every move and what happens when you do that is one, you waste a lot of energy, two, you tense the body up, three you tend to run out of gas faster.",3TrMyzNWGpY,3TrMyzNWGpY,33.33,52.07,3TrMyzNWGpY_5-2-rgb_front,256
+3TrMyzNWGpY_7-2-rgb_front,You don't typically spar like that or fight like that in a match so you want to train like you fight in a match and how is that?,3TrMyzNWGpY,3TrMyzNWGpY,52.34,59.84,3TrMyzNWGpY_6-2-rgb_front,206
+3TrMyzNWGpY_8-2-rgb_front,"I'll have techniques that I'm just going to snap and I'm just going to pop out there so I might go snap, snap, snap, snap, snap and about every seventh or eight go pow, pow, pow, pow, pow and then I recover.",3TrMyzNWGpY,3TrMyzNWGpY,59.97,75.41,3TrMyzNWGpY_7-2-rgb_front,249
+3TrMyzNWGpY_9-2-rgb_front,"Pow, pow, pow, pow so I'm mixing my snapping my speed techniques with my power techniques, two, every time you step in and every time you throw a technique you want to make sure you're penetrating with your footwork and you are not standing in one spot digging a hole.",3TrMyzNWGpY,3TrMyzNWGpY,75.5,99.78,3TrMyzNWGpY_8-2-rgb_front,433
+3sZjSNcqXpI_1-1-rgb_front,"Now depending on your style of play, if you like to play offense or defense you should be able to choose before you start the game where you want to go on the field.",3sZjSNcqXpI,3sZjSNcqXpI,11.78,32.02,,262
+3sZjSNcqXpI_2-1-rgb_front,If you're willing to play defense you should stay in the back where you can see the field clearly and be able to communicate with your teammates who move forward.,3sZjSNcqXpI,3sZjSNcqXpI,32.17,45.23,3sZjSNcqXpI_1-1-rgb_front,212
+3sZjSNcqXpI_3-1-rgb_front,"Now if defense isn't your thing and you like to play more offense, when you're playing up front be sure that you communicate with your teammate who is playing defense.",3sZjSNcqXpI,3sZjSNcqXpI,45.49,56.8,3sZjSNcqXpI_2-1-rgb_front,248
+3sZjSNcqXpI_4-1-rgb_front,"Ask them where the teammates of the other team are so you can be able to, be able not get shot at from an area where you're not looking.",3sZjSNcqXpI,3sZjSNcqXpI,57.61,69.91,3sZjSNcqXpI_3-1-rgb_front,219
+3sZjSNcqXpI_5-1-rgb_front,"If you're playing offense and you're up front, make sure you're laying down as much fire as possible to keep the other team from not shooting at you.",3sZjSNcqXpI,3sZjSNcqXpI,70.42,81.82,3sZjSNcqXpI_4-1-rgb_front,217
+3xni-I6N3EY_1-1-rgb_front,"This medicine has been around for over 5,000 years.",3xni-I6N3EY,3xni-I6N3EY,10.33,15.18,,91
+3xni-I6N3EY_2-1-rgb_front,"Before recorded history, between 100 BC and 200 AD The Yellow Emperor's Classic was written down so there was a huge amount of time when medicine was being practiced upon in the China continent and its fundamental principles all came back to the philosophies that were also moving across.",3xni-I6N3EY,3xni-I6N3EY,15.58,50.08,3xni-I6N3EY_1-1-rgb_front,553
+3xni-I6N3EY_3-1-rgb_front,You had observation as the key point.,3xni-I6N3EY,3xni-I6N3EY,51.2,54.29,3xni-I6N3EY_2-1-rgb_front,61
+3xni-I6N3EY_4-1-rgb_front,"It was sacrilegious to dissect the human body so the systems of acupuncture, acupressure, as well as the use of herbs all came about through trial and error and they all came about through the constellations of the stars and the idea reflected of the micro and the macro so that points were developed for the purpose of releasing this natural flow of Chi.",3xni-I6N3EY,3xni-I6N3EY,55.47,90.49,3xni-I6N3EY_3-1-rgb_front,684
+3xni-I6N3EY_5-1-rgb_front,In this next segment we will talk about the six external causes of illness.,3xni-I6N3EY,3xni-I6N3EY,90.78,103.72,3xni-I6N3EY_4-1-rgb_front,139
+40JRPcYZkWg_1-1-rgb_front,"If you look out on the market, you're going to find a lot of different types of equipment.",40JRPcYZkWg,40JRPcYZkWg,11.93,16.66,,78
+40JRPcYZkWg_2-1-rgb_front,"The two big ones, I want to talk about though right now, are metal versus plastic.",40JRPcYZkWg,40JRPcYZkWg,17.87,23.72,40JRPcYZkWg_1-1-rgb_front,110
+40JRPcYZkWg_3-1-rgb_front,"If you remember, to make good biodiesel we need a lot of heat.",40JRPcYZkWg,40JRPcYZkWg,24.75,28.17,40JRPcYZkWg_2-1-rgb_front,75
+40JRPcYZkWg_4-1-rgb_front,"Typically, if you find metal processors, you're going to get better reaction simply because the heat is better.",40JRPcYZkWg,40JRPcYZkWg,29.15,35.71,40JRPcYZkWg_3-1-rgb_front,155
+40JRPcYZkWg_5-1-rgb_front,You also want to look for good mixing as well.,40JRPcYZkWg,40JRPcYZkWg,37.14,39.24,40JRPcYZkWg_4-1-rgb_front,63
+40JRPcYZkWg_6-1-rgb_front,"Also, because we are dealing with a flammable substance, methanol, it's a little bit safer if you use metal tanks versus plastic tanks.",40JRPcYZkWg,40JRPcYZkWg,39.93,51.22,40JRPcYZkWg_5-1-rgb_front,198
+40JRPcYZkWg_7-1-rgb_front,"Also, if you're heating within the tank, you don't want your tank to melt on you, so I kinda recommend metal tanks over plastic tanks.",40JRPcYZkWg,40JRPcYZkWg,53.45,63.16,40JRPcYZkWg_6-1-rgb_front,207
+40JRPcYZkWg_8-1-rgb_front,"Do your research, look hard but look for the plastic, look for the metal, see which ones work the best for you.",40JRPcYZkWg,40JRPcYZkWg,63.98,73.33,40JRPcYZkWg_7-1-rgb_front,162
+40JRPcYZkWg_9-1-rgb_front,"Again, calling it referrals, but my feeling is you can make better biodiesel with metal tanks.",40JRPcYZkWg,40JRPcYZkWg,74.04,81.59,40JRPcYZkWg_8-1-rgb_front,180
+46Cwjrd4ua4_0-2-rgb_front,"Now the next environmental factors that you want to look at are the date, and the year.",46Cwjrd4ua4,46Cwjrd4ua4,0.35,9.35,,162
+46Cwjrd4ua4_1-2-rgb_front,When does this take place?,46Cwjrd4ua4,46Cwjrd4ua4,10.03,11.51,46Cwjrd4ua4_0-2-rgb_front,34
+46Cwjrd4ua4_10-2-rgb_front,Is it taking place in the summer?,46Cwjrd4ua4,46Cwjrd4ua4,48.91,50.99,46Cwjrd4ua4_6-2-rgb_front,39
+46Cwjrd4ua4_11-2-rgb_front,The fall?,46Cwjrd4ua4,46Cwjrd4ua4,53.15,53.9,46Cwjrd4ua4_10-2-rgb_front,24
+46Cwjrd4ua4_12-2-rgb_front,The spring?,46Cwjrd4ua4,46Cwjrd4ua4,53.94,55.15,46Cwjrd4ua4_11-2-rgb_front,21
+46Cwjrd4ua4_13-2-rgb_front,"These are real important things, because let's say it's taking place in New Orleans in the summer.",46Cwjrd4ua4,46Cwjrd4ua4,55.24,63.57,46Cwjrd4ua4_12-2-rgb_front,158
+46Cwjrd4ua4_14-2-rgb_front,"Well, that means it's going to be hot and muggy, and that's going to directly affect how your character's going to respond.",46Cwjrd4ua4,46Cwjrd4ua4,63.81,74.0,46Cwjrd4ua4_13-2-rgb_front,161
+46Cwjrd4ua4_15-2-rgb_front,"Or is it taking place in North Dakota in the winter, where it's very, very cold?",46Cwjrd4ua4,46Cwjrd4ua4,74.45,81.11,46Cwjrd4ua4_14-2-rgb_front,122
+46Cwjrd4ua4_16-2-rgb_front,"That will affect how your character reacts and responds and moves, and so forth and so on.",46Cwjrd4ua4,46Cwjrd4ua4,81.24,89.11,46Cwjrd4ua4_15-2-rgb_front,133
+46Cwjrd4ua4_17-2-rgb_front,"You also need to take a look at the time period, in the sense of how long does this whole interaction of this play or movie take place?",46Cwjrd4ua4,46Cwjrd4ua4,89.65,103.86,46Cwjrd4ua4_16-2-rgb_front,231
+46Cwjrd4ua4_18-2-rgb_front,Is it a day?,46Cwjrd4ua4,46Cwjrd4ua4,103.95,104.82,46Cwjrd4ua4_17-2-rgb_front,23
+46Cwjrd4ua4_19-2-rgb_front,Is it a week?,46Cwjrd4ua4,46Cwjrd4ua4,105.28,106.2,46Cwjrd4ua4_18-2-rgb_front,22
+46Cwjrd4ua4_2-2-rgb_front,Is it 1912?,46Cwjrd4ua4,46Cwjrd4ua4,11.71,13.44,46Cwjrd4ua4_1-2-rgb_front,32
+46Cwjrd4ua4_20-2-rgb_front,Is it a month?,46Cwjrd4ua4,46Cwjrd4ua4,106.42,107.24,46Cwjrd4ua4_19-2-rgb_front,18
+46Cwjrd4ua4_21-2-rgb_front,Is it a year?,46Cwjrd4ua4,46Cwjrd4ua4,107.33,109.26,46Cwjrd4ua4_20-2-rgb_front,22
+46Cwjrd4ua4_22-2-rgb_front,"Does everything usually take place in the morning, or in the middle of the night, or in the daytime?",46Cwjrd4ua4,46Cwjrd4ua4,109.56,116.61,46Cwjrd4ua4_29-2-rgb_front,136
+46Cwjrd4ua4_23-2-rgb_front,All of those things can affect how your character acts.,46Cwjrd4ua4,46Cwjrd4ua4,117.47,122.87,46Cwjrd4ua4_22-2-rgb_front,85
+46Cwjrd4ua4_24-2-rgb_front,"Also, you also want to take into consideration the date.",46Cwjrd4ua4,46Cwjrd4ua4,123.07,126.87,46Cwjrd4ua4_23-2-rgb_front,126
+46Cwjrd4ua4_25-2-rgb_front,"Meaning, are there any specific holidays?",46Cwjrd4ua4,46Cwjrd4ua4,131.15,135.64,46Cwjrd4ua4_24-2-rgb_front,78
+46Cwjrd4ua4_26-2-rgb_front,Does this take place on a Sunday?,46Cwjrd4ua4,46Cwjrd4ua4,135.84,140.27,46Cwjrd4ua4_25-2-rgb_front,40
+46Cwjrd4ua4_27-2-rgb_front,What do people usually do on Sunday?,46Cwjrd4ua4,46Cwjrd4ua4,140.48,142.99,46Cwjrd4ua4_26-2-rgb_front,43
+46Cwjrd4ua4_28-2-rgb_front,Does it take place on a Monday?,46Cwjrd4ua4,46Cwjrd4ua4,143.25,145.72,46Cwjrd4ua4_27-2-rgb_front,36
+46Cwjrd4ua4_29-2-rgb_front,What are people usually doing on a Monday?,46Cwjrd4ua4,46Cwjrd4ua4,108.57,110.43,46Cwjrd4ua4_21-2-rgb_front,45
+46Cwjrd4ua4_3-2-rgb_front,Is it 1960's?,46Cwjrd4ua4,46Cwjrd4ua4,13.52,14.68,46Cwjrd4ua4_2-2-rgb_front,44
+46Cwjrd4ua4_30-2-rgb_front,"Does it take place over St. Patrick's Day, or President's Day, or Christmas?",46Cwjrd4ua4,46Cwjrd4ua4,145.76,153.18,46Cwjrd4ua4_28-2-rgb_front,107
+46Cwjrd4ua4_31-2-rgb_front,Take into effect all of those environmental factors.,46Cwjrd4ua4,46Cwjrd4ua4,153.26,158.11,46Cwjrd4ua4_30-2-rgb_front,80
+46Cwjrd4ua4_4-2-rgb_front,Is it 2008?,46Cwjrd4ua4,46Cwjrd4ua4,14.75,15.89,46Cwjrd4ua4_3-2-rgb_front,39
+46Cwjrd4ua4_5-2-rgb_front,Is it in the future?,46Cwjrd4ua4,46Cwjrd4ua4,15.93,18.04,46Cwjrd4ua4_4-2-rgb_front,36
+46Cwjrd4ua4_6-2-rgb_front,"Going to be real important to know what time period, because people acted differently; the social norms were different, in different time periods.",46Cwjrd4ua4,46Cwjrd4ua4,22.54,34.53,46Cwjrd4ua4_5-2-rgb_front,250
