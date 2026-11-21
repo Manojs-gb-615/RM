@@ -38,7 +38,8 @@ interface PoseAnimationViewerProps {
   width?: number;
   height?: number;
   onFrameChange?: (frame: number, total: number) => void;
-  externalFrame?: number;        // controlled from outside (scrubber)
+  externalFrame?: number;        // controlled from outside (scrubber / video)
+  driven?: boolean;              // external frame owns playback (video-synced)
 }
 
 function drawFrame(
@@ -54,13 +55,19 @@ function drawFrame(
 
   if (!frameData || frameData.length < 274) return;
 
-  // Parse keypoints
+  // Parse keypoints. (0,0) marks a missing OpenPose keypoint.
   const pts: [number, number][] = [];
+  const valid: boolean[] = [];
   for (let i = 0; i < 137; i++) {
-    pts.push([frameData[i * 2] * W, frameData[i * 2 + 1] * H]);
+    const x = frameData[i * 2];
+    const y = frameData[i * 2 + 1];
+    const ok = !(x === 0 && y === 0);
+    valid.push(ok);
+    pts.push([x * W, y * H]);
   }
 
   const drawLine = (a: number, b: number, color: string) => {
+    if (!valid[a] || !valid[b]) return;
     const [x1, y1] = pts[a];
     const [x2, y2] = pts[b];
     ctx.strokeStyle = color;
@@ -77,6 +84,7 @@ function drawFrame(
 
   if (showLandmarks) {
     pts.forEach(([x, y], i) => {
+      if (!valid[i]) return;
       let color = COLORS.dot;
       if (i < 25)       color = COLORS.body;
       else if (i < 46)  color = COLORS.lhand;
@@ -101,6 +109,7 @@ export default function PoseAnimationViewer({
   height = 400,
   onFrameChange,
   externalFrame,
+  driven = false,
 }: PoseAnimationViewerProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const frameRef  = useRef(0);
@@ -115,17 +124,20 @@ export default function PoseAnimationViewer({
   // Draw a specific frame
   const renderFrame = useCallback((f: number) => {
     const canvas = canvasRef.current;
-    if (!canvas || !poses) return;
+    if (!canvas || !poses || poses.length === 0) return;
+    const idx = Math.max(0, Math.min(poses.length - 1, f));
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
-    drawFrame(ctx, poses[f], width, height, showLandmarks);
-    setCurrentFrame(f);
-    onFrameChange?.(f, totalFrames);
+    drawFrame(ctx, poses[idx], width, height, showLandmarks);
+    canvas.dataset.frame = String(idx);
+    canvas.dataset.total = String(poses.length);
+    setCurrentFrame(idx);
+    onFrameChange?.(idx, totalFrames);
   }, [poses, width, height, showLandmarks, totalFrames, onFrameChange]);
 
-  // Animation loop
+  // Internal animation loop (only when not externally driven)
   useEffect(() => {
-    if (!isPlaying || !poses || poses.length === 0) {
+    if (driven || !isPlaying || !poses || poses.length === 0) {
       cancelAnimationFrame(rafRef.current);
       return;
     }
@@ -143,17 +155,21 @@ export default function PoseAnimationViewer({
     };
     rafRef.current = requestAnimationFrame(loop);
     return () => cancelAnimationFrame(rafRef.current);
-  }, [isPlaying, poses, MS_PER_FRAME, renderFrame]);
+  }, [driven, isPlaying, poses, MS_PER_FRAME, renderFrame]);
 
-  // External frame control (scrubber / pause)
+  // External frame control (video sync or scrubber)
   useEffect(() => {
-    if (externalFrame !== undefined && !isPlaying && poses) {
+    if (externalFrame === undefined || !poses) return;
+    if (driven || !isPlaying) {
       frameRef.current = externalFrame;
       renderFrame(externalFrame);
     }
-  }, [externalFrame, isPlaying, renderFrame, poses]);
+  }, [externalFrame, isPlaying, driven, renderFrame, poses]);
 
-  // Initial render
+  // Initial render (only when the clip itself changes — must not reset the
+  // externally-driven frame on every parent render).
+  const renderRef = useRef(renderFrame);
+  renderRef.current = renderFrame;
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -170,10 +186,12 @@ export default function PoseAnimationViewer({
       ctx.font = '12px Inter, sans-serif';
       ctx.fillStyle = '#334155';
       ctx.fillText('See README for dataset setup', width / 2, height / 2 + 15);
+      canvas.dataset.frame = '';
+      canvas.dataset.total = '0';
     } else {
-      renderFrame(0);
+      renderRef.current(0);
     }
-  }, [poses, width, height, renderFrame]);
+  }, [poses, width, height]);
 
   return (
     <div className="relative inline-block">
@@ -181,6 +199,7 @@ export default function PoseAnimationViewer({
         ref={canvasRef}
         width={width}
         height={height}
+        data-testid="pose-canvas"
         className="rounded-lg border border-gray-700"
         style={{ background: '#0f172a' }}
       />
@@ -193,7 +212,8 @@ export default function PoseAnimationViewer({
       </div>
       {/* Frame counter */}
       {poses && poses.length > 0 && (
-        <div className="absolute bottom-2 right-2 text-xs text-gray-400 bg-black/50 px-2 py-0.5 rounded">
+        <div className="absolute bottom-2 right-2 text-xs text-gray-400 bg-black/50 px-2 py-0.5 rounded"
+             data-testid="pose-frame-counter">
           {currentFrame + 1} / {totalFrames}
         </div>
       )}

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Upload, Video, FileText, ArrowRightLeft, Info } from 'lucide-react';
 import PoseAnimationViewer from '../components/PoseAnimationViewer';
 import AnimationControls from '../components/AnimationControls';
@@ -33,6 +33,8 @@ export default function StudioPage() {
   const [showLandmarks, setShowLandmarks] = useState(true);
   const [currentFrame, setCurrentFrame] = useState(0);
   const [externalFrame, setExternalFrame] = useState<number | undefined>(undefined);
+
+  const handleFrameChange = useCallback((f: number) => setCurrentFrame(f), []);
 
   const [showCompare, setShowCompare] = useState(false);
   const [compareResult, setCompareResult] = useState<{ text_only: RetrievalResult; context_aware: RetrievalResult } | null>(null);
@@ -75,6 +77,77 @@ export default function StudioPage() {
       video.removeEventListener('ended', onEnded);
     };
   }, [videoUrl]);
+
+  // Playback rate follows the animation speed control.
+  useEffect(() => {
+    if (videoRef.current) videoRef.current.playbackRate = speed;
+  }, [speed, videoUrl]);
+
+  // Frame-level sync: map video.currentTime -> skeleton frame.
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !session || activeSegIdx < 0) return;
+    const seg = segments[activeSegIdx];
+    const pose = session.segments[activeSegIdx]?.retrieval.pose;
+    if (!seg || !pose || pose.length === 0) return;
+
+    const n = pose.length;
+    const duration = Math.max(0.001, seg.end_seconds - seg.start_seconds);
+    let cancelled = false;
+    let vfcId = 0;
+
+    const apply = () => {
+      if (cancelled) return;
+      const progress = Math.min(1, Math.max(0, (video.currentTime - seg.start_seconds) / duration));
+      const frame = Math.min(n - 1, Math.max(0, Math.floor(progress * n)));
+      setExternalFrame(frame);
+      setCurrentFrame(frame);
+    };
+
+    const onMedia = () => apply();
+    ['seeking', 'seeked', 'ratechange', 'play', 'pause', 'ended', 'loadedmetadata', 'timeupdate']
+      .forEach(evt => video.addEventListener(evt, onMedia));
+
+    type VFCVideo = HTMLVideoElement & {
+      requestVideoFrameCallback?: (cb: () => void) => number;
+      cancelVideoFrameCallback?: (id: number) => void;
+    };
+    const vfc = video as VFCVideo;
+
+    if (typeof vfc.requestVideoFrameCallback === 'function') {
+      const tick = () => {
+        if (cancelled) return;
+        apply();
+        vfcId = vfc.requestVideoFrameCallback!(tick);
+      };
+      vfcId = vfc.requestVideoFrameCallback(tick);
+    } else {
+      let raf = 0;
+      const loop = () => {
+        if (cancelled) return;
+        if (!video.paused) apply();
+        raf = requestAnimationFrame(loop);
+      };
+      apply();
+      raf = requestAnimationFrame(loop);
+      return () => {
+        cancelled = true;
+        cancelAnimationFrame(raf);
+        ['seeking', 'seeked', 'ratechange', 'play', 'pause', 'ended', 'loadedmetadata', 'timeupdate']
+          .forEach(evt => video.removeEventListener(evt, onMedia));
+      };
+    }
+
+    apply();
+    return () => {
+      cancelled = true;
+      if (vfcId && typeof vfc.cancelVideoFrameCallback === 'function') {
+        vfc.cancelVideoFrameCallback(vfcId);
+      }
+      ['seeking', 'seeked', 'ratechange', 'play', 'pause', 'ended', 'loadedmetadata', 'timeupdate']
+        .forEach(evt => video.removeEventListener(evt, onMedia));
+    };
+  }, [videoUrl, session, activeSegIdx, segments]);
 
   const handleVideoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -153,6 +226,37 @@ export default function StudioPage() {
     if (video) video.currentTime = segments[i].start_seconds;
   };
 
+  const togglePlay = () => {
+    const video = videoRef.current;
+    if (video) {
+      if (video.paused) void video.play().catch(() => {});
+      else video.pause();
+    } else {
+      setIsPlaying(p => !p);
+    }
+  };
+
+  const restartPlayback = () => {
+    const video = videoRef.current;
+    if (video && session && activeSegIdx >= 0) {
+      video.currentTime = segments[activeSegIdx].start_seconds;
+    }
+    setExternalFrame(0);
+    setCurrentFrame(0);
+    setIsPlaying(false);
+  };
+
+  const scrubTo = (frame: number) => {
+    setExternalFrame(frame);
+    setCurrentFrame(frame);
+    const video = videoRef.current;
+    if (video && session && activeSegIdx >= 0 && activePose && activePose.length > 0) {
+      const seg = segments[activeSegIdx];
+      const progress = frame / activePose.length;
+      video.currentTime = seg.start_seconds + progress * (seg.end_seconds - seg.start_seconds);
+    }
+  };
+
   const activePose = session && activeSegIdx >= 0
     ? session.segments[activeSegIdx]?.retrieval.pose ?? null
     : null;
@@ -169,7 +273,14 @@ export default function StudioPage() {
           </span>
           <span className="text-xs text-gray-500">Context-Aware ASL Pose Retrieval</span>
         </div>
-        <StatusBadge status={status} />
+        <div className="flex items-center gap-2">
+          {status?.is_trained && (
+            <span className="text-[10px] uppercase tracking-wide bg-indigo-950 text-indigo-300 border border-indigo-700 rounded px-2 py-1">
+              trained InfoNCE ranker
+            </span>
+          )}
+          <StatusBadge status={status} />
+        </div>
       </header>
 
       <div className="bg-yellow-950 border-b border-yellow-800 px-6 py-2 flex items-center gap-2 text-yellow-300 text-xs">
@@ -184,27 +295,29 @@ export default function StudioPage() {
         <div className="bg-red-950 border-b border-red-700 px-6 py-2 flex items-center gap-2 text-red-300 text-xs">
           <Info size={14} />
           <span>
-            <strong>Synthetic test data loaded.</strong> The poses below are generated
+            <strong>SYNTHETIC DATA.</strong> The poses below are generated
             sinusoids, not American Sign Language. Retrain on real How2Sign clips for real output.
           </span>
         </div>
       )}
 
-      <main className="flex-1 flex flex-col gap-6 p-6 max-w-7xl mx-auto w-full">
+      <main data-testid="main-layout" className="flex-1 flex flex-col gap-6 p-6 max-w-7xl mx-auto w-full">
         {/* LEFT: video — RIGHT: skeleton */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="card flex flex-col gap-3">
             <h2 className="font-semibold text-gray-200 flex items-center gap-2"><Video size={16} /> Educational Video</h2>
             <label className="btn-secondary cursor-pointer flex items-center gap-2 justify-center">
               <Upload size={15} /> Upload MP4
-              <input type="file" accept="video/mp4,video/*" className="hidden" onChange={handleVideoUpload} />
+              <input data-testid="video-input" type="file" accept="video/mp4,video/*" className="hidden" onChange={handleVideoUpload} />
             </label>
             {videoUrl ? (
               <video
                 ref={videoRef}
                 src={videoUrl}
+                data-testid="video"
                 className="rounded-lg w-full border border-gray-700"
                 controls
+                loop
                 style={{ maxHeight: 340 }}
               />
             ) : (
@@ -230,7 +343,13 @@ export default function StudioPage() {
             </div>
 
             {activeSegIdx >= 0 && segments[activeSegIdx] && (
-              <div className="bg-gray-800 rounded p-2 text-sm text-gray-200 border border-gray-700">
+              <div
+                data-testid="active-sentence"
+                data-start={segments[activeSegIdx].start_seconds}
+                data-end={segments[activeSegIdx].end_seconds}
+                data-frames={activePose?.length ?? 0}
+                className="bg-gray-800 rounded p-2 text-sm text-gray-200 border border-gray-700"
+              >
                 <span className="text-xs text-gray-500 mr-1">{segments[activeSegIdx].start_seconds.toFixed(1)}s –</span>
                 {segments[activeSegIdx].text}
               </div>
@@ -252,21 +371,22 @@ export default function StudioPage() {
                 playbackSpeed={speed}
                 showLandmarks={showLandmarks}
                 width={360}
-                height={360}
-                onFrameChange={(f) => setCurrentFrame(f)}
+                height={203}
+                onFrameChange={handleFrameChange}
                 externalFrame={externalFrame}
+                driven={Boolean(videoUrl) && Boolean(session)}
               />
             </div>
 
             <AnimationControls
               isPlaying={isPlaying}
-              onPlayPause={() => setIsPlaying(p => !p)}
-              onRestart={() => { setIsPlaying(false); setCurrentFrame(0); setExternalFrame(0); }}
+              onPlayPause={togglePlay}
+              onRestart={restartPlayback}
               speed={speed}
               onSpeedChange={setSpeed}
               currentFrame={currentFrame}
               totalFrames={activePose?.length ?? 0}
-              onScrub={f => { setExternalFrame(f); setCurrentFrame(f); }}
+              onScrub={scrubTo}
               showLandmarks={showLandmarks}
               onToggleLandmarks={() => setShowLandmarks(p => !p)}
             />
@@ -294,7 +414,7 @@ export default function StudioPage() {
             </h2>
             <label className="btn-secondary cursor-pointer flex items-center gap-2">
               <Upload size={15} /> Upload .srt / .vtt
-              <input type="file" accept=".srt,.vtt" className="hidden" onChange={handleTranscriptUpload} />
+              <input data-testid="transcript-input" type="file" accept=".srt,.vtt" className="hidden" onChange={handleTranscriptUpload} />
             </label>
             <select
               className="bg-gray-800 border border-gray-700 rounded px-2 py-2 text-sm"
@@ -305,6 +425,7 @@ export default function StudioPage() {
               <option value="text_only">Text-Only Baseline</option>
             </select>
             <button
+              data-testid="generate-btn"
               className="btn-primary flex items-center gap-2"
               onClick={handleGenerate}
               disabled={loading || segments.length === 0}
@@ -331,6 +452,7 @@ export default function StudioPage() {
               {segments.map((seg, i) => (
                 <button
                   key={seg.index}
+                  data-testid={`sentence-${i}`}
                   onClick={() => selectSegment(i)}
                   className={`text-left rounded px-2 py-1 text-sm transition-colors ${
                     i === activeSegIdx ? 'bg-primary/20 text-primary border border-primary/40' : 'hover:bg-gray-800 text-gray-300'
@@ -363,7 +485,7 @@ export default function StudioPage() {
                       isPlaying={false}
                       showLandmarks={false}
                       width={170}
-                      height={170}
+                      height={96}
                     />
                     <div className="text-xs text-gray-400">
                       Score: {r.score.toFixed(3)}<br />

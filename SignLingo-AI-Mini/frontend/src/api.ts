@@ -6,6 +6,8 @@ export interface StatusResponse {
   dataset_samples: number;
   dataset_with_pose: number;
   is_synthetic: boolean;
+  is_trained?: boolean;
+  ranker_path?: string;
   message: string;
 }
 
