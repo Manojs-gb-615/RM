@@ -1,0 +1,15 @@
+# Generated model binaries (reproducible from the commands in README)
+models/*.pkl
+models/*.npy
+
+# Converted pose arrays (regenerate with ml/build_real_index.py)
+data/real/poses/
+
+# Generated evaluation outputs
+eval/summary.csv
+
+# Frontend build / test artifacts
+frontend/node_modules/
+frontend/dist/
+frontend/test-results/
+frontend/playwright-report/
