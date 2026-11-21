@@ -1,0 +1,76 @@
+{
+  "data_dir": "data/real",
+  "index": "models/retrieval_index.pkl",
+  "ranker": "models/ranker.pt",
+  "num_samples": 450,
+  "num_val": 90,
+  "note": "full protocol includes the query caption in the index, so exact-caption retrieval is near-trivial. ctx-only hides the current sentence and is the non-trivial context ablation. Real ASL correctness still requires signer study.",
+  "results": {
+    "full/text_only": {
+      "baseline": {
+        "n": 90,
+        "recall@1": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "latency_ms_mean": 31.348980002156978,
+        "latency_ms_p50": 29.811150045134127,
+        "latency_ms_p95": 41.96968499163631
+      },
+      "trained": {
+        "n": 90,
+        "recall@1": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "latency_ms_mean": 33.035781109032946,
+        "latency_ms_p50": 31.97569996700622,
+        "latency_ms_p95": 42.057030004798435
+      }
+    },
+    "full/context_aware": {
+      "baseline": {
+        "n": 90,
+        "recall@1": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "latency_ms_mean": 65.94954666668653,
+        "latency_ms_p50": 66.21325004380196,
+        "latency_ms_p95": 88.10977999819443
+      },
+      "trained": {
+        "n": 90,
+        "recall@1": 0.9888888888888889,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 0.9944444444444445,
+        "latency_ms_mean": 68.81672444740414,
+        "latency_ms_p50": 68.17435001721606,
+        "latency_ms_p95": 91.03892001148779
+      }
+    },
+    "context_only/context_aware": {
+      "baseline": {
+        "n": 90,
+        "recall@1": 0.044444444444444446,
+        "recall@5": 0.25555555555555554,
+        "recall@10": 0.4222222222222222,
+        "mrr": 0.1587800654036824,
+        "latency_ms_mean": 29.34489555385274,
+        "latency_ms_p50": 31.181649974314496,
+        "latency_ms_p95": 39.5027099730214
+      },
+      "trained": {
+        "n": 90,
+        "recall@1": 0.044444444444444446,
+        "recall@5": 0.25555555555555554,
+        "recall@10": 0.3,
+        "mrr": 0.14720384551412144,
+        "latency_ms_mean": 31.401223332957468,
+        "latency_ms_p50": 32.57825001492165,
+        "latency_ms_p95": 44.40309999627061
+      }
+    }
+  }
+}
