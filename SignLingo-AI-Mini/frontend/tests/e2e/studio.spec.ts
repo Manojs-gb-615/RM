@@ -135,6 +135,25 @@ test('studio layout, retrieval, and frame-level video sync', async ({ page }) =>
   await expect(page.getByText('SYNTHETIC DATA')).toHaveCount(0);
 });
 
+test('normal educational video with captions retrieves dataset poses', async ({ page }) => {
+  test.setTimeout(120_000);
+  const demo = path.resolve(HERE, '../../../demo');
+  await page.goto('/');
+  await page.locator('[data-testid=video-input]').setInputFiles(path.join(demo, 'educational_cravat.webm'));
+  await page.locator('[data-testid=transcript-input]').setInputFiles(path.join(demo, 'educational_cravat.srt'));
+  await expect(page.getByTestId('sentence-21')).toBeVisible();
+
+  await page.getByTestId('generate-btn').click();
+  await expect(page.getByTestId('pose-canvas'))
+    .toHaveAttribute('data-total', /^[1-9]\d*$/, { timeout: 60_000 });
+  await expect(page.getByTestId('active-sentence')).toBeVisible();
+  const sentenceCount = await page.locator('[data-testid^=sentence-]').count();
+  expect(sentenceCount).toBeGreaterThanOrEqual(22);
+
+  await page.screenshot({ path: `${SHOTS}/07-educational-video.png`, fullPage: true });
+  await expect(page.getByText('SYNTHETIC DATA')).toHaveCount(0);
+});
+
 test('synthetic data banner is impossible to miss', async ({ page }) => {
   await page.route('**/api/status', (route) => route.fulfill({
     status: 200,
