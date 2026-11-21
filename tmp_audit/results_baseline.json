@@ -1,0 +1,511 @@
+{
+  "generatedAt": "2026-11-21T09:06:07.653Z",
+  "tool": "frontend/eval/eval.ts",
+  "data": {
+    "manifest": "demo_data/manifest.json",
+    "sourceKind": "synthetic",
+    "realDataAvailable": false,
+    "note": "No real How2Sign clips are present in this checkout, so every number below is measured on synthetic test motion, not ASL."
+  },
+  "config": {
+    "filter": {
+      "body": {
+        "minCutoff": 1.2,
+        "beta": 0.02,
+        "dCutoff": 1
+      },
+      "hands": {
+        "minCutoff": 3.5,
+        "beta": 0.05,
+        "dCutoff": 1
+      },
+      "face": {
+        "minCutoff": 2,
+        "beta": 0.01,
+        "dCutoff": 1
+      },
+      "maxGapFrames": 5,
+      "maxJointSpeed": 1.6
+    },
+    "depth": {
+      "upperArmForward": 0.25,
+      "forearmForward": 1,
+      "depthFlipHysteresis": 0.35,
+      "minElbowFlexion": 5,
+      "maxElbowFlexion": 175,
+      "signingPlaneZ": 0.12
+    },
+    "hands": {
+      "palmSignLeft": 1,
+      "palmSignRight": -1,
+      "rollLeft": 0,
+      "rollRight": 0,
+      "maxCurl": 2.9845130209103035,
+      "ambiguityThreshold": 0.02
+    },
+    "torso": {
+      "rollGain": 1,
+      "yawGain": 0.6,
+      "pitchGain": 0.5,
+      "maxRoll": 0.25,
+      "maxYaw": 0.18,
+      "maxPitch": 0.12
+    },
+    "head": {
+      "enabled": true,
+      "gain": 0.8,
+      "maxYaw": 0.45,
+      "maxPitch": 0.35,
+      "maxRoll": 0.35,
+      "iterations": 14
+    },
+    "smoothing": {
+      "bodyHalfLife": 0.06,
+      "handHalfLife": 0.025,
+      "boundaryCrossfadeFrames": 7
+    },
+    "face": {
+      "neutralFrames": 30,
+      "gain": {
+        "browRaise": 1,
+        "browFurrow": 1,
+        "blink": 1,
+        "jawOpen": 1,
+        "mouthWide": 1,
+        "mouthRound": 1,
+        "smile": 1,
+        "frown": 1,
+        "gaze": 1
+      },
+      "smoothingHalfLife": 0.04,
+      "warnOnMissingBrows": true
+    }
+  },
+  "golden": {
+    "written": false,
+    "pass": null,
+    "checks": []
+  },
+  "sequences": [
+    {
+      "id": "synthetic_arm_raise",
+      "title": "Synthetic — arm raise",
+      "source": "synthetic",
+      "synthetic": true,
+      "frames": 96,
+      "fps": 24,
+      "reprojection": {
+        "torso": {
+          "mean": 0.01,
+          "p95": 0.02,
+          "count": 192,
+          "restMean": 0.01,
+          "restP95": 0.02
+        },
+        "leftArm": {
+          "mean": 0.0519,
+          "p95": 0.1436,
+          "count": 288,
+          "restMean": 0.3496,
+          "restP95": 1.1675
+        },
+        "rightArm": {
+          "mean": 0.0461,
+          "p95": 0.0849,
+          "count": 288,
+          "restMean": 0.6976,
+          "restP95": 1.3504
+        },
+        "head": {
+          "mean": 0.0078,
+          "p95": 0.0099,
+          "count": 480,
+          "restMean": 0.4934,
+          "restP95": 0.566
+        },
+        "leftHand": {
+          "mean": 0.2291,
+          "p95": 0.3228,
+          "count": 480,
+          "restMean": 0.9094,
+          "restP95": 1.7657
+        },
+        "rightHand": {
+          "mean": 0.1201,
+          "p95": 0.1458,
+          "count": 480,
+          "restMean": 1.5877,
+          "restP95": 1.7172
+        }
+      },
+      "jitter": {
+        "bodyBefore": 0.00052,
+        "bodyAfter": 0.00052,
+        "bodyReductionPct": 1.16,
+        "handsBefore": 0.00164,
+        "handsAfter": 0.0017,
+        "handReductionPct": -3.67
+      },
+      "limbFlips": {
+        "depthFlips": 0,
+        "depthFlipsPer100Frames": 0,
+        "largeRotationJumps": 0,
+        "handPalmFlips": 0
+      },
+      "selfIntersection": {
+        "oppositeHandFrames": 0,
+        "handHeadFrames": 0,
+        "handBehindTorsoFrames": 0,
+        "anyEventFrames": 0,
+        "anyEventPct": 0,
+        "note": "Contact between hands and between hand and head is legitimate in ASL; these are diagnostic proximity counts, not automatically errors."
+      },
+      "boneLength": {
+        "maxRelativeDeviation": 0,
+        "p95RelativeDeviation": 0,
+        "bonesChecked": 43
+      },
+      "outliers": 0,
+      "repairedPoints": 0,
+      "goldenHash": "647d71b2"
+    },
+    {
+      "id": "synthetic_handshape_cycle",
+      "title": "Synthetic — handshape cycle",
+      "source": "synthetic",
+      "synthetic": true,
+      "frames": 96,
+      "fps": 24,
+      "reprojection": {
+        "torso": {
+          "mean": 0.01,
+          "p95": 0.02,
+          "count": 192,
+          "restMean": 0.01,
+          "restP95": 0.02
+        },
+        "leftArm": {
+          "mean": 0.0421,
+          "p95": 0.0645,
+          "count": 288,
+          "restMean": 0.1262,
+          "restP95": 0.3625
+        },
+        "rightArm": {
+          "mean": 0.0456,
+          "p95": 0.075,
+          "count": 288,
+          "restMean": 0.7046,
+          "restP95": 1.3085
+        },
+        "head": {
+          "mean": 0.0081,
+          "p95": 0.0101,
+          "count": 480,
+          "restMean": 0.4934,
+          "restP95": 0.566
+        },
+        "leftHand": {
+          "mean": 0.0906,
+          "p95": 0.1472,
+          "count": 480,
+          "restMean": 0.4545,
+          "restP95": 0.5841
+        },
+        "rightHand": {
+          "mean": 0.0978,
+          "p95": 0.1468,
+          "count": 480,
+          "restMean": 1.6027,
+          "restP95": 1.6919
+        }
+      },
+      "jitter": {
+        "bodyBefore": 0,
+        "bodyAfter": 0,
+        "bodyReductionPct": 0,
+        "handsBefore": 0.00163,
+        "handsAfter": 0.00149,
+        "handReductionPct": 9.13
+      },
+      "limbFlips": {
+        "depthFlips": 0,
+        "depthFlipsPer100Frames": 0,
+        "largeRotationJumps": 0,
+        "handPalmFlips": 0
+      },
+      "selfIntersection": {
+        "oppositeHandFrames": 0,
+        "handHeadFrames": 0,
+        "handBehindTorsoFrames": 0,
+        "anyEventFrames": 0,
+        "anyEventPct": 0,
+        "note": "Contact between hands and between hand and head is legitimate in ASL; these are diagnostic proximity counts, not automatically errors."
+      },
+      "boneLength": {
+        "maxRelativeDeviation": 0,
+        "p95RelativeDeviation": 0,
+        "bonesChecked": 43
+      },
+      "outliers": 0,
+      "repairedPoints": 0,
+      "goldenHash": "057db008"
+    },
+    {
+      "id": "synthetic_head_nod",
+      "title": "Synthetic — head nod",
+      "source": "synthetic",
+      "synthetic": true,
+      "frames": 72,
+      "fps": 24,
+      "reprojection": {
+        "torso": {
+          "mean": 0.01,
+          "p95": 0.02,
+          "count": 144,
+          "restMean": 0.01,
+          "restP95": 0.02
+        },
+        "leftArm": {
+          "mean": 0.0468,
+          "p95": 0.0785,
+          "count": 216,
+          "restMean": 0.5045,
+          "restP95": 0.922
+        },
+        "rightArm": {
+          "mean": 0.0483,
+          "p95": 0.0833,
+          "count": 216,
+          "restMean": 0.6553,
+          "restP95": 1.237
+        },
+        "head": {
+          "mean": 0.0278,
+          "p95": 0.0604,
+          "count": 360,
+          "restMean": 0.4958,
+          "restP95": 0.7073
+        },
+        "leftHand": {
+          "mean": 0.1233,
+          "p95": 0.1399,
+          "count": 360,
+          "restMean": 1.1332,
+          "restP95": 1.2068
+        },
+        "rightHand": {
+          "mean": 0.127,
+          "p95": 0.1447,
+          "count": 360,
+          "restMean": 1.5264,
+          "restP95": 1.6032
+        }
+      },
+      "jitter": {
+        "bodyBefore": 0,
+        "bodyAfter": 0,
+        "bodyReductionPct": 0,
+        "handsBefore": 0,
+        "handsAfter": 0,
+        "handReductionPct": 0
+      },
+      "limbFlips": {
+        "depthFlips": 0,
+        "depthFlipsPer100Frames": 0,
+        "largeRotationJumps": 0,
+        "handPalmFlips": 0
+      },
+      "selfIntersection": {
+        "oppositeHandFrames": 0,
+        "handHeadFrames": 0,
+        "handBehindTorsoFrames": 0,
+        "anyEventFrames": 0,
+        "anyEventPct": 0,
+        "note": "Contact between hands and between hand and head is legitimate in ASL; these are diagnostic proximity counts, not automatically errors."
+      },
+      "boneLength": {
+        "maxRelativeDeviation": 0,
+        "p95RelativeDeviation": 0,
+        "bonesChecked": 43
+      },
+      "outliers": 0,
+      "repairedPoints": 0,
+      "goldenHash": "ddeaa329"
+    },
+    {
+      "id": "synthetic_brow_raise",
+      "title": "Synthetic — brow raise",
+      "source": "synthetic",
+      "synthetic": true,
+      "frames": 72,
+      "fps": 24,
+      "reprojection": {
+        "torso": {
+          "mean": 0.01,
+          "p95": 0.02,
+          "count": 144,
+          "restMean": 0.01,
+          "restP95": 0.02
+        },
+        "leftArm": {
+          "mean": 0.0463,
+          "p95": 0.077,
+          "count": 216,
+          "restMean": 0.438,
+          "restP95": 0.7852
+        },
+        "rightArm": {
+          "mean": 0.048,
+          "p95": 0.0824,
+          "count": 216,
+          "restMean": 0.6609,
+          "restP95": 1.2452
+        },
+        "head": {
+          "mean": 0.0078,
+          "p95": 0.0101,
+          "count": 360,
+          "restMean": 0.4934,
+          "restP95": 0.566
+        },
+        "leftHand": {
+          "mean": 0.1217,
+          "p95": 0.1383,
+          "count": 360,
+          "restMean": 0.9595,
+          "restP95": 1.0346
+        },
+        "rightHand": {
+          "mean": 0.126,
+          "p95": 0.1438,
+          "count": 360,
+          "restMean": 1.5347,
+          "restP95": 1.6116
+        }
+      },
+      "jitter": {
+        "bodyBefore": 0,
+        "bodyAfter": 0,
+        "bodyReductionPct": 0,
+        "handsBefore": 0,
+        "handsAfter": 0,
+        "handReductionPct": 0
+      },
+      "limbFlips": {
+        "depthFlips": 0,
+        "depthFlipsPer100Frames": 0,
+        "largeRotationJumps": 0,
+        "handPalmFlips": 0
+      },
+      "selfIntersection": {
+        "oppositeHandFrames": 0,
+        "handHeadFrames": 0,
+        "handBehindTorsoFrames": 0,
+        "anyEventFrames": 0,
+        "anyEventPct": 0,
+        "note": "Contact between hands and between hand and head is legitimate in ASL; these are diagnostic proximity counts, not automatically errors."
+      },
+      "boneLength": {
+        "maxRelativeDeviation": 0,
+        "p95RelativeDeviation": 0,
+        "bonesChecked": 43
+      },
+      "outliers": 0,
+      "repairedPoints": 0,
+      "goldenHash": "c2a15ab2"
+    },
+    {
+      "id": "synthetic_session",
+      "title": "Synthetic — combined session (4 sentences)",
+      "source": "synthetic",
+      "synthetic": true,
+      "frames": 192,
+      "fps": 24,
+      "reprojection": {
+        "torso": {
+          "mean": 0.01,
+          "p95": 0.02,
+          "count": 384,
+          "restMean": 0.01,
+          "restP95": 0.02
+        },
+        "leftArm": {
+          "mean": 0.0563,
+          "p95": 0.1556,
+          "count": 576,
+          "restMean": 0.3456,
+          "restP95": 0.9219
+        },
+        "rightArm": {
+          "mean": 0.0471,
+          "p95": 0.0833,
+          "count": 576,
+          "restMean": 0.6794,
+          "restP95": 1.3085
+        },
+        "head": {
+          "mean": 0.0165,
+          "p95": 0.0583,
+          "count": 960,
+          "restMean": 0.4944,
+          "restP95": 0.603
+        },
+        "leftHand": {
+          "mean": 0.4961,
+          "p95": 1.6498,
+          "count": 960,
+          "restMean": 1.051,
+          "restP95": 1.435
+        },
+        "rightHand": {
+          "mean": 0.1182,
+          "p95": 0.1461,
+          "count": 960,
+          "restMean": 1.5629,
+          "restP95": 1.6852
+        }
+      },
+      "jitter": {
+        "bodyBefore": 0.00442,
+        "bodyAfter": 0.00134,
+        "bodyReductionPct": 69.76,
+        "handsBefore": 0.00886,
+        "handsAfter": 0.00544,
+        "handReductionPct": 38.62
+      },
+      "limbFlips": {
+        "depthFlips": 0,
+        "depthFlipsPer100Frames": 0,
+        "largeRotationJumps": 2,
+        "handPalmFlips": 0
+      },
+      "selfIntersection": {
+        "oppositeHandFrames": 0,
+        "handHeadFrames": 0,
+        "handBehindTorsoFrames": 0,
+        "anyEventFrames": 0,
+        "anyEventPct": 0,
+        "note": "Contact between hands and between hand and head is legitimate in ASL; these are diagnostic proximity counts, not automatically errors."
+      },
+      "boneLength": {
+        "maxRelativeDeviation": 0,
+        "p95RelativeDeviation": 0,
+        "bonesChecked": 43
+      },
+      "outliers": 529,
+      "repairedPoints": 0,
+      "goldenHash": "2792fe98"
+    }
+  ],
+  "aggregate": {
+    "sequences": 5,
+    "frames": 528,
+    "meanDepthFlipsPer100Frames": 0,
+    "meanLargeRotationJumpFrames": 0.4,
+    "meanAnyProximityPct": 0,
+    "maxBoneLengthDeviation": 0,
+    "bodyJitterReductionPct": 14.18,
+    "handJitterReductionPct": 8.82
+  }
+}

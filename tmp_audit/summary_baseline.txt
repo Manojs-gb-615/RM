@@ -1,0 +1,10 @@
+Avatar evaluation (synthetic demo data; no real ASL clips in this checkout)
+
+synthetic_arm_raise: 96f @ 24fps | reprojection mean/p95 (SW): torso 0.010/0.020  leftArm 0.052/0.144  rightArm 0.046/0.085  head 0.008/0.010  leftHand 0.229/0.323  rightHand 0.120/0.146 | depth flips 0 | jitter body 1.16% hands -3.67% | proximity 0% | bone max 0 | hash 647d71b2
+synthetic_handshape_cycle: 96f @ 24fps | reprojection mean/p95 (SW): torso 0.010/0.020  leftArm 0.042/0.065  rightArm 0.046/0.075  head 0.008/0.010  leftHand 0.091/0.147  rightHand 0.098/0.147 | depth flips 0 | jitter body 0% hands 9.13% | proximity 0% | bone max 0 | hash 057db008
+synthetic_head_nod: 72f @ 24fps | reprojection mean/p95 (SW): torso 0.010/0.020  leftArm 0.047/0.079  rightArm 0.048/0.083  head 0.028/0.060  leftHand 0.123/0.140  rightHand 0.127/0.145 | depth flips 0 | jitter body 0% hands 0% | proximity 0% | bone max 0 | hash ddeaa329
+synthetic_brow_raise: 72f @ 24fps | reprojection mean/p95 (SW): torso 0.010/0.020  leftArm 0.046/0.077  rightArm 0.048/0.082  head 0.008/0.010  leftHand 0.122/0.138  rightHand 0.126/0.144 | depth flips 0 | jitter body 0% hands 0% | proximity 0% | bone max 0 | hash c2a15ab2
+synthetic_session: 192f @ 24fps | reprojection mean/p95 (SW): torso 0.010/0.020  leftArm 0.056/0.156  rightArm 0.047/0.083  head 0.017/0.058  leftHand 0.496/1.650  rightHand 0.118/0.146 | depth flips 0 | jitter body 69.76% hands 38.62% | proximity 0% | bone max 0 | hash 2792fe98
+
+Aggregate: {"sequences":5,"frames":528,"meanDepthFlipsPer100Frames":0,"meanLargeRotationJumpFrames":0.4,"meanAnyProximityPct":0,"maxBoneLengthDeviation":0,"bodyJitterReductionPct":14.18,"handJitterReductionPct":8.82}
+Golden: not present
