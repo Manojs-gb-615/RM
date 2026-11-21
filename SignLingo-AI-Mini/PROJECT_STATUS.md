@@ -1,6 +1,6 @@
 # PROJECT_STATUS.md — SignLingo AI Mini
 
-Updated: 2026-11-20
+Updated: 2026-11-21
 
 ---
 
@@ -8,19 +8,23 @@ Updated: 2026-11-20
 
 | Component | Status | Notes |
 |---|---|---|
-| `ml/dataset.py` | ✅ DONE | Loader + synthetic test data + synthetic marker detection |
-| `ml/retrieval.py` | ✅ DONE | text_only + context_aware, SRT/VTT parsing, model cache, save/load |
-| `ml/inference.py` | ✅ DONE | Backend wrapper, configurable index path, synthetic flag |
-| `ml/train.py` | ✅ DONE | Builds index, honest split evaluation |
+| `ml/convert_openpose.py` | ✅ DONE | OpenPose JSON → [T,274] .npy + metadata; resume + parallel |
+| `ml/build_real_index.py` | ✅ DONE | One command: convert → train → index |
+| `ml/ranker.py` | ✅ DONE | Dual encoder, symmetric InfoNCE, checkpoint + loss log |
+| `ml/retrieval.py` | ✅ DONE | Trained + baseline rankers, vectorized scoring, save/load |
+| `ml/evaluate.py` | ✅ DONE | Recall@1/5/10, MRR, p50/p95 latency, baseline vs trained |
+| `ml/dataset.py` | ✅ DONE | Loader + synthetic marker detection |
+| `ml/inference.py` | ✅ DONE | Loads trained index/checkpoint; reports `is_trained` |
+| `ml/train.py` | ✅ DONE | `--train-ranker`, `--synthetic` gating, baseline fallback |
 | `ml/setup_data.py` | ✅ DONE | `real` / `synthetic` / `template` modes |
-| `backend/main.py` | ✅ DONE | 8 endpoints, lifespan startup, pydantic v2 validators |
-| `frontend/` | ✅ DONE | React + Tailwind single page, canvas skeleton viewer |
-| Frontend build | ✅ PASSED | `npm run build` → 0 errors |
-| Colab notebook | ✅ DONE | Honest evaluation; `USE_SYNTHETIC` defaults to False |
-| Tests | ✅ PASSED | `python -m pytest tests -q` → 19 passed |
-| Backend end-to-end | ✅ VERIFIED | retrieve, retrieve_all, compare → 274-d pose (synthetic) |
-| UI layout | ✅ DONE | LEFT video / RIGHT skeleton / BOTTOM transcript + controls |
-| Video ↔ animation sync | ✅ DONE | video play/pause drives animation; segment click seeks video |
+| `backend/main.py` | ✅ DONE | 8 endpoints, lifespan startup |
+| `frontend/` | ✅ DONE | LEFT video / RIGHT skeleton / BOTTOM transcript + controls |
+| Frame-level sync | ✅ DONE | `requestVideoFrameCallback` (rAF fallback); seek/rate/pause/loop |
+| Colab notebook | ✅ DONE | `USE_SYNTHETIC` defaults to False |
+| Tests | ✅ PASSED | `python -m pytest tests -q` → 31 passed |
+| Backend end-to-end | ✅ VERIFIED | retrieve, retrieve_all, compare (real index + synthetic tests) |
+| Playwright E2E | ✅ PASSED | 2 tests, screenshots 01–06 |
+| ASL-signer evaluation | ⏳ PENDING | Kit in `eval/` |
 
 ---
 
@@ -28,60 +32,54 @@ Updated: 2026-11-20
 
 | Item | Status |
 |---|---|
-| How2Sign CSVs | Available in `Downloads` (outside this repo) |
-| How2Sign pose `.npy` files | ❌ NOT AVAILABLE locally |
-| `data/metadata.csv` | ⚠️ header-only template committed |
-| Real retrieval index | ❌ NOT BUILT (no pose data) |
-| Synthetic test data | Generated on demand + clearly flagged |
+| How2Sign CSVs | ✅ in `Downloads` (outside repo) |
+| How2Sign OpenPose keypoints | ✅ val archive downloaded + extracted (1,739 clips) |
+| Converted real poses | ✅ 450 clips in `data/real/poses/` (gitignored) |
+| `data/real/metadata.csv` | ✅ 450 rows committed |
+| Real retrieval index | ✅ `models/retrieval_index.pkl` (gitignored, local) |
+| Trained ranker | ✅ `models/ranker.pt` (gitignored) + loss log |
+| Synthetic test data | Explicit `--synthetic` only, flagged in UI |
 
 ---
 
 ## Verified commands
 
 ```bash
-# unit tests
-python -m pytest tests -q                      # 19 passed
+# convert + train + build (450 real val clips)
+python ml/build_real_index.py --data-dir data/real --epochs 40
 
-# synthetic pipeline (testing only)
-python ml/setup_data.py synthetic --output-dir data/synthetic --n 30
-python ml/train.py --data-dir data/synthetic --pose-dir data/synthetic/poses \
-    --output data/synthetic/retrieval_index.pkl --eval
+# evaluation
+python ml/evaluate.py --data-dir data/real \
+    --index models/retrieval_index.pkl --ranker models/ranker.pt
 
-# frontend
-cd frontend && npm run build                    # passes
+# tests
+python -m pytest tests -q                      # 31 passed
+cd frontend && npm run build                    # 0 errors
+npm run test:e2e                                # 2 passed
+
+# human ratings (pending)
+python eval/aggregate_ratings.py --input eval/rating_form.csv --output eval/summary.csv
 ```
 
 ---
 
-## Startup commands
+## Evaluation result (honest)
 
-```bash
-# 1. install
-pip install -r requirements.txt
-cd frontend && npm install && cd ..
-
-# 2. build index from real data (once poses exist)
-python ml/setup_data.py real --csv <how2sign.csv> --pose-dir data/poses --output data/metadata.csv
-python ml/train.py --data-dir data --pose-dir data/poses --eval
-
-# 3. run (from SignLingo-AI-Mini/)
-uvicorn backend.main:app --reload --port 8000
-cd frontend && npm run dev
-# open http://localhost:5173
-```
-
----
+Full-protocol retrieval is near-trivial because the query caption is in the index
+(baseline and trained both ≈1.0). In the non-trivial context-only ablation, the
+trained ranker did **not** beat the fixed baseline (R@1 0.044 vs 0.044; R@10 0.300
+vs 0.422). See `docs/eval_results.md`.
 
 ## What is NOT done
 
-- Real How2Sign pose data download/extraction (blocker; requires registration).
-- Real index build (blocked by pose data).
-- Human evaluation by qualified ASL signers (not conducted; ethically required before real use).
+- Human evaluation by qualified ASL signers (kit ready; no ratings yet).
+- Trained ranker does not improve the hard context-only task.
+- Only the validation split (450 clips) is used; train split (31k clips) not processed.
 
 ## Honest limitations
 
 - Retrieval only, not generation.
-- Retrieval quality untested on real data.
-- No certified ASL accuracy evaluation.
+- Poses are automatic OpenPose estimates, not verified ASL ground truth.
+- Captions are mostly unique, making standard retrieval metrics uninformative.
 - Prototype only — not for accessibility use without expert evaluation.
-- Synthetic poses are random sinusoids and are flagged as such; never ASL.
+- Synthetic poses are random sinusoids; never presented as ASL.
