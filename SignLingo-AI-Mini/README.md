@@ -6,6 +6,9 @@
 > dataset — it does **not** generate novel ASL. Retrieved poses have not been
 > evaluated by qualified ASL signers. Unmatched sentences fall back to caption-only.
 
+**Operators and end users:** see [USER_MANUAL.md](USER_MANUAL.md) for usage,
+troubleshooting, and the production deployment checklist.
+
 ---
 
 ## What it does
