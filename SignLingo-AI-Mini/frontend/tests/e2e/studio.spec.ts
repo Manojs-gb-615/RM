@@ -41,6 +41,19 @@ test('studio layout, retrieval, and frame-level video sync', async ({ page }) =>
   await page.waitForTimeout(800);
   await video.evaluate((el) => ((el as HTMLVideoElement).pause()));
 
+  // Pause must freeze the animation at the same frame.
+  const pausedState = await page.evaluate(() => {
+    const v = document.querySelector('[data-testid=video]') as HTMLVideoElement;
+    const c = document.querySelector('[data-testid=pose-canvas]') as HTMLCanvasElement;
+    return { paused: v.paused, frame: Number(c.dataset.frame ?? -1) };
+  });
+  expect(pausedState.paused).toBe(true);
+  await page.waitForTimeout(500);
+  const pausedFrameLater = await page.evaluate(
+    () => Number((document.querySelector('[data-testid=pose-canvas]') as HTMLCanvasElement).dataset.frame ?? -1),
+  );
+  expect(pausedFrameLater).toBe(pausedState.frame);
+
   await expect
     .poll(async () => page.evaluate(() => {
       const v = document.querySelector('[data-testid=video]') as HTMLVideoElement;
@@ -89,6 +102,27 @@ test('studio layout, retrieval, and frame-level video sync', async ({ page }) =>
   });
   expect(afterRate.frame).toBeGreaterThanOrEqual(0);
   expect(afterRate.frame).toBeLessThan(afterRate.total);
+
+  // Loop must wrap back to the start without breaking the frame mapping.
+  const loopInfo = await video.evaluate(async (el) => {
+    const v = el as HTMLVideoElement;
+    v.playbackRate = 1;
+    v.currentTime = Math.max(0, v.duration - 0.25);
+    await v.play();
+    await new Promise((r) => setTimeout(r, 1800));
+    const c = document.querySelector('[data-testid=pose-canvas]') as HTMLCanvasElement;
+    return {
+      loop: v.loop,
+      t: v.currentTime,
+      frame: Number(c.dataset.frame ?? -1),
+      total: Number(c.dataset.total || 0),
+    };
+  });
+  expect(loopInfo.loop).toBe(true);
+  expect(loopInfo.t, JSON.stringify(loopInfo)).toBeLessThan(3);
+  expect(loopInfo.frame).toBeGreaterThanOrEqual(0);
+  expect(loopInfo.frame).toBeLessThan(loopInfo.total);
+  await video.evaluate((el) => ((el as HTMLVideoElement).pause()));
 
   // Clicking a transcript sentence seeks the video.
   await page.getByTestId('sentence-1').click();
