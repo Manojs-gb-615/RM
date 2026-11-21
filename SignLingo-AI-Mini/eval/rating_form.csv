@@ -1,0 +1,3 @@
+rater_id,sample_id,mode,sign_accuracy_1_5,naturalness_1_5,sync_quality_1_5,comments
+EXAMPLE_R1,EXAMPLE_E01a,text_only,3,3,4,Example only — ignored by aggregator
+EXAMPLE_R1,EXAMPLE_E01b,context_aware,4,4,4,Example only — ignored by aggregator
